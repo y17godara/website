@@ -2,6 +2,12 @@
 
 # ignore
 .env
+generated/
+generated
+.cache/
+.contentlayer
+.contentlayer/
+migrations/
 
 # dependencies
 /node_modules
