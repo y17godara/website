@@ -1,6 +1,8 @@
+import '@/styles/globals.css';
+import localFont from 'next/font/local';
 import type { Metadata, Viewport } from 'next';
 import { siteConfig } from '@/config/index';
-import './globals.css';
+import { cn } from '@/lib/utils';
 
 export const viewport: Viewport = {
   themeColor: [
@@ -72,14 +74,30 @@ export const metadata: Metadata = {
   },
 };
 
+const hubot = localFont({
+  src: '../public/assets/HubotSans.woff2',
+  variable: '--font-hubot',
+  display: 'swap',
+  weight: '400 900',
+});
+
+type RootLayoutProps = {
+  children: React.ReactNode;
+};
+
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: RootLayoutProps): React.ReactElement<RootLayoutProps> {
   return (
-    <html lang='en' dir='ltr'>
-      <body>{children}</body>
+    <html lang='en' dir='ltr' suppressHydrationWarning>
+      <body
+        className={cn(
+          'bg-background text-text selection:bg-bgSelection selection:text-textSelection w-full font-sans antialiased',
+          hubot.variable
+        )}
+      >
+        {children}
+      </body>
     </html>
   );
 }
