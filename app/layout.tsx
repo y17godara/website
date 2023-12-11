@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     creatorId: siteConfig.twitterHandle,
     creator: siteConfig.twitterHandle,
-    images: { url: `../public/assets/og.png`, alt: `${siteConfig.title}` },
+    images: { url: `/og-bg.png`, alt: `${siteConfig.title}` },
   },
   referrer: 'origin-when-cross-origin',
   metadataBase: new URL(siteConfig.url),
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.title,
     images: [
       {
-        url: new URL('/assets/og.png', siteConfig.url).toString(),
+        url: new URL('/og-bg.png', siteConfig.url).toString(),
         alt: siteConfig.title,
         width: 1200,
         height: 630,
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
 };
 
 const hubot = localFont({
-  src: '../public/assets/HubotSans.woff2',
+  src: '../public/assets/fonts/HubotSans.woff2',
   variable: '--font-hubot',
   display: 'swap',
   weight: '400 900',
