@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import type { Metadata, Viewport } from 'next';
 import { siteConfig } from '@/config/index';
 import { cn } from '@/lib/utils';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const viewport: Viewport = {
   themeColor: [
@@ -108,6 +109,7 @@ export default function RootLayout({
           }
         >
           {children}
+          <SpeedInsights />
         </div>
       </body>
     </html>
