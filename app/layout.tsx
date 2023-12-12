@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     creatorId: siteConfig.twitterHandle,
     creator: siteConfig.twitterHandle,
-    images: { url: `/og-bg.png`, alt: `${siteConfig.title}` },
+    images: { url: ``, alt: `${siteConfig.title}` },
   },
   referrer: 'origin-when-cross-origin',
   metadataBase: new URL(siteConfig.url),
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.title,
     images: [
       {
-        url: new URL('/og-bg.png', siteConfig.url).toString(),
+        url: new URL('', siteConfig.url).toString(),
         alt: siteConfig.title,
         width: 1200,
         height: 630,
