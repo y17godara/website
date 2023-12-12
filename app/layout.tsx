@@ -92,11 +92,17 @@ export default function RootLayout({
     <html lang='en' dir='ltr' suppressHydrationWarning>
       <body
         className={cn(
-          'bg-background text-text selection:bg-bgSelection selection:text-textSelection w-full font-sans antialiased',
+          'w-full bg-primary font-sans text-primary antialiased selection:bg-secondaryA',
           hubot.variable
         )}
       >
-        {children}
+        <div
+          className={
+            'mx-auto max-w-screen-md px-2 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20'
+          }
+        >
+          {children}
+        </div>
       </body>
     </html>
   );
