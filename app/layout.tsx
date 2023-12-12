@@ -27,36 +27,8 @@ export const metadata: Metadata = {
   category: siteConfig.category,
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.title,
-    description: siteConfig.description,
-    creatorId: siteConfig.twitterHandle,
-    creator: siteConfig.twitterHandle,
-    images: {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/opengraph-image.png`,
-      alt: `${siteConfig.title}`,
-    },
   },
   referrer: 'origin-when-cross-origin',
-  metadataBase: new URL(siteConfig.url),
-  assets: [`${siteConfig.url}/assets`],
-  openGraph: {
-    type: 'website',
-    title: siteConfig.title,
-    url: siteConfig.url,
-    description: siteConfig.description,
-    siteName: siteConfig.title,
-    images: [
-      {
-        url: new URL(
-          `${process.env.NEXT_PUBLIC_BASE_URL}/opengraph-image.png`,
-          siteConfig.url
-        ).toString(),
-        alt: siteConfig.title,
-        width: 1200,
-        height: 630,
-      },
-    ],
-  },
   keywords: siteConfig.keywords,
   generator: siteConfig.generator,
   applicationName: siteConfig.title,
@@ -64,20 +36,6 @@ export const metadata: Metadata = {
     email: false,
     address: false,
     telephone: false,
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
 };
 
