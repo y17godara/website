@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   creator: siteConfig.creator,
   publisher: siteConfig.publisher,
   category: siteConfig.category,
+  metadataBase: new URL(`https://${process.env.DOMAIN}`),
   twitter: {
     card: 'summary_large_image',
     images: [
@@ -85,14 +86,17 @@ export default function RootLayout({
           hubot.variable
         )}
       >
+        {/* Themes Provider */}
+        {/* Navigation / Header */}
         <div
           className={
-            'mx-auto max-w-screen-md px-2 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20'
+            'mx-auto max-w-[700px] px-6 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20'
           }
         >
           {children}
-          <SpeedInsights />
         </div>
+        <SpeedInsights />
+        {/* ThemeProvider */}
       </body>
     </html>
   );

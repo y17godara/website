@@ -9,3 +9,7 @@
 - [Radix Primitives](https://www.radix-ui.com/primitives) (Headless UI components)
 - [Radix UI Colors](https://www.radix-ui.com/colors) (Color system)
 - [Framer Motion](https://www.framer.com/motion/) (Animations)
+
+# Todo
+
+- [ ] Add `Og Image` support
