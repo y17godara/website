@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'Uh oh! This page does not exist, maybe you clicked an old link or misspelled. Please try again…',
 };
 
-const PageNotFound = (): JSX.Element => (
+const Custom404 = (): JSX.Element => (
   <div className='flex flex-col gap-2'>
     <h1>404 - Page not found</h1>
     <p className='text-secondary'>
@@ -21,4 +21,4 @@ const PageNotFound = (): JSX.Element => (
   </div>
 );
 
-export default PageNotFound;
+export default Custom404;
