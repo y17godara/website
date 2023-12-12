@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import type { Metadata, Viewport } from 'next';
 import { siteConfig } from '@/config/index';
 import { cn } from '@/lib/utils';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const viewport: Viewport = {
   themeColor: [
@@ -16,8 +17,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: `Yash Godara | ${siteConfig.meta}`,
-    template: `%s | ${siteConfig.title}`,
+    default: `Home | Yash Godara`,
+    template: `%s | Yash Godara`,
   },
   description: siteConfig.description,
   authors: siteConfig.authors,
@@ -26,30 +27,30 @@ export const metadata: Metadata = {
   category: siteConfig.category,
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.title,
-    description: siteConfig.description,
-    creatorId: siteConfig.twitterHandle,
-    creator: siteConfig.twitterHandle,
-    // images: { url: ``, alt: `${siteConfig.title}` },
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: 'Yash Godara',
+      },
+    ],
+  },
+  openGraph: {
+    title: siteConfig.aboutMe,
+    siteName: siteConfig.title,
+    type: 'website',
+    locale: 'en_US',
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: 'Yash Godara',
+      },
+    ],
   },
   referrer: 'origin-when-cross-origin',
-  // metadataBase: new URL(siteConfig.url),
-  // assets: [`${siteConfig.url}/assets`],
-  openGraph: {
-    type: 'website',
-    title: siteConfig.title,
-    // url: siteConfig.url,
-    description: siteConfig.description,
-    siteName: siteConfig.title,
-    // images: [
-    //   {
-    //     // url: new URL('', siteConfig.url).toString(),
-    //     alt: siteConfig.title,
-    //     width: 1200,
-    //     height: 630,
-    //   },
-    // ],
-  },
   keywords: siteConfig.keywords,
   generator: siteConfig.generator,
   applicationName: siteConfig.title,
@@ -57,20 +58,6 @@ export const metadata: Metadata = {
     email: false,
     address: false,
     telephone: false,
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
 };
 
@@ -102,6 +89,7 @@ export default function RootLayout({
           }
         >
           {children}
+          <SpeedInsights />
         </div>
       </body>
     </html>
