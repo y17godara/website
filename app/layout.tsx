@@ -3,6 +3,8 @@ import localFont from 'next/font/local';
 import type { Metadata, Viewport } from 'next';
 import { siteConfig } from '@/config/index';
 import { cn } from '@/lib/utils';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { url } from 'inspector';
 
 export const viewport: Viewport = {
   themeColor: [
@@ -26,30 +28,22 @@ export const metadata: Metadata = {
   category: siteConfig.category,
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.title,
-    description: siteConfig.description,
-    creatorId: siteConfig.twitterHandle,
-    creator: siteConfig.twitterHandle,
-    images: { url: `/og-bg.png`, alt: `${siteConfig.title}` },
   },
-  referrer: 'origin-when-cross-origin',
-  metadataBase: new URL(siteConfig.url),
-  assets: [`${siteConfig.url}/assets`],
   openGraph: {
-    type: 'website',
-    title: siteConfig.title,
-    url: siteConfig.url,
-    description: siteConfig.description,
+    title: siteConfig.aboutMe,
     siteName: siteConfig.title,
+    type: 'website',
+    locale: 'en_US',
     images: [
       {
-        url: new URL('/og-bg.png', siteConfig.url).toString(),
-        alt: siteConfig.title,
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/og-image.png`,
         width: 1200,
         height: 630,
+        alt: 'Yash Godara',
       },
     ],
   },
+  referrer: 'origin-when-cross-origin',
   keywords: siteConfig.keywords,
   generator: siteConfig.generator,
   applicationName: siteConfig.title,
@@ -57,20 +51,6 @@ export const metadata: Metadata = {
     email: false,
     address: false,
     telephone: false,
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
 };
 
@@ -102,6 +82,7 @@ export default function RootLayout({
           }
         >
           {children}
+          <SpeedInsights />
         </div>
       </body>
     </html>
