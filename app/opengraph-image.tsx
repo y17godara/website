@@ -4,7 +4,7 @@ import { ImageResponse } from 'next/og';
 export const runtime = 'edge';
 
 // Image metadata
-export const alt = 'Alt Image Text';
+export const alt = 'Yash Godara';
 export const size = {
   width: 1200,
   height: 630,
@@ -33,7 +33,7 @@ export default async function Image() {
           justifyContent: 'center',
         }}
       >
-        yash godara
+        Yash Godara
       </div>
     ),
     // ImageResponse options
