@@ -4,7 +4,6 @@ import type { Metadata, Viewport } from 'next';
 import { siteConfig } from '@/config/index';
 import { cn } from '@/lib/utils';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { url } from 'inspector';
 
 export const viewport: Viewport = {
   themeColor: [
@@ -18,8 +17,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: `Yash Godara | ${siteConfig.meta}`,
-    template: `%s | ${siteConfig.title}`,
+    default: `Home | Yash Godara`,
+    template: `%s | Yash Godara`,
   },
   description: siteConfig.description,
   authors: siteConfig.authors,
@@ -28,6 +27,14 @@ export const metadata: Metadata = {
   category: siteConfig.category,
   twitter: {
     card: 'summary_large_image',
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: 'Yash Godara',
+      },
+    ],
   },
   openGraph: {
     title: siteConfig.aboutMe,
@@ -36,7 +43,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/og-image.png`,
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
         alt: 'Yash Godara',
