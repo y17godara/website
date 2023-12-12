@@ -1,22 +1,21 @@
 import { MetadataRoute } from 'next';
-import { siteConfig } from '@/config';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     {
-      url: `${siteConfig.url}`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
-      url: `${siteConfig.url}/about`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/about`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${siteConfig.url}/contact`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/contact`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,
