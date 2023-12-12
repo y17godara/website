@@ -38,6 +38,9 @@ dependencies:
   tailwind-merge:
     specifier: ^2.1.0
     version: 2.1.0
+  website:
+    specifier: 'link:'
+    version: 'link:'
 
 devDependencies:
   '@next/eslint-plugin-next':
