@@ -19,6 +19,7 @@ export function Link(props: LinkProps) {
       )}
       // is target true so _black else undefined
       target={target ? '_blank' : undefined}
+      rel={target ? 'noopener noreferrer' : undefined}
     >
       {props.children}
     </NextLink>
