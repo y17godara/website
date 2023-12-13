@@ -30,7 +30,7 @@ export function Footer() {
           </div>
 
           {/* Build Stack */}
-          <p className='text-tertity mt-8 text-sm '>
+          <p className='mt-8 text-sm text-secondary '>
             Built with{' '}
             <Link
               className='italic underline-offset-2 hover:underline'
@@ -66,7 +66,7 @@ export function Footer() {
 
         {/* Copy Rights */}
         <div className='flex flex-col items-center justify-center text-center'>
-          <p className='text-tertity mt-8 text-sm '>
+          <p className='mt-8 text-sm text-secondary '>
             © {new Date().getFullYear()} Yash Godara. All rights reserved.
           </p>
         </div>
