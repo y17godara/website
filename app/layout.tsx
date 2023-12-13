@@ -5,6 +5,7 @@ import { siteConfig } from '@/config/index';
 import { cn } from '@/lib/utils';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
+import { ThemeProvider, Header } from '@/components';
 
 export const viewport: Viewport = {
   themeColor: [
@@ -87,18 +88,18 @@ export default function RootLayout({
           hubot.variable
         )}
       >
-        {/* Themes Provider */}
-        {/* Navigation / Header */}
-        <div
-          className={
-            'mx-auto max-w-[700px] px-6 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20'
-          }
-        >
-          {children}
-        </div>
+        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+          <Header />
+          <main
+            className={
+              'mx-auto max-w-[700px] px-4 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20'
+            }
+          >
+            {children}
+          </main>
+        </ThemeProvider>
         <SpeedInsights />
         <Analytics />
-        {/* ThemeProvider */}
       </body>
     </html>
   );
