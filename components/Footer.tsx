@@ -20,9 +20,11 @@ export function Footer() {
                 <Link
                   key={index}
                   href={social.href}
+                  aria-label={social.ariaLabel}
+                  title={social.label}
                   className='flex flex-row items-center gap-1 text-secondary hover:text-primary'
                 >
-                  {social.label}
+                  <span className='hidden sm:block'>{social.label}</span>
                   {social.icon}
                 </Link>
               ))}

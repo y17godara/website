@@ -6,6 +6,7 @@ type LinkProps = {
   children: ReactNode;
   className?: string;
   target?: boolean;
+  title?: string;
 } & NextLinkProps;
 
 export function Link(props: LinkProps) {
@@ -18,6 +19,7 @@ export function Link(props: LinkProps) {
         props.className
       )}
       // is target true so _black else undefined
+      title={props.title}
       target={target ? '_blank' : undefined}
       rel={target ? 'noopener noreferrer' : undefined}
     >
