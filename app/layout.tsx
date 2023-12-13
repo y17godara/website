@@ -5,7 +5,7 @@ import { siteConfig } from '@/config/index';
 import { cn } from '@/lib/utils';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
-import { ThemeProvider, Header } from '@/components';
+import { ThemeProvider, Header, Footer } from '@/components';
 
 export const viewport: Viewport = {
   themeColor: [
@@ -97,6 +97,7 @@ export default function RootLayout({
           >
             {children}
           </main>
+          <Footer />
         </ThemeProvider>
         <SpeedInsights />
         <Analytics />
