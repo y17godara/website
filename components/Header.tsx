@@ -53,7 +53,7 @@ export function Header() {
           {/* Small Nav Menu */}
           <Popover className='relative ml-auto sm:hidden'>
             <Popover.Button
-              className='flex items-center gap-1 rounded-lg p-1 text-secondary focus:ring-0 focus-visible:outline-none'
+              className='flex items-center gap-1 rounded-lg p-1 text-secondary hover:text-primary focus:ring-0 focus-visible:outline-none'
               onClick={handleMobileNavOpen}
             >
               Menu
@@ -77,7 +77,7 @@ export function Header() {
               leaveFrom='opacity-100 translate-y-0'
               leaveTo='opacity-0 translate-y-1'
             >
-              <Popover.Panel className='absolute right-0 z-10 mt-4 w-40 origin-top-right overflow-auto rounded-xl bg-white p-2 text-base shadow-sm focus:outline-none dark:bg-black sm:text-sm'>
+              <Popover.Panel className='absolute right-0 z-10 mt-4 max-h-60 w-40 origin-top-right overflow-auto rounded-xl bg-white p-2 text-base capitalize shadow-sm focus:outline-none dark:bg-black sm:text-sm'>
                 <div className='grid gap-1'>
                   {navLinks.map((link) => (
                     <Link
