@@ -13,38 +13,63 @@ export function Footer() {
     >
       {/* Socials */}
       <footer className='mx-auto flex max-w-[700px] flex-col items-center justify-between gap-3 px-4 py-3 md:px-6'>
-        <div className='flex flex-col justify-between font-medium lg:flex-row'>
-          <div className='flex space-x-5'>
-            {socials.map((social, index) => (
-              <Link
-                key={index}
-                href={social.href}
-                className='flex flex-row items-center gap-1 text-secondary hover:text-primary'
-              >
-                {social.label}
-                {social.icon}
-              </Link>
-            ))}
+        <div className='flex flex-col items-center justify-center text-center'>
+          <div className='flex flex-col justify-between font-medium lg:flex-row'>
+            <div className='flex space-x-5'>
+              {socials.map((social, index) => (
+                <Link
+                  key={index}
+                  href={social.href}
+                  className='flex flex-row items-center gap-1 text-secondary hover:text-primary'
+                >
+                  {social.label}
+                  {social.icon}
+                </Link>
+              ))}
+            </div>
           </div>
+
+          {/* Build Stack */}
+          <p className='text-tertity mt-8 text-sm '>
+            Built with{' '}
+            <Link
+              className='italic underline-offset-2 hover:underline'
+              href={'/'}
+            >
+              Next.js
+            </Link>
+            {', '}
+            <Link
+              className='italic underline-offset-2 hover:underline'
+              href={'/'}
+            >
+              MDX
+            </Link>
+            {', '}
+            <Link
+              className='italic underline-offset-2 hover:underline'
+              href={'/'}
+            >
+              Tailwindcss
+            </Link>
+            {', '}
+            and{' '}
+            <Link
+              className='italic underline-offset-2 hover:underline'
+              href={'/'}
+            >
+              Vercel
+            </Link>
+            {'. '}
+          </p>
         </div>
 
-        {/* Build Stack */}
-        <p className='text-tertity mt-8 text-sm '>
-          Built with{' '}
-          <Link className='underline-offset-2 hover:underline' href={'/'}>
-            Next.js
-          </Link>{' '}
-          <Link className='underline-offset-2 hover:underline' href={'/'}>
-            MDX
-          </Link>{' '}
-          <Link className='underline-offset-2 hover:underline' href={'/'}>
-            Tailwind
-          </Link>{' '}
-          and{' '}
-          <Link className='underline-offset-2 hover:underline' href={'/'}>
-            Vercel
-          </Link>{' '}
-        </p>
+        {/* Copy Rights */}
+        <div className='flex flex-col items-center justify-center text-center'>
+          <p className='text-tertity mt-8 text-sm '>
+            © {new Date().getFullYear()} Yash Godara. All rights reserved.
+          </p>
+        </div>
       </footer>
     </div>
   );
