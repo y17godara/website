@@ -20,71 +20,22 @@ export const SocialsCard = () => {
             {/* Social */}
             <div>
               <div className='relative flex items-center justify-center gap-4 pb-6 '>
-                <MotionDiv
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.8 }}
-                >
-                  <Link
-                    className='text-3xl text-primary hover:text-brand'
-                    href='https://www.linkedin.com/in/y17godara'
-                    target
-                    aria-label='LinkedIn'
+                {socials.map((social, index) => (
+                  <MotionDiv
+                    key={index}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.8 }}
                   >
-                    <FaLinkedin />
-                  </Link>
-                </MotionDiv>
-                <MotionDiv
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.8 }}
-                >
-                  <Link
-                    className='text-3xl text-primary hover:text-brand'
-                    href='https://twitter.com/y17godara'
-                    target
-                    aria-label='X Twitter'
-                  >
-                    <FaXTwitter />
-                  </Link>
-                </MotionDiv>
-                <MotionDiv
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.8 }}
-                >
-                  <Link
-                    className='text-3xl text-primary hover:text-brand'
-                    href='https://github.com/y17godara'
-                    target
-                    aria-label='GitHub'
-                  >
-                    <FaGithub />
-                  </Link>
-                </MotionDiv>
-                <MotionDiv
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.8 }}
-                >
-                  <Link
-                    className='text-3xl text-primary hover:text-brand'
-                    href='https://stackoverflow.com/users/17114824/y17godara'
-                    target
-                    aria-label='Stack Overflow'
-                  >
-                    <FaStackOverflow />
-                  </Link>
-                </MotionDiv>
-                <MotionDiv
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.8 }}
-                >
-                  <Link
-                    className='text-3xl text-primary hover:text-brand'
-                    href='https://discord.com/users/526972062741299211'
-                    target
-                    aria-label='Discord'
-                  >
-                    <FaDiscord />
-                  </Link>
-                </MotionDiv>
+                    <Link
+                      className='text-3xl text-primary hover:text-brand'
+                      href={social.href}
+                      target
+                      aria-label={social.ariaLabel}
+                    >
+                      {social.icon}
+                    </Link>
+                  </MotionDiv>
+                ))}
               </div>
             </div>
             <p className='text-sm text-tertiary'>
@@ -108,3 +59,44 @@ export const SocialsCard = () => {
     </>
   );
 };
+
+// Socials
+type socialsProps = {
+  href: string;
+  label: string;
+  ariaLabel: string;
+  icon?: React.ReactNode;
+}[];
+
+const socials: socialsProps = [
+  {
+    href: 'https://www.linkedin.com/in/y17godara',
+    label: 'Linkedin',
+    ariaLabel: 'LinkedIn',
+    icon: <FaLinkedin />,
+  },
+  {
+    href: 'https://twitter.com/y17godara',
+    label: 'Github',
+    ariaLabel: 'X Twitter',
+    icon: <FaXTwitter />,
+  },
+  {
+    href: 'https://github.com/y17godara',
+    label: 'Github',
+    ariaLabel: 'GitHub',
+    icon: <FaGithub />,
+  },
+  {
+    href: 'https://stackoverflow.com/users/17114824/y17godara',
+    label: 'Stackoverflow',
+    ariaLabel: 'Stack Overflow',
+    icon: <FaStackOverflow />,
+  },
+  {
+    href: 'https://discord.com/users/526972062741299211',
+    label: 'Discord',
+    ariaLabel: 'Discord',
+    icon: <FaDiscord />,
+  },
+];
