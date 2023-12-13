@@ -24,4 +24,8 @@
     --bg: var(--gray-1);
     --boxBg: var(--gray-4);
   }
+  html {
+    -webkit-scrollbar: none;
+    overflow-y: hidden;
+  }
 }

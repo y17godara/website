@@ -6,9 +6,10 @@ import { usePathname } from 'next/navigation';
 type NavLinkProps = {
   href: string;
   children: ReactNode;
+  className?: string;
 };
 
-export default function NavLink({ href, children }: NavLinkProps) {
+export function NavLink({ href, children, className }: NavLinkProps) {
   const pathname = `/${usePathname().split('/')[1]}`; // active path
   const active = pathname === href;
 
@@ -16,7 +17,8 @@ export default function NavLink({ href, children }: NavLinkProps) {
     <Link
       className={cn(
         'rounded-lg px-4 py-2 text-sm transition-colors hover:text-primary',
-        active ? 'bg-secondaryA text-primary' : 'text-secondary'
+        active ? 'bg-secondaryA text-primary' : 'text-secondary',
+        className
       )}
       href={href}
     >

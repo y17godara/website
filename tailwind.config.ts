@@ -15,6 +15,10 @@ const config: Config = {
     fontFamily: {
       sans: ['var(--font-hubot)', ...defaultTheme.fontFamily.sans],
     },
+    screens: {
+      maxS: '700px',
+      ...defaultTheme.screens,
+    },
     container: {
       center: true,
       padding: '2rem',
