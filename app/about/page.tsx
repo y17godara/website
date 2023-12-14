@@ -15,15 +15,24 @@ export default async function About() {
       <div className='flex flex-col gap-16 md:gap-24'>
         <div>
           <h1 className='animate-in text-3xl font-bold'>About</h1>
-          <p className='animate-in text-lg font-normal'>
+          <p
+            className='animate-in text-lg font-normal'
+            style={{ '--index': 1 } as React.CSSProperties}
+          >
             Just a quick glimpse.
           </p>
         </div>
 
         {/* TODO: Images Section Here */}
+        <div style={{ '--index': 1 } as React.CSSProperties} className='hidden'>
+          {/* Framer Motion Images */}
+        </div>
 
         {/* About */}
-        <div className='flex animate-in flex-col gap-16 md:gap-24'>
+        <div
+          className='flex animate-in flex-col gap-16 md:gap-24'
+          style={{ '--index': 3 } as React.CSSProperties}
+        >
           <section className='col-reverse flex flex-col gap-2 md:flex-row md:gap-9'>
             <div className='flex flex-col gap-6'>
               <p>Hello World,</p>
@@ -77,17 +86,31 @@ export default async function About() {
         </div>
 
         {/* Contact */}
-        <div className='flex animate-in flex-col gap-16  md:gap-24 '>
-          <div className='relative flex flex-col gap-6'>
-            <div>
+        <div
+          className='flex animate-in flex-col gap-16  md:gap-24 '
+          style={{ '--index': 3 } as React.CSSProperties}
+        >
+          <div className='relative flex  flex-col gap-8'>
+            <div className='flex flex-col gap-2'>
               <h1 className='animate-in text-lg font-bold'>Contact Me</h1>
               <p className='text-md animate-in font-normal'>
-                Connect with me on social media.
+                {/* Wanna discuss something or have any question feel free to email me */}
+                Have a question or want to discuss something? Feel free to{' '}
+                <Link
+                  className='text-sm italic underline underline-offset-4'
+                  href='mailto:yash17godara@gmail.com'
+                  target
+                  title='yash17godara@gmail.com'
+                >
+                  email me
+                </Link>{' '}
+                , or you can also find me on social medias with the handle
+                @y17godara.
               </p>
             </div>
 
             {/* Social */}
-            <ul className='animated-list grid flex-grow grid-cols-1 gap-2 md:grid-cols-2'>
+            <ul className='animated-list grid flex-grow grid-cols-1 gap-2 md:grid-cols-2 '>
               {socials.map((link: socialsProps, index: number) => (
                 <li className='col-span-1 transition-opacity' key={index}>
                   <Link
