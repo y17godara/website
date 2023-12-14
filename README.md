@@ -13,3 +13,4 @@
 # Todo
 
 - [ ] Add `Og Image` support
+- [ ] Add `Card Hover Glossy Effect` to Cards.

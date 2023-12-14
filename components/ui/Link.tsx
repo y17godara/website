@@ -20,7 +20,6 @@ export function Link(props: LinkProps) {
       )}
       title={props.title}
       // is target true so _black else undefined
-      title={props.title}
       target={target ? '_blank' : undefined}
       rel={target ? 'noopener noreferrer' : undefined}
     >

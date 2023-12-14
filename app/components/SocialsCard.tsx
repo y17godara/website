@@ -37,7 +37,9 @@ export const SocialsCard = () => {
                       aria-label='LinkedIn'
                       title={'@y17godara'}
                     >
-                      <FaLinkedin className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'} />
+                      <FaLinkedin
+                        className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'}
+                      />
                     </Link>
                   </MotionDiv>
                   <MotionDiv
@@ -51,7 +53,9 @@ export const SocialsCard = () => {
                       aria-label='X Twitter'
                       title={'@y17godara'}
                     >
-                      <FaXTwitter className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'} />
+                      <FaXTwitter
+                        className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'}
+                      />
                     </Link>
                   </MotionDiv>
                   <MotionDiv
@@ -65,7 +69,9 @@ export const SocialsCard = () => {
                       aria-label='GitHub'
                       title={'@y17godara'}
                     >
-                      <FaGithub className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'} />
+                      <FaGithub
+                        className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'}
+                      />
                     </Link>
                   </MotionDiv>
                   <MotionDiv
@@ -79,7 +85,9 @@ export const SocialsCard = () => {
                       aria-label='Stack Overflow'
                       title={'@y17godara'}
                     >
-                      <FaStackOverflow className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'} />
+                      <FaStackOverflow
+                        className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'}
+                      />
                     </Link>
                   </MotionDiv>
                   <MotionDiv
@@ -93,7 +101,9 @@ export const SocialsCard = () => {
                       aria-label='Discord'
                       title={'@y17godara'}
                     >
-                      <FaDiscord className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'} />
+                      <FaDiscord
+                        className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'}
+                      />
                     </Link>
                   </MotionDiv>
                 </div>
