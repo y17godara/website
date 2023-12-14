@@ -2,7 +2,7 @@ import React from 'react';
 import { MotionDiv } from '@/components/index';
 import { Link } from '@/components/ui';
 import { Spotlight, Tilt } from '@/components/ui/index';
-import { socials } from '@/config/contants';
+import { socials } from '@/components/index';
 import { type socialsProps } from '@/types/index';
 
 export const SocialsCard = () => {
@@ -27,23 +27,27 @@ export const SocialsCard = () => {
               <div>
                 <div className='relative flex items-center justify-center gap-4 pb-6 '>
                   {socials.map((social: socialsProps, index: number) => (
-                    <MotionDiv
-                      key={index}
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.8 }}
-                    >
-                      <Link
-                        className={`text-3xl text-primary ${social.className}`}
-                        href={social.href}
-                        target
-                        aria-label={social.ariaLabel}
-                        title={social.title}
-                      >
-                        <span className='text-[20px] sm:text-[24px] md:text-[32px]'>
-                          {social.icon}
-                        </span>
-                      </Link>
-                    </MotionDiv>
+                    <>
+                      {social.private ? null : (
+                        <MotionDiv
+                          key={index}
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.8 }}
+                        >
+                          <Link
+                            className={`text-3xl text-primary ${social.className}`}
+                            href={social.href}
+                            target
+                            aria-label={social.ariaLabel}
+                            title={social.title}
+                          >
+                            <span className='text-[20px] sm:text-[24px] md:text-[32px]'>
+                              {social.icon}
+                            </span>
+                          </Link>
+                        </MotionDiv>
+                      )}
+                    </>
                   ))}
                 </div>
               </div>

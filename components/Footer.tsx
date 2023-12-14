@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 import { Link } from './ui';
-import { socials } from '@/config/contants';
+import { socials } from '@/components/index';
 import { type socialsProps } from '@/types/index';
 
 export function Footer() {
@@ -24,8 +24,12 @@ export function Footer() {
                   title={social.label}
                   className='flex flex-row items-center gap-1 text-secondary hover:text-primary'
                 >
-                  <span className='hidden sm:block'>{social.label}</span>
-                  {social.icon}
+                  {social.private ? null : (
+                    <>
+                      <span className='hidden sm:block'>{social.label}</span>
+                      {social.icon}
+                    </>
+                  )}
                 </Link>
               ))}
             </div>
@@ -33,7 +37,7 @@ export function Footer() {
 
           {/* Build Stack */}
           <p className='mt-8 text-start text-sm text-secondary'>
-            Built with{' '}
+            Built with <span className='text-primary'>❤️</span> using{' '}
             <Link
               className='italic underline-offset-2 hover:underline'
               href={'/'}
@@ -68,7 +72,11 @@ export function Footer() {
         {/* Copy Rights */}
         <div className='flex flex-col items-center justify-center text-start'>
           <p className='mt-8 text-sm text-secondary '>
-            © {new Date().getFullYear()} Yash Godara. All rights reserved.
+            {/* Copyright */}©{' '}
+            {new Date().getFullYear() === 2023
+              ? 2023
+              : `2023 - ${new Date().getFullYear()}`}{' '}
+            Yash Godara. All rights reserved.
           </p>
         </div>
       </footer>
