@@ -8,6 +8,7 @@ export type socialsProps = {
   title: string;
   className?: string;
   icon: React.ReactNode;
+  private?: boolean;
 };
 
 export type LinkProps = {
