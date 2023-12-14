@@ -18,6 +18,7 @@ export function Link(props: LinkProps) {
         'duration-600 underline-offset-4 transition ease-in-out ',
         props.className
       )}
+      title={props.title}
       // is target true so _black else undefined
       title={props.title}
       target={target ? '_blank' : undefined}

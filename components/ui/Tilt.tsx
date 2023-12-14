@@ -52,7 +52,7 @@ export const Tilt = ({ children, className }: TiltProps) => {
         transformStyle: 'preserve-3d',
         transform: 'translateZ(75px)',
       }}
-      className={cn('relative inset-4 rounded-lg', className)}
+      className={cn('', className)}
     >
       {children}
     </motion.div>
@@ -101,7 +101,7 @@ export const DoubleTilt = ({ children, className }: TiltProps) => {
           transformStyle: 'preserve-3d',
           transform: 'translateZ(75px)',
         }}
-        className={cn('relative inset-4 rounded-lg', className)}
+        className={cn('', className)}
       >
         <div
           style={{
