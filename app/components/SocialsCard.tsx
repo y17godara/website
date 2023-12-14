@@ -10,8 +10,8 @@ export const SocialsCard = () => {
     <>
       <Tilt>
         <Spotlight
-          strength={30}
-          size={600}
+          strength={20}
+          size={400}
           color='#8b0d0d'
           className='rounded-lg'
         >
