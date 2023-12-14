@@ -1,13 +1,7 @@
 import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 import { cn } from '@/lib/utils';
 import { ReactNode } from 'react';
-
-type LinkProps = {
-  children: ReactNode;
-  className?: string;
-  target?: boolean;
-  title?: string;
-} & NextLinkProps;
+import { type LinkProps } from '@/types';
 
 export function Link(props: LinkProps) {
   const { target, ...rest } = props;

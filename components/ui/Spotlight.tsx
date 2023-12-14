@@ -1,17 +1,10 @@
 'use client';
 
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { useMousePosition } from '@/hooks/index';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
-
-type SpotlightProps = {
-  children: ReactNode | ReactNode[];
-  size?: number /**(px) */;
-  strength?: number /**(0-100) */;
-  color?: string /**(rgba) */;
-  className?: string;
-};
+import { type SpotlightProps } from '@/types/index';
 
 export function Spotlight({
   children,

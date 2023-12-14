@@ -1,9 +1,9 @@
 import React from 'react';
 import { MotionDiv } from '@/components/index';
 import { Link } from '@/components/ui';
-import { FaStackOverflow, FaLinkedin } from 'react-icons/fa';
-import { FaXTwitter, FaGithub, FaDiscord } from 'react-icons/fa6';
 import { Spotlight, Tilt } from '@/components/ui/index';
+import { socials } from '@/config/contants';
+import { type socialsProps } from '@/types/index';
 
 export const SocialsCard = () => {
   return (
@@ -26,86 +26,25 @@ export const SocialsCard = () => {
               {/* Social */}
               <div>
                 <div className='relative flex items-center justify-center gap-4 pb-6 '>
-                  <MotionDiv
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.8 }}
-                  >
-                    <Link
-                      className='text-3xl text-primary hover:text-[#0077B5]'
-                      href='https://www.linkedin.com/in/y17godara'
-                      target
-                      aria-label='LinkedIn'
-                      title={'@y17godara'}
+                  {socials.map((social: socialsProps, index: number) => (
+                    <MotionDiv
+                      key={index}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.8 }}
                     >
-                      <FaLinkedin
-                        className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'}
-                      />
-                    </Link>
-                  </MotionDiv>
-                  <MotionDiv
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.8 }}
-                  >
-                    <Link
-                      className='text-3xl text-primary hover:text-[#14171A]'
-                      href='https://twitter.com/y17godara'
-                      target
-                      aria-label='X Twitter'
-                      title={'@y17godara'}
-                    >
-                      <FaXTwitter
-                        className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'}
-                      />
-                    </Link>
-                  </MotionDiv>
-                  <MotionDiv
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.8 }}
-                  >
-                    <Link
-                      className='text-3xl text-primary hover:text-[#24292e]'
-                      href='https://github.com/y17godara'
-                      target
-                      aria-label='GitHub'
-                      title={'@y17godara'}
-                    >
-                      <FaGithub
-                        className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'}
-                      />
-                    </Link>
-                  </MotionDiv>
-                  <MotionDiv
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.8 }}
-                  >
-                    <Link
-                      className='text-3xl text-primary hover:text-[#f1730c]'
-                      href='https://stackoverflow.com/users/17114824/y17godara'
-                      target
-                      aria-label='Stack Overflow'
-                      title={'@y17godara'}
-                    >
-                      <FaStackOverflow
-                        className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'}
-                      />
-                    </Link>
-                  </MotionDiv>
-                  <MotionDiv
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.8 }}
-                  >
-                    <Link
-                      className='text-3xl text-primary hover:text-[#7289da]'
-                      href='https://discord.com/users/526972062741299211'
-                      target
-                      aria-label='Discord'
-                      title={'@y17godara'}
-                    >
-                      <FaDiscord
-                        className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'}
-                      />
-                    </Link>
-                  </MotionDiv>
+                      <Link
+                        className={`text-3xl text-primary ${social.className}`}
+                        href={social.href}
+                        target
+                        aria-label={social.ariaLabel}
+                        title={social.title}
+                      >
+                        <span className='text-[20px] sm:text-[24px] md:text-[32px]'>
+                          {social.icon}
+                        </span>
+                      </Link>
+                    </MotionDiv>
+                  ))}
                 </div>
               </div>
               <p className='text-sm text-tertiary'>
@@ -130,44 +69,3 @@ export const SocialsCard = () => {
     </>
   );
 };
-
-// Socials
-type socialsProps = {
-  href: string;
-  label: string;
-  ariaLabel: string;
-  icon?: React.ReactNode;
-}[];
-
-const socials: socialsProps = [
-  {
-    href: 'https://www.linkedin.com/in/y17godara',
-    label: 'Linkedin',
-    ariaLabel: 'LinkedIn',
-    icon: <FaLinkedin />,
-  },
-  {
-    href: 'https://twitter.com/y17godara',
-    label: 'Github',
-    ariaLabel: 'X Twitter',
-    icon: <FaXTwitter />,
-  },
-  {
-    href: 'https://github.com/y17godara',
-    label: 'Github',
-    ariaLabel: 'GitHub',
-    icon: <FaGithub />,
-  },
-  {
-    href: 'https://stackoverflow.com/users/17114824/y17godara',
-    label: 'Stackoverflow',
-    ariaLabel: 'Stack Overflow',
-    icon: <FaStackOverflow />,
-  },
-  {
-    href: 'https://discord.com/users/526972062741299211',
-    label: 'Discord',
-    ariaLabel: 'Discord',
-    icon: <FaDiscord />,
-  },
-];
