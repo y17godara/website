@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import React from 'react';
 import { Link } from '@/components/ui';
+import { socials } from '@/components/index';
+import { type socialsProps } from '@/types/index';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -83,39 +85,46 @@ export default async function About() {
                 Connect with me on social media.
               </p>
             </div>
-            <div className='flex flex-col justify-center gap-4 md:flex-row'>
-              <Link
-                href='https://discord.gg/'
-                target
-                className='flex-1 transform rounded-md bg-indigo-500 bg-opacity-30 px-8 py-4 duration-300 ease-in-out hover:scale-105'
-              >
-                Discord
-              </Link>
-              <Link
-                href='https://twitter.com/y17godara'
-                target
-                className='flex-1 transform rounded-md bg-blue-500 bg-opacity-30 px-8 py-4 duration-300 ease-in-out hover:scale-105'
-              >
-                @y17godara
-              </Link>
-            </div>
 
-            <div className='flex flex-col justify-center gap-4 md:flex-row'>
-              <Link
-                href='mailto:yash17godara@gmail.com'
-                target
-                className='flex-1 transform rounded-md bg-yellow-500 bg-opacity-30 px-8 py-4 duration-300 ease-in-out hover:scale-105'
-              >
-                yash17godara@gmail.com
-              </Link>
-              <Link
-                href='https://github.com/y17godara'
-                target
-                className='flex-1 transform rounded-md bg-purple-500 bg-opacity-30 px-8 py-4 duration-300 ease-in-out hover:scale-105'
-              >
-                y17godara
-              </Link>
-            </div>
+            {/* Social */}
+            <ul className='animated-list grid flex-grow grid-cols-1 gap-2 md:grid-cols-2'>
+              {socials.map((link: socialsProps, index: number) => (
+                <li className='col-span-1 transition-opacity' key={index}>
+                  <Link
+                    href={link.href}
+                    target
+                    aria-label={link.ariaLabel}
+                    title={link.title}
+                    className='inline-grid w-full rounded-lg border border-primary p-4 no-underline transition-opacity'
+                  >
+                    <div className='flex items-center gap-3'>
+                      {/* Icon */}
+                      <span className='text-xl'>{link.icon}</span>
+                      {link.label}
+
+                      {/* is Private */}
+                      {link.private ? (
+                        <span className='text-xs text-tertiary'>{`(Private)`}</span>
+                      ) : null}
+
+                      {/* Arrow */}
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        viewBox='0 0 20 20'
+                        fill='currentColor'
+                        className='ml-auto h-5 w-5 text-secondary'
+                      >
+                        <path
+                          fillRule='evenodd'
+                          d='M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z'
+                          clipRule='evenodd'
+                        />
+                      </svg>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
