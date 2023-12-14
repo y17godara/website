@@ -31,12 +31,13 @@ export const SocialsCard = () => {
                     whileTap={{ scale: 0.8 }}
                   >
                     <Link
-                      className='text-3xl text-primary hover:text-brand'
+                      className='text-3xl text-primary hover:text-[#0077B5]'
                       href='https://www.linkedin.com/in/y17godara'
                       target
                       aria-label='LinkedIn'
+                      title={'@y17godara'}
                     >
-                      <FaLinkedin />
+                      <FaLinkedin className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'} />
                     </Link>
                   </MotionDiv>
                   <MotionDiv
@@ -44,12 +45,13 @@ export const SocialsCard = () => {
                     whileTap={{ scale: 0.8 }}
                   >
                     <Link
-                      className='text-3xl text-primary hover:text-brand'
+                      className='text-3xl text-primary hover:text-[#14171A]'
                       href='https://twitter.com/y17godara'
                       target
                       aria-label='X Twitter'
+                      title={'@y17godara'}
                     >
-                      <FaXTwitter />
+                      <FaXTwitter className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'} />
                     </Link>
                   </MotionDiv>
                   <MotionDiv
@@ -57,12 +59,13 @@ export const SocialsCard = () => {
                     whileTap={{ scale: 0.8 }}
                   >
                     <Link
-                      className='text-3xl text-primary hover:text-brand'
+                      className='text-3xl text-primary hover:text-[#24292e]'
                       href='https://github.com/y17godara'
                       target
                       aria-label='GitHub'
+                      title={'@y17godara'}
                     >
-                      <FaGithub />
+                      <FaGithub className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'} />
                     </Link>
                   </MotionDiv>
                   <MotionDiv
@@ -70,12 +73,13 @@ export const SocialsCard = () => {
                     whileTap={{ scale: 0.8 }}
                   >
                     <Link
-                      className='text-3xl text-primary hover:text-brand'
+                      className='text-3xl text-primary hover:text-[#f1730c]'
                       href='https://stackoverflow.com/users/17114824/y17godara'
                       target
                       aria-label='Stack Overflow'
+                      title={'@y17godara'}
                     >
-                      <FaStackOverflow />
+                      <FaStackOverflow className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'} />
                     </Link>
                   </MotionDiv>
                   <MotionDiv
@@ -83,12 +87,13 @@ export const SocialsCard = () => {
                     whileTap={{ scale: 0.8 }}
                   >
                     <Link
-                      className='text-3xl text-primary hover:text-brand'
+                      className='text-3xl text-primary hover:text-[#7289da]'
                       href='https://discord.com/users/526972062741299211'
                       target
                       aria-label='Discord'
+                      title={'@y17godara'}
                     >
-                      <FaDiscord />
+                      <FaDiscord className={'h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8'} />
                     </Link>
                   </MotionDiv>
                 </div>
