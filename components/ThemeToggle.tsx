@@ -1,10 +1,5 @@
 import { RxGear } from 'react-icons/rx';
 import { GrRadialSelected } from 'react-icons/gr';
-// import { IoIosCheckmark } from 'react-icons/io';
-// import { useState } from 'react';
-// import { Listbox } from '@headlessui/react';
-// import { useTheme } from 'next-themes';
-
 import { useEffect, useState } from 'react';
 import { Listbox } from '@headlessui/react';
 import clsx from 'clsx';

@@ -22,10 +22,7 @@ export function Header() {
   return (
     <>
       <header
-        className={cn(
-          'md:stick relative top-0 z-50 animate-in bg-primary shadow-sm'
-        )}
-        style={{ '--index': 1 } as React.CSSProperties}
+        className={cn('md:stick relative top-0 z-50 bg-primary shadow-sm')}
       >
         <nav className='mx-auto flex max-w-[700px] items-center justify-between gap-3 px-4 py-3 md:px-6'>
           {/* Logo */}
