@@ -25,3 +25,12 @@ export type SpotlightProps = {
   color?: string /**(rgba) */;
   className?: string;
 };
+
+export type NoteProps = {
+  description: string;
+  note?: string;
+  message?: string;
+  button?: string;
+  className?: string;
+  href?: any;
+};
