@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 import React from 'react';
 import { Link } from '@/components/ui';
 import { socials } from '@/components/index';
-import { type socialsProps } from '@/types/index';
+import { type socialsProps } from '@/app/about/components/types/index';
+import { WorkExperience } from './components/index';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -85,16 +86,40 @@ export default async function About() {
           </section>
         </div>
 
-        {/* Contact */}
+        {/* Experience */}
         <div
           className='flex animate-in flex-col gap-16  md:gap-24 '
           style={{ '--index': 3 } as React.CSSProperties}
         >
           <div className='relative flex  flex-col gap-8'>
             <div className='flex flex-col gap-2'>
+              <h1 className='animate-in text-lg font-bold'>Experience</h1>
+              <p className='text-md animate-in font-normal'>
+                I have been coding for a years now and I have worked on various{' '}
+                <Link
+                  className='text-sm italic underline underline-offset-4'
+                  href='/projects'
+                >
+                  personal projects
+                </Link>{' '}
+                ranging from html websites to full stack.
+              </p>
+            </div>
+
+            {/* Experience List */}
+            <WorkExperience />
+          </div>
+        </div>
+
+        {/* Contact */}
+        <div
+          className='flex animate-in flex-col gap-16  md:gap-24 '
+          style={{ '--index': 4 } as React.CSSProperties}
+        >
+          <div className='relative flex  flex-col gap-8'>
+            <div className='flex flex-col gap-2'>
               <h1 className='animate-in text-lg font-bold'>Contact Me</h1>
               <p className='text-md animate-in font-normal'>
-                {/* Wanna discuss something or have any question feel free to email me */}
                 Have a question or want to discuss something? Feel free to{' '}
                 <Link
                   className='text-sm italic underline underline-offset-4'
