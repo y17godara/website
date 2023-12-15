@@ -23,6 +23,8 @@ export type educationProps = {
   course: string;
   majors: string[];
   cgpa: string;
+  certification: string;
+  verification: string;
   description: string;
   joined: {
     month: string;
@@ -35,4 +37,5 @@ export type educationProps = {
   location: string;
   className?: string;
   ariaLabel: string;
+  categories: 'education' | 'certification';
 };

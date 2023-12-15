@@ -4,7 +4,7 @@ import { Link, Note } from '@/components/ui';
 import { socials } from '@/components/index';
 import { type socialsProps } from '@/types/index';
 import { WorkExperience, Education } from './components/index';
-import { experience, education } from './components/Constants';
+import { experience, education, certifications } from './components/Constants';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -139,6 +139,21 @@ export default async function About() {
 
             {/* Education List */}
             <Education education={education} />
+          </div>
+        </div>
+
+        {/* Certificates and Licenses */}
+        <div
+          className='flex animate-in flex-col gap-16  md:gap-24 '
+          style={{ '--index': 4 } as React.CSSProperties}
+        >
+          <div className='relative flex  flex-col gap-4'>
+            <div className='flex flex-col gap-2'>
+              <h1 className='animate-in text-lg font-bold'>Certificates</h1>
+            </div>
+
+            {/* Experience List */}
+            <Education education={certifications} />
           </div>
         </div>
 

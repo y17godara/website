@@ -28,7 +28,9 @@ export const education: educationProps[] = [
     title: 'Graduation',
     course: 'Bachelors of Computer Applications',
     majors: ['Coud', 'FullStack', 'Security'],
-    cgpa: '00.00',
+    cgpa: 'N/A',
+    certification: '',
+    verification: '',
     description:
       'Currently pursuing my Bachelors of Computer Applications from Amity University, Noida.',
     joined: {
@@ -42,12 +44,15 @@ export const education: educationProps[] = [
     location: 'India',
     className: '',
     ariaLabel: 'BCA',
+    categories: 'education',
   },
   {
     title: 'Senior Secondary',
     course: 'Higher Secondary Education',
     majors: ['Computer Science', 'Mathematics', 'Physics'],
     cgpa: '6.5',
+    certification: '',
+    verification: '',
     description:
       'Finished my Higher Secondary Education from Heera Public School, Delhi.',
     joined: {
@@ -61,12 +66,15 @@ export const education: educationProps[] = [
     location: 'India',
     className: '',
     ariaLabel: 'Senior Secondary',
+    categories: 'education',
   },
   {
     title: 'Secondary',
     course: 'Secondary Education',
     majors: ['Computer Science', 'Mathematics', 'Physics'],
     cgpa: '7.6',
+    certification: '',
+    verification: '',
     description:
       'Finished my Secondary Education from Heera Public School, Delhi.',
     joined: {
@@ -80,5 +88,31 @@ export const education: educationProps[] = [
     location: 'India',
     className: '',
     ariaLabel: 'Secondary',
+    categories: 'education',
+  },
+];
+
+export const certifications: educationProps[] = [
+  {
+    title: 'FullStack Web Development',
+    course: 'FullStack Cohort at 100xDevs by Harikat Singh',
+    majors: ['React.js', 'Node.js', 'Next.js', 'MongoDB', 'PostgreSQL'],
+    cgpa: '',
+    certification: '/assets/about/100xdev.jpg',
+    verification: 'https://cert.100xdevs.com/certificate/kvg1eprgo2',
+    description:
+      'Completed a 6 month long FullStack Web Development course from 100xDevs by Harikat Singh.',
+    joined: {
+      month: '',
+      year: '2023',
+    },
+    to: {
+      month: 'Nov',
+      year: '2023',
+    },
+    location: 'Online',
+    className: '',
+    ariaLabel: 'FullStack Web Development',
+    categories: 'certification',
   },
 ];

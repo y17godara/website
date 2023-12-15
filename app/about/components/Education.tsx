@@ -1,11 +1,15 @@
 import { type educationProps } from './types/index';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import { Link } from '@/components/ui/Link';
 
 export function Edu({
   title,
   course,
   majors,
   cgpa,
+  certification,
+  verification,
   description,
   joined,
   to,
@@ -39,24 +43,59 @@ export function Edu({
             </p>
           </div>
         </div>
-        <div>
-          <div className='flex flex-row gap-1'>
-            <h3 className='text-xs font-semibold'>CGPA</h3>
-            <p className='text-xs font-normal'>
-              {cgpa === '00.00' ? 'N/A' : cgpa}
-            </p>
-          </div>
-          <div className='flex flex-col gap-1'>
-            <h3 className='text-xs font-semibold'>Duration:</h3>
-            <p className='text-xs font-normal'>
-              {joined.month} {joined.year} - {to.month} {to.year}
-            </p>
-          </div>
-          <div className='flex flex-row gap-1'>
-            <h3 className='text-xs font-semibold'>Location:</h3>
-            <p className='text-xs font-normal'>{location} </p>
-          </div>
-        </div>
+        {certification ? (
+          <>
+            <div className='hidden flex-col gap-y-4 sm:flex'>
+              <Link
+                href={verification}
+                target
+                className='flex flex-col gap-y-4'
+              >
+                <Image
+                  src={certification}
+                  alt={title}
+                  width={80}
+                  height={80}
+                  quality={80}
+                  loading='lazy'
+                  placeholder='blur'
+                  blurDataURL={'https://bit.ly/placeholder-image'}
+                  style={{ width: 'auto', height: 'auto' }}
+                  className='rounded-lg'
+                />
+              </Link>
+              <div>
+                <h3 className='text-xs font-semibold'>Duration:</h3>
+                <p className='text-xs font-normal'>
+                  {joined.month} {joined.year} - {to.month} {to.year}
+                </p>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <div>
+              <div className='flex flex-row gap-1'>
+                {cgpa ? (
+                  <>
+                    <h3 className='text-xs font-semibold'>CGPA</h3>
+                    <p className='text-xs font-normal'>{cgpa}</p>
+                  </>
+                ) : null}
+              </div>
+              <div className='flex flex-col gap-1'>
+                <h3 className='text-xs font-semibold'>Duration:</h3>
+                <p className='text-xs font-normal'>
+                  {joined.month} {joined.year} - {to.month} {to.year}
+                </p>
+              </div>
+              <div className='flex flex-row gap-1'>
+                <h3 className='text-xs font-semibold'>Location:</h3>
+                <p className='text-xs font-normal'>{location} </p>
+              </div>
+            </div>{' '}
+          </>
+        )}
       </div>
     </>
   );
