@@ -1,9 +1,10 @@
 import { Metadata } from 'next';
 import React from 'react';
-import { Link } from '@/components/ui';
+import { Link, Note } from '@/components/ui';
 import { socials } from '@/components/index';
 import { type socialsProps } from '@/types/index';
 import { WorkExperience } from './components/index';
+import { experience } from './components/Constants';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -95,19 +96,29 @@ export default async function About() {
             <div className='flex flex-col gap-2'>
               <h1 className='animate-in text-lg font-bold'>Experience</h1>
               <p className='text-md animate-in font-normal'>
-                I have been coding for a years now and I have worked on various{' '}
+                I have been coding for more than years now and I have worked on
+                various{' '}
                 <Link
                   className='text-sm italic underline underline-offset-4'
                   href='/projects'
                 >
                   personal projects
                 </Link>{' '}
-                ranging from html websites to full stack.
+                . I believe in project based learning and I have learned a lot
+                of things from my various projects.
               </p>
             </div>
 
+            {/* Additional Note */}
+            <Note
+              href={'mailto:yash17godara@gmail.com'}
+              button={'Email Me'}
+              note={'Note'}
+              description="Currently, I don't have industry experience, but I am actively looking for internship opportunities. Feel free to reach out to me via email or social media."
+            />
+
             {/* Experience List */}
-            <WorkExperience />
+            <WorkExperience experience={experience} />
           </div>
         </div>
 

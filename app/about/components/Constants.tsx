@@ -2,13 +2,14 @@ import { type experienceProps } from '@/app/about/components/types/index';
 
 export const experience: experienceProps[] = [
   {
-    href: '#',
+    logo: '/assets/about/github.jpg',
+    title: 'Personal Projects',
+    description:
+      'I have worked on various small personal projects ranging from html websites to full stack.',
+    role: 'FullStack',
+    href: 'https://github.com/y17godara',
     label: 'Personal Projects',
     ariaLabel: 'Personal Projects',
-    title: 'Personal Projects',
-    description: 'Personal Projects',
-    role: 'Full Stack Developer',
-    logo: '',
     className: '',
     location: 'India',
     joined: {
@@ -16,7 +17,7 @@ export const experience: experienceProps[] = [
       year: '2021',
     },
     to: {
-      month: 'Present',
+      month: '', // Leave empty if currently working
       year: Date().split(' ')[3],
     },
   },

@@ -1,5 +1,5 @@
 export type experienceProps = {
-  href: string;
+  href?: string;
   label: string;
   ariaLabel: string;
   title: string;
