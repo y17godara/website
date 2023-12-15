@@ -1,12 +1,84 @@
-import React from 'react';
-import { FaUniversity } from 'react-icons/fa';
-import { type experienceProps } from './types/index';
+import { type educationProps } from './types/index';
+import { cn } from '@/lib/utils';
 
-export function Education() {
+export function Edu({
+  title,
+  course,
+  majors,
+  cgpa,
+  description,
+  joined,
+  to,
+  location,
+  className,
+  ariaLabel,
+}: educationProps) {
+  const content = (
+    <>
+      <div
+        aria-label={ariaLabel}
+        className={cn('flex h-full w-full items-center gap-4', className)}
+      >
+        <div className='flex-1'>
+          <div className='flex flex-col gap-1'>
+            <h2 className='text-sm font-bold text-secondary' title={title}>
+              {title}
+            </h2>
+            <h4 className='text-md text-start font-normal text-primary'>
+              {course}{' '}
+            </h4>
+            <p
+              className='text-start text-xs font-normal text-secondary'
+              title={description}
+            >
+              {description}
+            </p>
+            <p>
+              <span className='text-xs font-semibold'>Majors: </span>
+              <span className='text-xs font-normal'>{majors.join(', ')}</span>
+            </p>
+          </div>
+        </div>
+        <div>
+          <div className='flex flex-row gap-1'>
+            <h3 className='text-xs font-semibold'>CGPA</h3>
+            <p className='text-xs font-normal'>
+              {cgpa === '00.00' ? 'N/A' : cgpa}
+            </p>
+          </div>
+          <div className='flex flex-col gap-1'>
+            <h3 className='text-xs font-semibold'>Duration:</h3>
+            <p className='text-xs font-normal'>
+              {joined.month} {joined.year} - {to.month} {to.year}
+            </p>
+          </div>
+          <div className='flex flex-row gap-1'>
+            <h3 className='text-xs font-semibold'>Location:</h3>
+            <p className='text-xs font-normal'>{location} </p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+
+  return (
+    <li>
+      <div
+        aria-label={ariaLabel}
+        title={title}
+        className='inline-grid w-full rounded-lg border border-primary p-4 no-underline transition-opacity'
+      >
+        {content}
+      </div>
+    </li>
+  );
+}
+
+export function Education({ education }: { education: educationProps[] }) {
   return (
     <>
       <ul className='animated-list grid flex-grow grid-cols-1 gap-2'>
-        {/* check is length 0 show no experience else  */}
+        {education.map(Edu)}
       </ul>
     </>
   );

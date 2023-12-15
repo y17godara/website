@@ -3,8 +3,8 @@ import React from 'react';
 import { Link, Note } from '@/components/ui';
 import { socials } from '@/components/index';
 import { type socialsProps } from '@/types/index';
-import { WorkExperience } from './components/index';
-import { experience } from './components/Constants';
+import { WorkExperience, Education } from './components/index';
+import { experience, education } from './components/Constants';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -122,10 +122,30 @@ export default async function About() {
           </div>
         </div>
 
-        {/* Contact */}
+        {/* Education */}
         <div
           className='flex animate-in flex-col gap-16  md:gap-24 '
           style={{ '--index': 4 } as React.CSSProperties}
+        >
+          <div className='relative flex  flex-col gap-8'>
+            <div className='flex flex-col gap-2'>
+              <h1 className='animate-in text-lg font-bold'>Education</h1>
+              <p className='text-md animate-in font-normal'>
+                I am currently pursuing my Bachelors of Computer Applications
+                from Amity University, Noida. I am currently in my first
+                semester.
+              </p>
+            </div>
+
+            {/* Education List */}
+            <Education education={education} />
+          </div>
+        </div>
+
+        {/* Contact */}
+        <div
+          className='flex animate-in flex-col gap-16  md:gap-24 '
+          style={{ '--index': 5 } as React.CSSProperties}
         >
           <div className='relative flex  flex-col gap-8'>
             <div className='flex flex-col gap-2'>

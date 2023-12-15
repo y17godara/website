@@ -17,3 +17,22 @@ export type experienceProps = {
     year: string;
   };
 };
+
+export type educationProps = {
+  title: string;
+  course: string;
+  majors: string[];
+  cgpa: string;
+  description: string;
+  joined: {
+    month: string;
+    year: string;
+  };
+  to: {
+    month: string;
+    year: string;
+  };
+  location: string;
+  className?: string;
+  ariaLabel: string;
+};
