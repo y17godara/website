@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import React from 'react';
 import { Link } from '@/components/ui';
 import { socials } from '@/components/index';
-import { type socialsProps } from '@/app/about/components/types/index';
+import { type socialsProps } from '@/types/index';
 import { WorkExperience } from './components/index';
 
 export const metadata: Metadata = {
