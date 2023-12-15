@@ -1,8 +1,17 @@
-import { FaStackOverflow, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaStackOverflow, FaLinkedin } from 'react-icons/fa';
+import { MdAttachEmail } from 'react-icons/md';
 import { FaXTwitter, FaGithub, FaDiscord } from 'react-icons/fa6';
 import { type socialsProps } from '@/types/index';
 
 export const socials: socialsProps[] = [
+  {
+    href: 'mailto:yash17godara@gamil.com',
+    label: 'Email',
+    ariaLabel: 'Email',
+    title: 'Email',
+    className: 'hover:text-[#ea4335] ',
+    icon: <MdAttachEmail />,
+  },
   {
     href: 'https://www.linkedin.com/in/y17godara',
     label: 'Linkedin',
@@ -46,15 +55,6 @@ export const socials: socialsProps[] = [
     title: '@y17godara',
     className: 'hover:text-[#7289da] ',
     icon: <FaDiscord />,
-    private: true,
-  },
-  {
-    href: 'https://www.instagram.com/y17godara',
-    label: 'Instagram',
-    ariaLabel: 'Instagram',
-    title: '@y17godara',
-    className: 'hover:text-[#e1306c]',
-    icon: <FaInstagram />,
     private: true,
   },
 ];

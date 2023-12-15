@@ -4,7 +4,7 @@ import React from 'react';
 import { useMousePosition } from '@/hooks/index';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
-import { type SpotlightProps } from '@/types/index';
+import { type SpotlightProps } from '@/app/about/components/types/index';
 
 export function Spotlight({
   children,
