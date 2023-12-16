@@ -21,7 +21,7 @@ export default async function About() {
             className='animate-in text-lg font-normal'
             style={{ '--index': 1 } as React.CSSProperties}
           >
-            Just a quick glimpse.
+            {/* Just a quick glimpse. */}
           </p>
         </div>
 
