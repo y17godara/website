@@ -1,5 +1,5 @@
 import React from 'react';
-import { SocialsCard } from './components/SocialsCard';
+import { SocialsCard } from './_components/SocialsCard';
 
 export default async function Home() {
   return (
