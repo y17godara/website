@@ -15,3 +15,6 @@
 - [ ] Add `Og Image` support
 - [ ] Add `Card Hover Glossy Effect` to Cards.
 - [ ] Add `Share Button` Component.
+- [ ] Header Logo Switch According to Theme Color.
+- [ ] Note Component According to Theme Color.
+- [ ] Table, List View for Blogs and Projects.

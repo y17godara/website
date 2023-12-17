@@ -29,6 +29,7 @@ export function Header() {
           <Link href='/' className=''>
             <Image
               src={Logo}
+              priority
               alt='Yash Godara Logo'
               className='h-8 w-8 rounded-full'
               width={40}
