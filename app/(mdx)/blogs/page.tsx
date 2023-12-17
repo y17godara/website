@@ -65,7 +65,7 @@ export default function page() {
                 <div className='w-full animate-in space-y-2 md:w-3/5'>
                   <div className='flex flex-col gap-1'>
                     <Link
-                      href={`/blog/${blog.slug}`}
+                      href={`/blogs/${blog.slug}`}
                       className='animate-in text-lg font-medium text-primary hover:underline'
                     >
                       {blog.title}
