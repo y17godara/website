@@ -1,1 +1,1 @@
-export * from './MdxWrapper';
+export * from "./MdxWrapper";

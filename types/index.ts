@@ -1,5 +1,5 @@
-import { LinkProps as NextLinkProps } from 'next/link';
-import { ReactNode } from 'react';
+import { LinkProps as NextLinkProps } from "next/link";
+import { ReactNode } from "react";
 
 export type socialsProps = {
   href: string;

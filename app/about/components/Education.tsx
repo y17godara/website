@@ -1,7 +1,7 @@
-import { type educationProps } from './types/index';
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
-import { Link } from '@/components/ui/Link';
+import { type educationProps } from "./types/index";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import { Link } from "@/components/ui/Link";
 
 export function Edu({
   title,
@@ -21,7 +21,7 @@ export function Edu({
     <>
       <div
         aria-label={ariaLabel}
-        className={cn('flex h-full w-full items-center gap-4', className)}
+        className={cn("flex h-full w-full items-center gap-4", className)}
       >
         <div className='flex-1'>
           <div className='flex flex-col gap-1'>
@@ -29,7 +29,7 @@ export function Edu({
               {title}
             </h2>
             <h4 className='text-md text-start font-normal text-primary'>
-              {course}{' '}
+              {course}{" "}
             </h4>
             <p
               className='text-start text-xs font-normal text-secondary'
@@ -39,7 +39,7 @@ export function Edu({
             </p>
             <p>
               <span className='text-xs font-semibold'>Majors: </span>
-              <span className='text-xs font-normal'>{majors.join(', ')}</span>
+              <span className='text-xs font-normal'>{majors.join(", ")}</span>
             </p>
           </div>
         </div>
@@ -59,8 +59,8 @@ export function Edu({
                   quality={80}
                   loading='lazy'
                   placeholder='blur'
-                  blurDataURL={'https://bit.ly/placeholder-image'}
-                  style={{ width: 'auto', height: 'auto' }}
+                  blurDataURL={"https://bit.ly/placeholder-image"}
+                  style={{ width: "auto", height: "auto" }}
                   className='rounded-lg'
                 />
               </Link>
@@ -93,7 +93,7 @@ export function Edu({
                 <h3 className='text-xs font-semibold'>Location:</h3>
                 <p className='text-xs font-normal'>{location} </p>
               </div>
-            </div>{' '}
+            </div>{" "}
           </>
         )}
       </div>

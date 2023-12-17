@@ -1,13 +1,13 @@
-import { Metadata } from 'next';
-import React from 'react';
-import { Link, Note } from '@/components/ui';
-import { socials } from '@/components/index';
-import { type socialsProps } from '@/types/index';
-import { WorkExperience, Education } from './components/index';
-import { experience, education, certifications } from './components/Constants';
+import { Metadata } from "next";
+import React from "react";
+import { Link, Note } from "@/components/ui";
+import { socials } from "@/components/index";
+import { type socialsProps } from "@/types/index";
+import { WorkExperience, Education } from "./components/index";
+import { experience, education, certifications } from "./components/Constants";
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: "About",
 };
 
 export default async function About() {
@@ -19,34 +19,34 @@ export default async function About() {
           <h1 className='animate-in text-3xl font-bold'>About</h1>
           <p
             className='animate-in text-lg font-normal'
-            style={{ '--index': 1 } as React.CSSProperties}
+            style={{ "--index": 1 } as React.CSSProperties}
           >
             {/* Just a quick glimpse. */}
           </p>
         </div>
 
         {/* TODO: Images Section Here */}
-        <div style={{ '--index': 1 } as React.CSSProperties} className='hidden'>
+        <div style={{ "--index": 1 } as React.CSSProperties} className='hidden'>
           {/* Framer Motion Images */}
         </div>
 
         {/* About */}
         <div
           className='flex animate-in flex-col gap-16 md:gap-24'
-          style={{ '--index': 3 } as React.CSSProperties}
+          style={{ "--index": 3 } as React.CSSProperties}
         >
           <section className='col-reverse flex flex-col gap-2 md:flex-row md:gap-9'>
             <div className='flex flex-col gap-6'>
               <p>Hello World,</p>
               <p>
-                I&apos;m Yash{' '}
+                I&apos;m Yash{" "}
                 <Link
                   className='text-sm italic underline underline-offset-4'
                   href='https://twitter.com/y17godara'
                   target
                 >
                   (@y17godara)
-                </Link>{' '}
+                </Link>{" "}
                 Godara
               </p>
               <p>
@@ -90,20 +90,20 @@ export default async function About() {
         {/* Experience */}
         <div
           className='flex animate-in flex-col gap-16  md:gap-24 '
-          style={{ '--index': 3 } as React.CSSProperties}
+          style={{ "--index": 3 } as React.CSSProperties}
         >
           <div className='relative flex  flex-col gap-8'>
             <div className='flex flex-col gap-2'>
               <h1 className='animate-in text-lg font-bold'>Experience</h1>
               <p className='text-md animate-in font-normal'>
                 I have been coding for more than years now and I have worked on
-                various{' '}
+                various{" "}
                 <Link
                   className='text-sm italic underline underline-offset-4'
                   href='/projects'
                 >
                   personal projects
-                </Link>{' '}
+                </Link>{" "}
                 . I believe in project based learning and I have learned a lot
                 of things from my various projects.
               </p>
@@ -111,9 +111,9 @@ export default async function About() {
 
             {/* Additional Note */}
             <Note
-              href={'mailto:yash17godara@gmail.com'}
-              button={'Email Me'}
-              note={'Note'}
+              href={"mailto:yash17godara@gmail.com"}
+              button={"Email Me"}
+              note={"Note"}
               description="Currently, I don't have industry experience, but I am actively looking for internship opportunities. Feel free to reach out to me via email or social media."
             />
 
@@ -125,7 +125,7 @@ export default async function About() {
         {/* Education */}
         <div
           className='flex animate-in flex-col gap-16  md:gap-24 '
-          style={{ '--index': 4 } as React.CSSProperties}
+          style={{ "--index": 4 } as React.CSSProperties}
         >
           <div className='relative flex  flex-col gap-8'>
             <div className='flex flex-col gap-2'>
@@ -145,7 +145,7 @@ export default async function About() {
         {/* Certificates and Licenses */}
         <div
           className='flex animate-in flex-col gap-16  md:gap-24 '
-          style={{ '--index': 4 } as React.CSSProperties}
+          style={{ "--index": 4 } as React.CSSProperties}
         >
           <div className='relative flex  flex-col gap-4'>
             <div className='flex flex-col gap-2'>
@@ -160,13 +160,13 @@ export default async function About() {
         {/* Contact */}
         <div
           className='flex animate-in flex-col gap-16  md:gap-24 '
-          style={{ '--index': 5 } as React.CSSProperties}
+          style={{ "--index": 5 } as React.CSSProperties}
         >
           <div className='relative flex  flex-col gap-8'>
             <div className='flex flex-col gap-2'>
               <h1 className='animate-in text-lg font-bold'>Contact Me</h1>
               <p className='text-md animate-in font-normal'>
-                Have a question or want to discuss something? Feel free to{' '}
+                Have a question or want to discuss something? Feel free to{" "}
                 <Link
                   className='text-sm italic underline underline-offset-4'
                   href='mailto:yash17godara@gmail.com'
@@ -174,7 +174,7 @@ export default async function About() {
                   title='yash17godara@gmail.com'
                 >
                   email me
-                </Link>{' '}
+                </Link>{" "}
                 , or you can also find me on social medias with the handle
                 @y17godara.
               </p>

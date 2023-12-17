@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from '@/components/ui/index';
-import { cn } from '@/lib/utils';
-import { RiExternalLinkFill } from 'react-icons/ri';
-import { type NoteProps } from '@/types/index';
+import React from "react";
+import { Link } from "@/components/ui/index";
+import { cn } from "@/lib/utils";
+import { RiExternalLinkFill } from "react-icons/ri";
+import { type NoteProps } from "@/types/index";
 
 const Badge = ({ note }: { note: string }) => {
   return (
@@ -27,12 +27,12 @@ export const Note = ({
     <>
       <div
         className={cn(
-          'inline-flex w-full flex-col gap-1 rounded-lg border border-primary p-2 text-xs font-normal no-underline transition-opacity',
+          "inline-flex w-full flex-col gap-1 rounded-lg border border-primary p-2 text-xs font-normal no-underline transition-opacity",
           className
         )}
       >
-        {' '}
-        <Badge note={note || 'Note'} />
+        {" "}
+        <Badge note={note || "Note"} />
         <div className='flex-1'>
           <div className=''>{description}</div>
         </div>

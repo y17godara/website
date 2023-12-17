@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export function Loading({
   message,
@@ -14,11 +14,11 @@ export function Loading({
           <div className='h-32 w-32 animate-spin rounded-full border-b-2 border-gray-900'></div>
           <p
             className={cn(
-              'mt-4 text-xl font-semibold text-gray-900',
+              "mt-4 text-xl font-semibold text-gray-900",
               className
             )}
           >
-            {message || 'Loading...'}
+            {message || "Loading..."}
           </p>
         </div>
       </div>
@@ -42,7 +42,7 @@ export function Spinner({
       viewBox='0 0 15 15'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
-      className={cn('animate-spin', className)}
+      className={cn("animate-spin", className)}
       {...props}
     >
       <path

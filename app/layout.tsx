@@ -1,18 +1,18 @@
-import '@/styles/globals.css';
-import localFont from 'next/font/local';
-import type { Metadata, Viewport } from 'next';
-import { siteConfig } from '@/config/index';
-import { cn } from '@/lib/utils';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/react';
-import { ThemeProvider, Header, Footer } from '@/components';
+import "@/styles/globals.css";
+import localFont from "next/font/local";
+import type { Metadata, Viewport } from "next";
+import { siteConfig } from "@/config/index";
+import { cn } from "@/lib/utils";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
+import { ThemeProvider, Header, Footer } from "@/components";
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
   maximumScale: 1,
 };
@@ -29,21 +29,21 @@ export const metadata: Metadata = {
   category: siteConfig.category,
   metadataBase: new URL(`https://${process.env.DOMAIN}`),
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     images: [
       {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: 'Yash Godara',
+        alt: "Yash Godara",
       },
     ],
   },
   openGraph: {
     title: siteConfig.aboutMe,
     siteName: siteConfig.title,
-    type: 'website',
-    locale: 'en_US',
+    type: "website",
+    locale: "en_US",
     url: siteConfig.url,
     description: siteConfig.description,
     images: [
@@ -51,11 +51,11 @@ export const metadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: 'Yash Godara',
+        alt: "Yash Godara",
       },
     ],
   },
-  referrer: 'origin-when-cross-origin',
+  referrer: "origin-when-cross-origin",
   keywords: siteConfig.keywords,
   generator: siteConfig.generator,
   applicationName: siteConfig.title,
@@ -67,10 +67,10 @@ export const metadata: Metadata = {
 };
 
 const hubot = localFont({
-  src: '../public/assets/fonts/HubotSans.woff2',
-  variable: '--font-hubot',
-  display: 'swap',
-  weight: '400 900',
+  src: "../public/assets/fonts/HubotSans.woff2",
+  variable: "--font-hubot",
+  display: "swap",
+  weight: "400 900",
 });
 
 type RootLayoutProps = {
@@ -84,7 +84,7 @@ export default function RootLayout({
     <html lang='en' dir='ltr' suppressHydrationWarning>
       <body
         className={cn(
-          'w-full bg-primary font-sans text-primary antialiased selection:bg-secondaryA',
+          "w-full bg-primary font-sans text-primary antialiased selection:bg-secondaryA",
           hubot.variable
         )}
       >
@@ -92,7 +92,7 @@ export default function RootLayout({
           <Header />
           <main
             className={
-              'mx-auto max-w-[700px] px-4 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20'
+              "mx-auto max-w-[700px] px-4 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20"
             }
           >
             {children}

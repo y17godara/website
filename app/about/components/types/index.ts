@@ -37,5 +37,5 @@ export type educationProps = {
   location: string;
   className?: string;
   ariaLabel: string;
-  categories: 'education' | 'certification';
+  categories: "education" | "certification";
 };

@@ -1,9 +1,9 @@
-import React from 'react';
-import { MotionDiv } from '@/components/index';
-import { Link } from '@/components/ui';
-import { Spotlight, Tilt } from '@/components/ui/index';
-import { socials } from '@/components/index';
-import { type socialsProps } from '@/types/index';
+import React from "react";
+import { MotionDiv } from "@/components/index";
+import { Link } from "@/components/ui";
+import { Spotlight, Tilt } from "@/components/ui/index";
+import { socials } from "@/components/index";
+import { type socialsProps } from "@/types/index";
 
 export const SocialsCard = () => {
   return (
@@ -17,7 +17,7 @@ export const SocialsCard = () => {
         >
           <div
             className='animate-in text-lg font-medium tracking-tight text-secondary'
-            style={{ '--index': 1 } as React.CSSProperties}
+            style={{ "--index": 1 } as React.CSSProperties}
           >
             <div className='flex  animate-in flex-col items-center justify-center gap-2 rounded-lg bg-tertiary p-6 text-center lg:p-8'>
               <p className='font-medium text-primary'>
@@ -56,7 +56,7 @@ export const SocialsCard = () => {
                 under development.
               </p>
               <span className='text-sm text-tertiary'>
-                Previous Portfolio Website here 👉{' '}
+                Previous Portfolio Website here 👉{" "}
                 <Link
                   className='hover:underline'
                   href='https://yashgodara-me.vercel.app/'

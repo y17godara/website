@@ -1,5 +1,5 @@
-import React from 'react';
-import { SocialsCard } from './_components/SocialsCard';
+import React from "react";
+import { SocialsCard } from "./_components/SocialsCard";
 
 export default async function Home() {
   return (
@@ -13,7 +13,7 @@ export default async function Home() {
             </h1>
             <h3>
               <span className='animate-in text-secondary'>Student </span>
-              {' | '}
+              {" | "}
               <span className='animate-in text-secondary'>Developer</span>
             </h3>
           </div>
@@ -21,16 +21,16 @@ export default async function Home() {
           <div>
             <h6
               className='animate-in text-2xl font-medium tracking-tight text-brand'
-              style={{ '--index': 1 } as React.CSSProperties}
+              style={{ "--index": 1 } as React.CSSProperties}
             >
               Exciting Things Coming Soon 🚧
             </h6>
 
             <p
               className='animate-in text-lg font-medium tracking-tight text-secondary'
-              style={{ '--index': 1 } as React.CSSProperties}
+              style={{ "--index": 1 } as React.CSSProperties}
             >
-              Stay tuned for updates{' '}
+              Stay tuned for updates{" "}
               <span className='animate-in text-secondary'>🚀</span>
             </p>
           </div>

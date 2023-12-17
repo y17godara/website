@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from '@/components/ui/index';
-import Image from 'next/image';
-import { type experienceProps } from './types/index';
-import { cn } from '@/lib/utils';
+import React from "react";
+import { Link } from "@/components/ui/index";
+import Image from "next/image";
+import { type experienceProps } from "./types/index";
+import { cn } from "@/lib/utils";
 
 export function Experience({
   href,
@@ -21,7 +21,7 @@ export function Experience({
     <>
       <div
         aria-label={ariaLabel}
-        className={cn('flex h-full w-full items-center gap-4', className)}
+        className={cn("flex h-full w-full items-center gap-4", className)}
       >
         <div className='flex items-center rounded-full border border-primary shadow-sm transition-opacity'>
           <Image

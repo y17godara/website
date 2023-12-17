@@ -17,12 +17,12 @@ export const siteConfig = {
   generator: `Next.js`,
   ogImage: `https://website-61p9jbjff-y17godara.vercel.app/opengraph-image.png`,
   links: {
-    twitter: 'https://x.com/y17godara',
-    github: 'https://github.com/y17godara',
+    twitter: "https://x.com/y17godara",
+    github: "https://github.com/y17godara",
   },
   keywords: process.env.NEXT_PUBLIC_BASE_URL
-    ? process.env.NEXT_PUBLIC_BASE_URL.split(',')
-    : ['y17godar', 'Yash Godara', 'Portfolio Website', 'Blogs Website'],
+    ? process.env.NEXT_PUBLIC_BASE_URL.split(",")
+    : ["y17godar", "Yash Godara", "Portfolio Website", "Blogs Website"],
 };
 
 export type SiteConfig = typeof siteConfig;

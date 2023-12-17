@@ -1,12 +1,12 @@
-import Image from 'next/image';
-import { Link } from '@/components/ui';
-import { socials } from '@/components';
-import Avatar from '../icon.png';
-import { Metadata } from 'next';
-import { socialsProps } from '@/types';
+import Image from "next/image";
+import { Link } from "@/components/ui";
+import { socials } from "@/components";
+import Avatar from "../icon.png";
+import { Metadata } from "next";
+import { socialsProps } from "@/types";
 
 export const metadata: Metadata = {
-  title: 'Connect with Me',
+  title: "Connect with Me",
 };
 
 export default function page() {
@@ -20,11 +20,11 @@ export default function page() {
             height={100}
             alt='avatar'
             className='mx-auto animate-in rounded-full bg-secondary'
-            style={{ '--index': 1 } as React.CSSProperties}
+            style={{ "--index": 1 } as React.CSSProperties}
           />
           <div
             className='animate-in space-y-1'
-            style={{ '--index': 2 } as React.CSSProperties}
+            style={{ "--index": 2 } as React.CSSProperties}
           >
             <h1 className='text-center text-2xl font-bold tracking-tight'>
               Yash Godara
@@ -38,7 +38,7 @@ export default function page() {
 
         <ul
           className='animated-list grid flex-grow animate-in grid-cols-1 gap-2 lg:gap-3'
-          style={{ '--index': 3 } as React.CSSProperties}
+          style={{ "--index": 3 } as React.CSSProperties}
         >
           {socials.map((link: socialsProps, index: number) => (
             <li className='col-span-1 transition-opacity' key={index}>

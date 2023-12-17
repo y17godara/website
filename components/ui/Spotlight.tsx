@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { useMousePosition } from '@/hooks/index';
-import { motion } from 'framer-motion';
-import clsx from 'clsx';
-import { type SpotlightProps } from '@/types/index';
+import React from "react";
+import { useMousePosition } from "@/hooks/index";
+import { motion } from "framer-motion";
+import clsx from "clsx";
+import { type SpotlightProps } from "@/types/index";
 
 export function Spotlight({
   children,
   size = 400,
   strength = 5,
-  color = 'rgba(188, 255, 219, 0.5)',
+  color = "rgba(188, 255, 219, 0.5)",
   className,
 }: SpotlightProps) {
   const ref = React.useRef(null);
@@ -20,14 +20,14 @@ export function Spotlight({
   return (
     <motion.div
       ref={ref}
-      className={clsx('relative h-full w-full overflow-hidden ', className)}
+      className={clsx("relative h-full w-full overflow-hidden ", className)}
       whileHover='hover'
     >
       <motion.div
         style={
           {
-            '--x': `${x ? x - offset : -offset}px`,
-            '--y': `${y ? y - offset : -offset}px`,
+            "--x": `${x ? x - offset : -offset}px`,
+            "--y": `${y ? y - offset : -offset}px`,
             width: size,
             height: size,
             background: `radial-gradient(${color} 0%, rgba(188, 255, 219, 0) 50%)`,
