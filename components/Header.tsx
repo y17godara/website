@@ -1,17 +1,17 @@
-'use client';
-import React, { useState, Fragment } from 'react';
-import { cn } from '@/lib/utils';
-import { ThemeToggle } from './ThemeToggle';
-import { IoIosAdd, IoIosRemove } from 'react-icons/io';
-import Link from 'next/link';
-import { NavLink } from './ui';
-import Logo from '@/public/assets/logo/favicon.png';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import { Popover, Transition } from '@headlessui/react';
+"use client";
+import React, { useState, Fragment } from "react";
+import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./ThemeToggle";
+import { IoIosAdd, IoIosRemove } from "react-icons/io";
+import Link from "next/link";
+import { NavLink } from "./ui";
+import Logo from "@/public/assets/logo/favicon.png";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { Popover, Transition } from "@headlessui/react";
 
 export function Header() {
-  const pathname = `/${usePathname().split('/')[1]}`;
+  const pathname = `/${usePathname().split("/")[1]}`;
 
   const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
 
@@ -22,7 +22,7 @@ export function Header() {
   return (
     <>
       <header
-        className={cn('md:stick relative top-0 z-50 bg-primary shadow-sm')}
+        className={cn("md:stick relative top-0 z-50 bg-primary shadow-sm")}
       >
         <nav className='mx-auto flex max-w-[700px] items-center justify-between gap-3 px-4 py-3 md:px-6'>
           {/* Logo */}
@@ -82,10 +82,10 @@ export function Header() {
                       href={link.href}
                       onClick={() => setMobileNavOpen(false)}
                       className={cn(
-                        'rounded-md px-4 py-2 text-sm transition-colors hover:bg-tertiary hover:text-primary',
+                        "rounded-md px-4 py-2 text-sm transition-colors hover:bg-tertiary hover:text-primary",
                         pathname === link.href
-                          ? 'bg-secondary font-medium'
-                          : 'font-normal'
+                          ? "bg-secondary font-medium"
+                          : "font-normal"
                       )}
                     >
                       {link.label}
@@ -113,15 +113,15 @@ type navLinksProps = {
 
 const navLinks: navLinksProps[] = [
   {
-    href: '/blog',
-    label: 'Blog',
+    href: "/blogs",
+    label: "Blogs",
   },
   {
-    href: '/projects',
-    label: 'Projects',
+    href: "/projects",
+    label: "Projects",
   },
   {
-    href: '/about',
-    label: 'About',
+    href: "/about",
+    label: "About",
   },
 ];
