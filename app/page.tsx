@@ -1,5 +1,6 @@
 import React from 'react';
 import { SocialsCard } from './components/SocialsCard';
+import { Link } from '@/components/ui';
 
 export default async function Home() {
   return (
@@ -18,7 +19,7 @@ export default async function Home() {
             </h3>
           </div>
 
-          <div>
+          <div className='flex flex-col items-center justify-center gap-4 text-center'>
             <h6
               className='animate-in text-2xl font-medium tracking-tight text-brand'
               style={{ '--index': 1 } as React.CSSProperties}
@@ -27,10 +28,18 @@ export default async function Home() {
             </h6>
 
             <p
-              className='animate-in text-lg font-medium tracking-tight text-secondary'
+              className='animate-in text-sm font-medium tracking-tight text-secondary'
               style={{ '--index': 1 } as React.CSSProperties}
             >
-              Stay tuned for updates{' '}
+              Follow me on{' '}
+              <Link
+                target
+                className='underline hover:text-brand'
+                href='https://twitter.com/y17godara'
+              >
+                X
+              </Link>{' '}
+              ( commonly called Twitter ), for daily Updates{' '}
               <span className='animate-in text-secondary'>🚀</span>
             </p>
           </div>
