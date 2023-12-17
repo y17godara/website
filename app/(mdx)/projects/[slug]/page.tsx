@@ -1,8 +1,11 @@
-import Link from 'next/link';
-import { compareDesc, format, parseISO } from 'date-fns';
-import { allPosts, Post } from 'contentlayer/generated';
-import { getMDXComponent } from 'next-contentlayer/hooks';
-import { notFound } from 'next/navigation';
+import Link from "next/link";
+import { format, parseISO } from "date-fns";
+import {
+  allProjects as allPosts,
+  Project as Post,
+} from "contentlayer/generated";
+import { getMDXComponent } from "next-contentlayer/hooks";
+import { notFound } from "next/navigation";
 
 function PostCard(post: Post) {
   const Content = getMDXComponent(post.body.code);
@@ -19,7 +22,7 @@ function PostCard(post: Post) {
         </Link>
       </h2>
       <time dateTime={post.date} className='mb-2 block text-xs text-gray-600'>
-        {format(parseISO(post.date), 'LLLL d, yyyy')}
+        {format(parseISO(post.date), "LLLL d, yyyy")}
       </time>
       <div className='text-sm'>
         <Content />
@@ -30,10 +33,10 @@ function PostCard(post: Post) {
 
 // app router param
 export const generateStaticParams = async () =>
-  allPosts.map((post: any) => ({ slug: post._raw.flattenedPath }));
+  allPosts.map((post: any) => ({ slug: post.slug }));
 
 export const generateMetadata = ({ params }: any) => {
-  const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
+  const post = allPosts.find((post) => post.slug === params.slug);
 
   if (!post) {
     if (!post) {
@@ -45,7 +48,7 @@ export const generateMetadata = ({ params }: any) => {
 };
 
 export default function Home({ params }: { params: { slug: string } }) {
-  const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
+  const post = allPosts.find((post) => post.slug === params.slug);
 
   if (!post) {
     notFound();
@@ -59,7 +62,7 @@ export default function Home({ params }: { params: { slug: string } }) {
       <article className='mx-auto max-w-xl py-8'>
         <div className='mb-8 text-center'>
           <time dateTime={post.date} className='mb-1 text-xs text-gray-600'>
-            {format(parseISO(post.date), 'LLLL d, yyyy')}
+            {format(parseISO(post.date), "LLLL d, yyyy")}
           </time>
           <h1>{post.title}</h1>
         </div>
