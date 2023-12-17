@@ -24,26 +24,13 @@ const Project = defineDocumentType(() => ({
   filePathPattern: `projects/**/*.mdx`,
   contentType: "mdx",
   fields: {
-    title: {
-      type: "string",
-      description: "The title of the post",
-      required: true,
-    },
-    date: {
-      type: "date",
-      description: "The date of the post",
-      required: true,
-    },
-    image: {
-      type: "string",
-      description: "The image of the post",
-      required: true,
-    },
-    description: {
-      type: "string",
-      description: "The Description of the post",
-      required: true,
-    },
+    title: { type: "string", required: true },
+    description: { type: "string", required: true },
+    image: { type: "string", required: true },
+    time: { type: "string", required: true },
+    tags: { type: "json", required: true },
+    url: { type: "string", required: false },
+    published: { type: "boolean", required: false, default: false },
   },
   computedFields: projectComputedFields,
 }));

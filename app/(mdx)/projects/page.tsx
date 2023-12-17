@@ -71,7 +71,7 @@ export default function page() {
                     </Link>
                     <time className='animate-in text-sm text-secondary'>
                       {" "}
-                      {format(parseISO(project.date), "LLLL d, yyyy")}
+                      {format(parseISO(project.time), "LLLL d, yyyy")}
                     </time>
                   </div>
 

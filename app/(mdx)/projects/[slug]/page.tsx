@@ -14,15 +14,15 @@ function PostCard(post: Post) {
     <div className='mb-8'>
       <h2 className='text-xl'>
         <Link
-          href={post.url}
+          href={post.slug}
           className='text-blue-700 hover:text-blue-900'
           legacyBehavior
         >
           {post.title}
         </Link>
       </h2>
-      <time dateTime={post.date} className='mb-2 block text-xs text-gray-600'>
-        {format(parseISO(post.date), "LLLL d, yyyy")}
+      <time dateTime={post.time} className='mb-2 block text-xs text-gray-600'>
+        {format(parseISO(post.time), "LLLL d, yyyy")}
       </time>
       <div className='text-sm'>
         <Content />
@@ -61,8 +61,8 @@ export default function Home({ params }: { params: { slug: string } }) {
       <div className='mb-8 text-center'>Working</div>
       <article className='mx-auto max-w-xl py-8'>
         <div className='mb-8 text-center'>
-          <time dateTime={post.date} className='mb-1 text-xs text-gray-600'>
-            {format(parseISO(post.date), "LLLL d, yyyy")}
+          <time dateTime={post.time} className='mb-1 text-xs text-gray-600'>
+            {format(parseISO(post.time), "LLLL d, yyyy")}
           </time>
           <h1>{post.title}</h1>
         </div>
