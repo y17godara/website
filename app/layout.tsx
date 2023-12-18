@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}?title=${siteConfig.title}`,
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/og?title=${siteConfig.title}`,
         alt: "Image: Yash Godara",
       },
     ],
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}?title=${siteConfig.title}`,
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/og?title=${siteConfig.title}`,
         alt: "Image: Yash Godara",
       },
     ],
