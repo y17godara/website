@@ -56,9 +56,10 @@ export default function page() {
                         <Image
                           src={blog.image}
                           alt={blog.title}
-                          layout='fill'
-                          objectFit='cover'
+                          fill
+                          style={{ objectFit: "cover" }}
                           quality={80}
+                          sizes='(min-width: 768px) 50vw, 100vw'
                           loading='lazy'
                           className='h-full w-full '
                         />
