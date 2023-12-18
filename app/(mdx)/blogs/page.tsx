@@ -15,80 +15,110 @@ export default function page() {
     compareDesc(new Date(a.date), new Date(b.date))
   );
 
+  const Content = () => {
+    return (
+      <>
+        <div className='flex animate-in flex-col gap-8'>
+          <div>
+            <h1 className='animate-in text-3xl font-bold tracking-tight'>
+              Blogs
+            </h1>
+            <p
+              className='animate-in text-secondary'
+              style={{ "--index": 1 } as React.CSSProperties}
+            >
+              Here are some of the blogs. I have written. I write about my
+              experiences and things I have learned.
+            </p>
+          </div>
+        </div>
+        <ul
+          className='animated-list flex animate-in flex-col'
+          style={{ "--index": 3 } as React.CSSProperties}
+        >
+          {blogs.map((blog: Blog, idx: number) => {
+            return (
+              <>
+                <li
+                  key={idx}
+                  className={cn(
+                    "flex flex-col gap-4 py-6 transition-opacity first:pt-0 last:pb-0 md:flex-row md:gap-6"
+                  )}
+                >
+                  {/* Image */}
+                  <Link
+                    href={`/blogs/${blog.slug}`}
+                    className='aspect-video w-full select-none overflow-clip rounded-lg border border-secondary bg-tertiary md:w-2/5'
+                  >
+                    <Spotlight strength={10}>
+                      <Image
+                        src={blog.featuredImage}
+                        alt={blog.title}
+                        fill
+                        style={{ objectFit: "cover" }}
+                        quality={80}
+                        sizes='(min-width: 768px) 50vw, 100vw'
+                        loading='lazy'
+                        className='h-full w-full '
+                      />
+                    </Spotlight>
+                  </Link>
+                  {/* Content */}
+                  <div className='w-full animate-in space-y-2 md:w-3/5'>
+                    <div className='flex flex-col gap-1'>
+                      <Link
+                        href={`/blogs/${blog.slug}`}
+                        className='animate-in text-lg font-medium text-primary hover:underline'
+                      >
+                        {blog.title}
+                      </Link>
+                      <time className='animate-in text-sm text-secondary'>
+                        {" "}
+                        {format(parseISO(blog.date), "LLLL d, yyyy")}
+                      </time>
+                    </div>
+
+                    <p className='line-clamp-3 animate-in text-tertiary'>
+                      {blog.description}
+                    </p>
+                  </div>
+                </li>
+              </>
+            );
+          })}
+        </ul>
+      </>
+    );
+  };
+
   return (
     <>
       <div className='mx-auto max-w-[700px]'>
         <div className='flex flex-col gap-16 md:gap-24'>
-          <div className='flex animate-in flex-col gap-8'>
-            <div>
-              <h1 className='animate-in text-3xl font-bold tracking-tight'>
-                Blogs
-              </h1>
-              <p
-                className='animate-in text-secondary'
-                style={{ "--index": 1 } as React.CSSProperties}
-              >
-                Here are some of the blogs. I have written. I write about my
-                experiences and things I have learned.
-              </p>
-            </div>
-          </div>
-          <ul
-            className='animated-list flex animate-in flex-col'
-            style={{ "--index": 3 } as React.CSSProperties}
-          >
-            {blogs.map((blog: Blog, idx: number) => {
-              // console.log(idx);
-              return (
-                <>
-                  <li
-                    key={idx}
-                    className={cn(
-                      "flex flex-col gap-4 py-6 transition-opacity first:pt-0 last:pb-0 md:flex-row md:gap-6"
-                    )}
+          {blogs.length === 0 ? (
+            <div className='flex animate-in flex-col gap-8'>
+              <div>
+                <h1 className='animate-in text-3xl font-bold tracking-tight'>
+                  Blogs
+                </h1>
+                <p
+                  className='animate-in text-secondary'
+                  style={{ "--index": 1 } as React.CSSProperties}
+                >
+                  Sorry, no blogs found. Please check back later. or you can
+                  check out my{" "}
+                  <Link
+                    href='/projects'
+                    className='animate-in text-primary underline'
                   >
-                    {/* Image */}
-                    <Link
-                      href={`/blogs/${blog.slug}`}
-                      className='aspect-video w-full select-none overflow-clip rounded-lg border border-secondary bg-tertiary md:w-2/5'
-                    >
-                      <Spotlight strength={10}>
-                        <Image
-                          src={blog.image}
-                          alt={blog.title}
-                          fill
-                          style={{ objectFit: "cover" }}
-                          quality={80}
-                          sizes='(min-width: 768px) 50vw, 100vw'
-                          loading='lazy'
-                          className='h-full w-full '
-                        />
-                      </Spotlight>
-                    </Link>
-                    {/* Content */}
-                    <div className='w-full animate-in space-y-2 md:w-3/5'>
-                      <div className='flex flex-col gap-1'>
-                        <Link
-                          href={`/blogs/${blog.slug}`}
-                          className='animate-in text-lg font-medium text-primary hover:underline'
-                        >
-                          {blog.title}
-                        </Link>
-                        <time className='animate-in text-sm text-secondary'>
-                          {" "}
-                          {format(parseISO(blog.date), "LLLL d, yyyy")}
-                        </time>
-                      </div>
-
-                      <p className='line-clamp-3 animate-in text-tertiary'>
-                        {blog.description}
-                      </p>
-                    </div>
-                  </li>
-                </>
-              );
-            })}
-          </ul>
+                    projects
+                  </Link>
+                </p>
+              </div>
+            </div>
+          ) : (
+            <Content />
+          )}
         </div>
       </div>
     </>

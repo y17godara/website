@@ -9,13 +9,13 @@ import rehypeSlug from "rehype-slug";
 const getSlug = (doc: any) => doc._raw.sourceFileName.replace(/\.mdx$/, "");
 
 const projectComputedFields: ComputedFields = {
-  url: {
-    type: "string",
-    resolve: (doc) => `/projects/${doc._raw.flattenedPath}`,
-  },
   slug: {
     type: "string",
     resolve: (doc) => getSlug(doc),
+  },
+  featuredImage: {
+    type: "string",
+    resolve: (doc) => `/assets/projects/${getSlug(doc)}/image.png`,
   },
 };
 
@@ -27,8 +27,8 @@ const Project = defineDocumentType(() => ({
     title: { type: "string", required: true },
     description: { type: "string", required: true },
     image: { type: "string", required: true },
-    time: { type: "string", required: true },
-    tags: { type: "json", required: true },
+    time: { type: "string", required: false },
+    tags: { type: "json", required: false },
     url: { type: "string", required: false },
     published: { type: "boolean", required: false, default: false },
   },
@@ -44,6 +44,10 @@ const blogComputedFields: ComputedFields = {
     type: "string",
     resolve: (doc) => getSlug(doc),
   },
+  featuredImage: {
+    type: "string",
+    resolve: (doc) => `/assets/blogs/${getSlug(doc)}/image.png`,
+  },
 };
 
 const Blog = defineDocumentType(() => ({
@@ -51,26 +55,15 @@ const Blog = defineDocumentType(() => ({
   filePathPattern: `blogs/**/*.mdx`,
   contentType: "mdx",
   fields: {
-    title: {
-      type: "string",
-      description: "The title of the post",
-      required: true,
-    },
-    date: {
-      type: "date",
-      description: "The date of the post",
-      required: true,
-    },
-    image: {
-      type: "string",
-      description: "The image of the post",
-      required: true,
-    },
-    description: {
-      type: "string",
-      description: "The Description of the post",
-      required: true,
-    },
+    title: { type: "string", required: true },
+    description: { type: "string", required: true },
+    publishedAt: { type: "string", required: true },
+    updatedAt: { type: "string", required: true },
+    image: { type: "string", required: true },
+    date: { type: "string", required: true },
+    tags: { type: "json", required: false },
+    url: { type: "string", required: false },
+    published: { type: "boolean", required: false, default: false },
   },
   computedFields: blogComputedFields,
 }));
