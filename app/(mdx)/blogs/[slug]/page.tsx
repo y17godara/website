@@ -25,6 +25,18 @@ export async function generateMetadata(
   const { title } = post;
   const metadata: Metadata = {
     title: `${title} | Blogs`,
+    description: post.description,
+    openGraph: {
+      title,
+      description: post.description,
+      type: "article",
+      images: [
+        {
+          url: `/api/og?title=${title}`,
+          alt: title,
+        },
+      ]
+    },
   };
 
   return metadata;
