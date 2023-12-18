@@ -9,6 +9,7 @@ import Logo from "@/public/assets/logo/favicon.png";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Popover, Transition } from "@headlessui/react";
+import { CiLocationArrow1 } from "react-icons/ci";
 
 export function Header() {
   const pathname = `/${usePathname().split("/")[1]}`;
@@ -41,11 +42,17 @@ export function Header() {
           <ul className='relative hidden h-8 items-center justify-center gap-1 sm:flex'>
             {navLinks.map((link: navLinksProps, index: number) => (
               <li key={index}>
-                <NavLink className='hover:bg-tertiary' href={link.href}>
+                <NavLink
+                  className='text-primary hover:bg-tertiary'
+                  href={link.href}
+                >
                   {link.label}
                 </NavLink>
               </li>
             ))}
+            <Link className='ml-4 text-primary' href={"/connect"}>
+              <CiLocationArrow1 title={"Connect with Me"} className='h-5 w-5' />
+            </Link>
           </ul>
 
           {/* Small Nav Menu */}
