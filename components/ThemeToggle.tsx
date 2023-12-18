@@ -42,9 +42,9 @@ export function ThemeToggle() {
                     transition={{ type: "spring", bounce: 0.3, duration: 0.3 }}
                     className='absolute right-0 mt-4 max-h-60 w-40 origin-top-right gap-1 overflow-auto rounded-xl bg-white p-2 text-sm capitalize shadow-lg focus:outline-none dark:bg-black'
                   >
-                    {themes.map((theme) => (
+                    {themes.map((theme, index: number) => (
                       <Listbox.Option
-                        key={theme}
+                        key={index}
                         className={({ active }) =>
                           clsx(
                             "relative cursor-default select-none rounded-md py-2 pl-10 pr-4",

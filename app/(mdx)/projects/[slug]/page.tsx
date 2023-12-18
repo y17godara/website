@@ -7,7 +7,7 @@ import { getMDXComponent } from "next-contentlayer/hooks";
 import { notFound } from "next/navigation";
 
 export const generateStaticParams = async () =>
-  allPosts.map((post: any) => ({ slug: post.slug }));
+  allPosts.map((post: any) => ({ slug: post.slug, key: post.slug }));
 
 export const generateMetadata = ({ params }: any) => {
   const post = allPosts.find((post: Post) => post.slug === params.slug);

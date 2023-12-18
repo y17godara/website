@@ -77,9 +77,9 @@ export function Header() {
             >
               <Popover.Panel className='absolute right-0 z-10 mt-4 max-h-60 w-40 origin-top-right overflow-auto rounded-xl bg-white p-2 text-base capitalize shadow-sm focus:outline-none dark:bg-black sm:text-sm'>
                 <div className='grid gap-1'>
-                  {navLinks.map((link) => (
+                  {navLinks.map((link: navLinksProps, index: number) => (
                     <Link
-                      key={link.href}
+                      key={index}
                       href={link.href}
                       onClick={() => setMobileNavOpen(false)}
                       className={cn(

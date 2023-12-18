@@ -20,6 +20,7 @@ export function Experience({
   const content = (
     <>
       <div
+        key={title}
         aria-label={ariaLabel}
         className={cn("flex h-full w-full items-center gap-4", className)}
       >
