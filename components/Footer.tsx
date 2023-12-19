@@ -69,15 +69,9 @@ export function Footer() {
             {". "}
           </p>
         </div>
-        {/* Copy Rights */}
+
         <div className='flex flex-col items-center justify-center text-start'>
-          <p className='mt-8 text-sm text-secondary '>
-            {/* Copyright */}©{" "}
-            {new Date().getFullYear() === 2023
-              ? 2023
-              : `2023 - ${new Date().getFullYear()}`}{" "}
-            Yash Godara. All rights reserved.
-          </p>
+          {/* TODO: Add Footer */}
         </div>
       </footer>
     </div>
