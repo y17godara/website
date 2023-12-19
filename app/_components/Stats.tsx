@@ -55,7 +55,7 @@ export const Stats = () => {
               flex flex-row
               gap-2
               text-sm
-              text-gray-500
+              text-secondary
               md:text-base
             '
             >
@@ -76,7 +76,7 @@ export const Stats = () => {
               flex flex-row
               gap-2
               text-sm
-              text-gray-500
+              text-secondary
               md:text-base
             '
             >
@@ -93,7 +93,7 @@ export const Stats = () => {
              flex flex-row
              gap-2
              text-sm
-             text-gray-500
+             text-secondary
              md:text-base
            '
             >
