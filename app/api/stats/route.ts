@@ -1,11 +1,4 @@
-import { NextResponse } from "next/server";
 import axios from "axios";
-
-export function middleware(req: any) {
-  if (req.path === "/api/stats") {
-    return NextResponse.next();
-  }
-}
 
 export async function GET() {
   try {
