@@ -39,12 +39,12 @@ export const Stats = () => {
     });
 
     axios.get("/api/views/totalViews").then((response) => {
-      console.log(response.data.total_views);
+      // console.log(response.data.total_views);
       setBlogsStats(response.data.total_views);
     });
 
     axios.get("/api/github/stars?username=y17godara").then((response) => {
-      console.log(response.data.stars);
+      // console.log(response.data.stars);
       setGithubStars(response.data.stars);
     });
   }, []);
@@ -55,7 +55,7 @@ export const Stats = () => {
         <li className='transition-opacity'>
           <Link
             className='flex items-center gap-3 no-underline'
-            href={"https://github.com/brianruizy"}
+            href={"https://github.com/y17godara"}
           >
             <GoGitBranch className='text-xl' />
             <div
@@ -76,7 +76,7 @@ export const Stats = () => {
         <li className='transition-opacity'>
           <Link
             className='flex items-center gap-3 no-underline'
-            href={"https://www.youtube.com/@"}
+            href={"https://github.com/y17godara"}
           >
             <CiStar className='text-xl' />
             <div
