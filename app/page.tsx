@@ -62,7 +62,7 @@ export default async function page() {
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                className='h-full max-w-[700px] animate-in text-secondary'
+                className='h-full max-w-full animate-in text-secondary'
                 src='https://ghchart.rshah.org/y17godara'
                 alt='y17godara Github chart'
               />
