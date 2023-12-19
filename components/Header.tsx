@@ -33,7 +33,7 @@ export function Header() {
               />
             </div>
             <SimpleNote
-              className={`relative flex h-4 flex-row items-center justify-center gap-[2px] rounded-lg bg-[#ffdfe2] p-[4px] text-[10px] font-medium text-primary`}
+              className={`relative flex h-4 flex-row items-center justify-center gap-[2px] rounded-lg bg-pink-100 p-[4px] text-[10px] font-medium text-primary dark:bg-pink-900`}
             >
               Beta <span>{`v${siteConfig.siteVersion}`}</span>
             </SimpleNote>
