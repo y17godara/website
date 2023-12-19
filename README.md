@@ -20,6 +20,7 @@
 - [ ] `Table`, `List View` for Blogs and Projects.
 - [ ] `MDX Components` Setup for `Dark Mode`.
 - [ ] `Discord Presence API` Integration.
+- [ ] `Add Related Blogs` to `Blog Post Page using Tags`.
 - [ ] `Spotify API` Integration.
 - [ ] `Blog` and `Project` `Search` Feature.
 - [ ] `Blog` and `Project` `Filter` Feature.
