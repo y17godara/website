@@ -43,10 +43,10 @@ export const Stats = () => {
       setBlogsStats(response.data.total_views);
     });
 
-    // axios.get("/api/github/stars").then((response) => {
-    //   console.log(response.data.total_stars);
-    //   setGithubStars(response.data.total_stars);
-    // });
+    axios.get("/api/github/stars?username=y17godara").then((response) => {
+      console.log(response.data.stars);
+      setGithubStars(response.data.stars);
+    });
   }, []);
 
   return (
