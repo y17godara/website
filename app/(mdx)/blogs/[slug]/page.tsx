@@ -35,7 +35,7 @@ export async function generateMetadata(
           url: `/api/og?title=${title}`,
           alt: title,
         },
-      ]
+      ],
     },
   };
 
@@ -51,7 +51,7 @@ export default function Home({ params }: { params: { slug: string } }) {
 
   return (
     <div className='flex flex-col gap-20'>
-      <article className=''>
+      <article className='prose dark:prose-invert lg:prose-lg'>
         <div
           className='flex animate-in flex-col gap-8'
           style={{ "--index": 1 } as React.CSSProperties}
@@ -97,7 +97,7 @@ export default function Home({ params }: { params: { slug: string } }) {
 
         <div className='h-16' />
         <div
-          className='prose prose-neutral animate-in'
+          className='blog prose-white animate-in'
           style={{ "--index": 3 } as React.CSSProperties}
         >
           <MdxWrapper code={post.body.code} />

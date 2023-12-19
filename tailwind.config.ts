@@ -8,7 +8,7 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./ui/**/*.{js,ts,jsx,tsx,mdx}",
     "./lib/**/*.{js,ts}",
-    "./content/**/*.mdx",
+    "./content/**/*.{js,ts,jsx,tsx,md,mdx}",
   ],
   darkMode: ["class"],
   theme: {
@@ -62,6 +62,7 @@ const config: Config = {
         in: "in .6s both",
         "in-reverse": "in-reverse .6s both",
       },
+      typography: ({ theme }: any) => ({}),
     },
   },
   plugins: [require("@tailwindcss/typography")],
