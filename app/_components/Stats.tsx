@@ -28,9 +28,7 @@ export const Stats = () => {
     totalContributions: 0,
   });
 
-  const [blogsStats, setBlogsStats] = React.useState({
-    totalViews: 0,
-  });
+  const [blogsStats, setBlogsStats] = React.useState(0);
 
   const [githubStars, setGithubStars] = React.useState(0);
 
@@ -38,6 +36,16 @@ export const Stats = () => {
     axios.get("/api/stats").then((response) => {
       // only keep the stats we need
       setGithubStats(response.data.github);
+    });
+
+    axios.get("/api/views/totalViews").then((response) => {
+      console.log(response.data.total_views);
+      setBlogsStats(response.data.total_views);
+    });
+
+    axios.get("/api/github/stars").then((response) => {
+      console.log(response.data.total_stars);
+      setGithubStars(response.data.total_stars);
     });
   }, []);
 
@@ -97,7 +105,7 @@ export const Stats = () => {
              md:text-base
            '
             >
-              {blogsStats ? blogsStats.totalViews : "0"}
+              {blogsStats ? blogsStats : "0"}
               <span> Total Blog Views</span>
             </div>
           </Link>
