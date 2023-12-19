@@ -3,13 +3,14 @@ import React, { Fragment } from "react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
 import Link from "next/link";
-import { NavLink } from "./ui";
+import { NavLink, SimpleNote } from "./ui";
 import Logo from "@/public/assets/logo/favicon.png";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Popover, Transition } from "@headlessui/react";
 import { CiLocationArrow1 } from "react-icons/ci";
 import { TbDotsVertical } from "react-icons/tb";
+import { siteConfig } from "@/config";
 
 export function Header() {
   const pathname = `/${usePathname().split("/")[1]}`;
@@ -20,15 +21,22 @@ export function Header() {
       >
         <nav className='mx-auto flex max-w-[700px] items-center justify-between gap-3 px-4 py-3 md:px-6'>
           {/* Logo */}
-          <Link href='/' className=''>
-            <Image
-              src={Logo}
-              priority
-              alt='Yash Godara Logo'
-              className='h-8 w-8 rounded-full'
-              width={40}
-              height={40}
-            />
+          <Link href='/' className='relative flex flex-col gap-1 sm:flex-row'>
+            <div>
+              <Image
+                src={Logo}
+                priority
+                alt='Yash Godara Logo'
+                className='h-8 w-8 rounded-full'
+                width={40}
+                height={40}
+              />
+            </div>
+            <SimpleNote
+              className={`relative flex h-4 flex-row items-center justify-center gap-[2px] rounded-lg bg-[#ffdfe2] p-[4px] text-[10px] font-medium text-primary`}
+            >
+              Beta <span>{`v${siteConfig.siteVersion}`}</span>
+            </SimpleNote>
           </Link>
 
           {/* Desktop Nav */}

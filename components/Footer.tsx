@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { Link } from "./ui";
 import { socials } from "@/components/index";
 import { type socialsProps } from "@/types/index";
+import { siteConfig } from "@/config";
 
 export function Footer() {
   return (
@@ -71,7 +72,10 @@ export function Footer() {
         </div>
 
         <div className='flex flex-col items-center justify-center text-start'>
-          {/* TODO: Add Footer */}
+          <div className='flex flex-row items-center justify-center gap-1 text-xs font-medium text-secondary'>
+            <span className='text-primary'>Beta</span>{" "}
+            {`v${siteConfig.siteVersion}`}
+          </div>
         </div>
       </footer>
     </div>

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { RiExternalLinkFill } from "react-icons/ri";
 import { type NoteProps } from "@/types/index";
 
-const Badge = ({ note }: { note: string }) => {
+export const Badge = ({ note }: { note: string }) => {
   return (
     <>
       <div className='flex flex-row gap-1'>
@@ -12,6 +12,19 @@ const Badge = ({ note }: { note: string }) => {
           {note}
         </span>
       </div>
+    </>
+  );
+};
+
+type SimpleNoteProps = {
+  className?: string;
+  children: React.ReactNode;
+};
+
+export const SimpleNote = ({ className, children }: SimpleNoteProps) => {
+  return (
+    <>
+      <span className={cn("text-xs", className)}>{children}</span>
     </>
   );
 };
