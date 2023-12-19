@@ -1,8 +1,7 @@
 "use client";
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
-import { IoIosAdd, IoIosRemove } from "react-icons/io";
 import Link from "next/link";
 import { NavLink } from "./ui";
 import Logo from "@/public/assets/logo/favicon.png";
@@ -10,16 +9,10 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Popover, Transition } from "@headlessui/react";
 import { CiLocationArrow1 } from "react-icons/ci";
+import { TbDotsVertical } from "react-icons/tb";
 
 export function Header() {
   const pathname = `/${usePathname().split("/")[1]}`;
-
-  const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
-
-  const handleMobileNavOpen = () => {
-    setMobileNavOpen(!mobileNavOpen);
-  };
-
   return (
     <>
       <header
@@ -57,20 +50,12 @@ export function Header() {
 
           {/* Small Nav Menu */}
           <Popover className='relative ml-auto sm:hidden'>
-            <Popover.Button
-              className='flex items-center gap-1 rounded-lg p-1 text-secondary hover:text-primary focus:ring-0 focus-visible:outline-none'
-              onClick={handleMobileNavOpen}
-            >
-              Menu
-              {mobileNavOpen ? (
-                <>
-                  <IoIosRemove className='h-5 w-5' />
-                </>
-              ) : (
-                <>
-                  <IoIosAdd className='h-5 w-5' />
-                </>
-              )}
+            <Popover.Button className='flex items-center gap-1 rounded-lg p-1 text-secondary hover:text-primary focus:ring-0 focus-visible:outline-none'>
+              <TbDotsVertical
+                className='h-5 w-5'
+                title='Menu'
+                arial-label={"Menu"}
+              />
             </Popover.Button>
 
             <Transition
@@ -88,7 +73,6 @@ export function Header() {
                     <Link
                       key={index}
                       href={link.href}
-                      onClick={() => setMobileNavOpen(false)}
                       className={cn(
                         "rounded-md px-4 py-2 text-sm transition-colors hover:bg-tertiary hover:text-primary",
                         pathname === link.href
