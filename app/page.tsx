@@ -59,6 +59,14 @@ export default async function page() {
               opportunities to learn and improve my skills. I am a team player
               who is always willing to help others and share my knowledge.
             </p>
+            <div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className='h-full max-w-[700px] animate-in'
+                src='https://ghchart.rshah.org/y17godara'
+                alt='y17godara Github chart'
+              />
+            </div>
             <ul
               className='animated-list flex animate-in flex-col gap-2 text-secondary md:flex-row md:gap-6'
               style={{ "--index": 2 } as React.CSSProperties}
