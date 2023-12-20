@@ -1,11 +1,15 @@
-import { allBlogs as allPosts, Blog as Post } from "contentlayer/generated";
-import { getMDXComponent } from "next-contentlayer/hooks";
+import {
+  allBlogs as allPosts,
+  Blog,
+  Blog as Post,
+} from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 import { MdxWrapper } from "../../components";
 import { Link } from "@/components/ui/index";
 import Avatar from "@/app/icon.png";
+import { ViewCounter } from "../../components/ui/index";
 
 type Props = {
   params: {
@@ -42,7 +46,7 @@ export async function generateMetadata(
   return metadata;
 }
 
-export default function Home({ params }: { params: { slug: string } }) {
+export default async function page({ params }: { params: { slug: string } }) {
   const post = allPosts.find((post: Post) => post.slug === params.slug);
 
   if (!post) {
@@ -75,6 +79,11 @@ export default function Home({ params }: { params: { slug: string } }) {
             />
             <div className='leading-tight'>
               <p className='font-medium text-primary'>Yash Godara</p>
+            </div>
+            <div className='leading-tight'>
+              <div className='text-secondary'>
+                <ViewCounter post={post as Post} />
+              </div>
             </div>
           </div>
         </div>

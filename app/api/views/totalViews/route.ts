@@ -11,5 +11,7 @@ export async function GET() {
   } catch (error: any) {
     console.log(error);
     return new Response("Something went wrong", { status: 500 });
+  } finally {
+    await prisma.$disconnect();
   }
 }
