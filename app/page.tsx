@@ -59,10 +59,10 @@ export default async function page() {
               opportunities to learn and improve my skills. I am a team player
               who is always willing to help others and share my knowledge.
             </p>
-            <div>
+            <div className='hidden h-28 rounded-md bg-tertiary p-2 md:block'>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                className='h-full max-w-full animate-in bg-secondary text-secondary'
+                className='h-full max-w-full animate-in'
                 src='https://ghchart.rshah.org/y17godara'
                 alt='y17godara Github chart'
               />
