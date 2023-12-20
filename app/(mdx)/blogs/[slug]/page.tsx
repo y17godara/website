@@ -137,7 +137,7 @@ export default function Home({ params }: { params: { slug: string } }) {
           </p>
         </div>
 
-        <Link href='/projects' className='text-primary underline'>
+        <Link href='/blogs' className='text-primary underline'>
           ← All Blogs
         </Link>
       </div>
