@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { GoGitBranch } from "react-icons/go";
 import { CiStar } from "react-icons/ci";
 import { LuSignalHigh } from "react-icons/lu";
@@ -9,108 +9,92 @@ import { Link } from "@/components/ui/Link";
 
 interface GithubStats {
   totalContributions?: number;
-  firstContribution?: string;
-  longestStreak?: {
-    start: string;
-    end: string;
-    length: number;
-  };
-  currentStreak?: {
-    start: string;
-    end: string;
-    length: number;
-  };
-  excludedDays?: string[];
 }
 
 export const Stats = () => {
-  const [githubStats, setGithubStats] = React.useState<GithubStats>({
-    totalContributions: 0,
-  });
+  const [githubStats, setGithubStats] = useState<GithubStats>({});
+  const [blogsStats, setBlogsStats] = useState<number>(0);
+  const [githubStars, setGithubStars] = useState<number>(0);
 
-  const [blogsStats, setBlogsStats] = React.useState(0);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [githubResponse, blogsResponse, starsResponse] =
+          await Promise.all([
+            axios.get("/api/stats"),
+            axios.get("/api/views/totalViews"),
+            axios.get("/api/github/stars?username=y17godara"),
+          ]);
 
-  const [githubStars, setGithubStars] = React.useState(0);
+        if (githubResponse.data.github) {
+          setGithubStats(githubResponse.data.github);
+        }
 
-  React.useEffect(() => {
-    axios.get("/api/stats").then((response) => {
-      // only keep the stats we need
-      setGithubStats(response.data.github);
-    });
+        if (blogsResponse.data.total_views) {
+          setBlogsStats(blogsResponse.data.total_views);
+        }
 
-    axios.get("/api/views/totalViews").then((response) => {
-      // console.log(response.data.total_views);
-      setBlogsStats(response.data.total_views);
-    });
+        if (starsResponse.data.stars) {
+          setGithubStars(starsResponse.data.stars);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-    axios.get("/api/github/stars?username=y17godara").then((response) => {
-      // console.log(response.data.stars);
-      setGithubStars(response.data.stars);
-    });
+    fetchData();
   }, []);
 
-  return (
-    <>
-      <ul className={cn("animated-list space-y-2")}>
-        <li className='transition-opacity'>
-          <Link
-            className='flex items-center gap-3 no-underline'
-            href={"https://github.com/y17godara"}
-          >
-            <GoGitBranch className='text-xl' />
-            <div
-              className='
-              flex flex-row
-              gap-2
-              text-sm
-              text-secondary
-              md:text-base
-            '
-            >
-              {githubStats ? githubStats.totalContributions : "000"}
+  const githubStatsElement = useMemo(
+    () => (
+      <Link
+        className='flex items-center gap-3 no-underline'
+        href={"https://github.com/y17godara"}
+      >
+        <GoGitBranch className='text-xl' />
+        <div className='flex flex-row gap-2 text-sm text-secondary md:text-base'>
+          {githubStats.totalContributions ?? "0"}
+          <span>Github Contributions</span>
+        </div>
+      </Link>
+    ),
+    [githubStats.totalContributions]
+  );
 
-              <span>Github Contributions</span>
-            </div>
-          </Link>
-        </li>
-        <li className='transition-opacity'>
-          <Link
-            className='flex items-center gap-3 no-underline'
-            href={"https://github.com/y17godara"}
-          >
-            <CiStar className='text-xl' />
-            <div
-              className='
-              flex flex-row
-              gap-2
-              text-sm
-              text-secondary
-              md:text-base
-            '
-            >
-              {githubStars ? githubStars : "0"}
-              <span> Github Stars</span>
-            </div>
-          </Link>
-        </li>
-        <li className='transition-opacity'>
-          <Link className='flex items-center gap-3' href='/blogs'>
-            <LuSignalHigh className='h-5 w-5' />
-            <div
-              className='
-             flex flex-row
-             gap-2
-             text-sm
-             text-secondary
-             md:text-base
-           '
-            >
-              {blogsStats ? blogsStats : "0"}
-              <span> Total Blog Views</span>
-            </div>
-          </Link>
-        </li>
-      </ul>
-    </>
+  const githubStarsElement = useMemo(
+    () => (
+      <Link
+        className='flex items-center gap-3 no-underline'
+        href={"https://github.com/y17godara"}
+      >
+        <CiStar className='text-xl' />
+        <div className='flex flex-row gap-2 text-sm text-secondary md:text-base'>
+          {githubStars ?? "0"}
+          <span> Github Stars</span>
+        </div>
+      </Link>
+    ),
+    [githubStars]
+  );
+
+  const blogsStatsElement = useMemo(
+    () => (
+      <Link className='flex items-center gap-3' href='/blogs'>
+        <LuSignalHigh className='h-5 w-5' />
+        <div className='flex flex-row gap-2 text-sm text-secondary md:text-base'>
+          {blogsStats ?? "0"}
+          <span> Total Blog Views</span>
+        </div>
+      </Link>
+    ),
+    [blogsStats]
+  );
+
+  return (
+    <ul className={cn("animated-list space-y-2")}>
+      <li className='transition-opacity'>{githubStatsElement}</li>
+      <li className='transition-opacity'>{githubStarsElement}</li>
+      <li className='transition-opacity'>{blogsStatsElement}</li>
+    </ul>
   );
 };
