@@ -99,7 +99,7 @@ export const certifications: educationProps[] = [
     majors: ["React.js", "Node.js", "Next.js", "MongoDB", "PostgreSQL"],
     cgpa: "",
     certification: "/assets/about/100xdev.jpg",
-    verification: "https://cert.100xdevs.com/certificate/kvg1eprgo2",
+    verification: "#",
     description:
       "Completed a 6 month long FullStack Web Development course from 100xDevs by Harikat Singh.",
     joined: {

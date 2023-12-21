@@ -47,45 +47,39 @@ export const Stats = () => {
 
   const githubStatsElement = useMemo(
     () => (
-      <Link
-        className='flex items-center gap-3 no-underline'
-        href={"https://github.com/y17godara"}
-      >
+      <p className='flex items-center gap-3 no-underline'>
         <GoGitBranch className='text-xl' />
         <div className='flex flex-row gap-2 text-sm text-secondary md:text-base'>
           {githubStats.totalContributions ?? "0"}
           <span>Github Contributions</span>
         </div>
-      </Link>
+      </p>
     ),
     [githubStats.totalContributions]
   );
 
   const githubStarsElement = useMemo(
     () => (
-      <Link
-        className='flex items-center gap-3 no-underline'
-        href={"https://github.com/y17godara"}
-      >
+      <p className='flex items-center gap-3 no-underline'>
         <CiStar className='text-xl' />
         <div className='flex flex-row gap-2 text-sm text-secondary md:text-base'>
           {githubStars ?? "0"}
           <span> Github Stars</span>
         </div>
-      </Link>
+      </p>
     ),
     [githubStars]
   );
 
   const blogsStatsElement = useMemo(
     () => (
-      <Link className='flex items-center gap-3' href='/blogs'>
+      <p className='flex items-center gap-3'>
         <LuSignalHigh className='h-5 w-5' />
         <div className='flex flex-row gap-2 text-sm text-secondary md:text-base'>
           {blogsStats ?? "0"}
           <span> Total Blog Views</span>
         </div>
-      </Link>
+      </p>
     ),
     [blogsStats]
   );

@@ -23,6 +23,7 @@ export function Footer() {
                   href={social.href}
                   aria-label={social.ariaLabel}
                   title={social.label}
+                  target
                   className='flex flex-row items-center gap-1 text-secondary hover:text-primary'
                 >
                   {social.private ? null : (
@@ -41,21 +42,24 @@ export function Footer() {
             Built with <span className='text-primary'>❤️</span> using{" "}
             <Link
               className='italic underline-offset-2 hover:underline'
-              href={"/"}
+              href={"https://nextjs.org/"}
+              target
             >
               Next.js
             </Link>
             {", "}
             <Link
               className='italic underline-offset-2 hover:underline'
-              href={"/"}
+              href={"https://mdxjs.com/"}
+              target
             >
               MDX
             </Link>
             {", "}
             <Link
               className='italic underline-offset-2 hover:underline'
-              href={"/"}
+              href={"https://tailwindcss.com/"}
+              target
             >
               Tailwindcss
             </Link>
@@ -63,7 +67,8 @@ export function Footer() {
             and{" "}
             <Link
               className='italic underline-offset-2 hover:underline'
-              href={"/"}
+              href={"https://vercel.com/"}
+              target
             >
               Vercel
             </Link>
