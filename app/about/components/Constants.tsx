@@ -50,7 +50,7 @@ export const education: educationProps[] = [
     title: "Senior Secondary",
     course: "Higher Secondary Education",
     majors: ["Computer Science", "Mathematics", "Physics"],
-    cgpa: "6.5",
+    cgpa: "",
     certification: "",
     verification: "",
     description:
@@ -72,7 +72,7 @@ export const education: educationProps[] = [
     title: "Secondary",
     course: "Secondary Education",
     majors: ["Computer Science", "Mathematics", "Physics"],
-    cgpa: "7.6",
+    cgpa: "",
     certification: "",
     verification: "",
     description:
