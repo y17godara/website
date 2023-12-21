@@ -1,10 +1,10 @@
-import { Link } from '@/components/ui/index';
-import { Metadata } from 'next';
+import { Link } from "@/components/ui/index";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: '404 - Page not found',
+  title: "404 - Page not found",
   description:
-    'Uh oh! This page does not exist, maybe you clicked an old link or misspelled. Please try again…',
+    "Uh oh! This page does not exist, maybe you clicked an old link or misspelled. Please try again…",
 };
 
 const Custom404 = (): JSX.Element => (

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { ReactNode } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { cn } from '@/lib/utils';
+import React, { ReactNode } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 type TiltProps = {
   children: ReactNode | ReactNode[];
@@ -18,8 +18,8 @@ export const Tilt = ({ children, className }: TiltProps) => {
   const mouseXSpring = useSpring(x);
   const mouseYSpring = useSpring(y);
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['10deg', '-10deg']);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-10deg', '10deg']);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
 
   const handleMouseMove = (e: any) => {
     const rect = e.target.getBoundingClientRect();
@@ -49,10 +49,10 @@ export const Tilt = ({ children, className }: TiltProps) => {
       style={{
         rotateY,
         rotateX,
-        transformStyle: 'preserve-3d',
-        transform: 'translateZ(75px)',
+        transformStyle: "preserve-3d",
+        transform: "translateZ(75px)",
       }}
-      className={cn('', className)}
+      className={cn("", className)}
     >
       {children}
     </motion.div>
@@ -66,8 +66,8 @@ export const DoubleTilt = ({ children, className }: TiltProps) => {
   const mouseXSpring = useSpring(x);
   const mouseYSpring = useSpring(y);
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['15deg', '-15deg']);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-15deg', '15deg']);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["15deg", "-15deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-15deg", "15deg"]);
 
   const handleMouseMove = (e: any) => {
     const rect = e.target.getBoundingClientRect();
@@ -98,15 +98,15 @@ export const DoubleTilt = ({ children, className }: TiltProps) => {
         style={{
           rotateY,
           rotateX,
-          transformStyle: 'preserve-3d',
-          transform: 'translateZ(75px)',
+          transformStyle: "preserve-3d",
+          transform: "translateZ(75px)",
         }}
-        className={cn('', className)}
+        className={cn("", className)}
       >
         <div
           style={{
-            transform: 'translateZ(75px)',
-            transformStyle: 'preserve-3d',
+            transform: "translateZ(75px)",
+            transformStyle: "preserve-3d",
           }}
           className='absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg'
         >

@@ -1,5 +1,5 @@
-'use client';
-import React from 'react';
+"use client";
+import React from "react";
 
 export const useMousePosition = (ref: React.RefObject<HTMLElement>) => {
   const [mousePosition, setMousePosition] = React.useState({
@@ -9,15 +9,17 @@ export const useMousePosition = (ref: React.RefObject<HTMLElement>) => {
 
   React.useEffect(() => {
     const updateMousePosition = (ev: MouseEvent) => {
-      setMousePosition({
-        x: ev.clientX - ref.current!.getBoundingClientRect().left,
-        y: ev.clientY - ref.current!.getBoundingClientRect().top,
-      });
+      if (ref.current) {
+        setMousePosition({
+          x: ev.clientX - ref.current!.getBoundingClientRect().left,
+          y: ev.clientY - ref.current!.getBoundingClientRect().top,
+        });
+      }
     };
-    window.addEventListener('mousemove', updateMousePosition);
+    window.addEventListener("mousemove", updateMousePosition);
 
     return () => {
-      window.removeEventListener('mousemove', updateMousePosition);
+      window.removeEventListener("mousemove", updateMousePosition);
     };
   }, [ref]);
 
