@@ -5,7 +5,6 @@ import { CiStar } from "react-icons/ci";
 import { LuSignalHigh } from "react-icons/lu";
 import axios from "axios";
 import { cn } from "@/lib/utils";
-import { Link } from "@/components/ui/Link";
 
 interface GithubStats {
   totalContributions?: number;
