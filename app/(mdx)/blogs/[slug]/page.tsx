@@ -1,8 +1,4 @@
-import {
-  allBlogs as allPosts,
-  Blog,
-  Blog as Post,
-} from "contentlayer/generated";
+import { allBlogs as allPosts, Blog as Post } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
