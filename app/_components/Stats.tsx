@@ -47,39 +47,39 @@ export const Stats = () => {
 
   const githubStatsElement = useMemo(
     () => (
-      <p className='flex items-center gap-3 no-underline'>
+      <div className='flex items-center gap-3 no-underline'>
         <GoGitBranch className='text-xl' />
         <div className='flex flex-row gap-2 text-sm text-secondary md:text-base'>
           {githubStats.totalContributions ?? "0"}
           <span>Github Contributions</span>
         </div>
-      </p>
+      </div>
     ),
     [githubStats.totalContributions]
   );
 
   const githubStarsElement = useMemo(
     () => (
-      <p className='flex items-center gap-3 no-underline'>
+      <div className='flex items-center gap-3 no-underline'>
         <CiStar className='text-xl' />
         <div className='flex flex-row gap-2 text-sm text-secondary md:text-base'>
           {githubStars ?? "0"}
           <span> Github Stars</span>
         </div>
-      </p>
+      </div>
     ),
     [githubStars]
   );
 
   const blogsStatsElement = useMemo(
     () => (
-      <p className='flex items-center gap-3'>
+      <div className='flex items-center gap-3'>
         <LuSignalHigh className='h-5 w-5' />
         <div className='flex flex-row gap-2 text-sm text-secondary md:text-base'>
           {blogsStats ?? "0"}
           <span> Total Blog Views</span>
         </div>
-      </p>
+      </div>
     ),
     [blogsStats]
   );
