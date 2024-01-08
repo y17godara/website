@@ -6,6 +6,7 @@ import { Link } from "@/components/ui";
 import { PiArrowUpRight } from "react-icons/pi";
 import { MdAttachEmail } from "react-icons/md";
 import { allBlogs, Blog } from "contentlayer/generated";
+import { SiGoogledocs } from "react-icons/si";
 
 export default async function page() {
   const blogs: Blog[] = await allBlogs
@@ -79,6 +80,17 @@ export default async function page() {
                   <MdAttachEmail className='h-5 w-5' />
                   <span className='underline-offset-4 hover:underline'>
                     Email me
+                  </span>
+                </Link>
+              </li>
+              <li className='transition-opacity'>
+                <Link
+                  href='/assets/about/resume-y17godara.pdf'
+                  className='flex items-center gap-2 no-underline'
+                >
+                  <SiGoogledocs className='h-5 w-5' />
+                  <span className='underline-offset-4 hover:underline'>
+                    Resume
                   </span>
                 </Link>
               </li>
