@@ -5,6 +5,9 @@ import { socials } from "@/components/index";
 import { type socialsProps } from "@/types/index";
 import { WorkExperience, Education } from "./components/index";
 import { experience, education, certifications } from "./components/Constants";
+import { SiGoogledocs } from "react-icons/si";
+import { PiArrowUpRight } from "react-icons/pi";
+import { MdAttachEmail } from "react-icons/md";
 
 export const metadata: Metadata = {
   title: "About",
@@ -83,6 +86,45 @@ export default async function About() {
                 of nature. When I am not on my desk, I am either spending time
                 with my family or travelling.
               </p>
+
+              <ul
+                className='animated-list flex animate-in flex-col gap-2 text-secondary md:flex-row md:gap-6'
+                style={{ "--index": 2 } as React.CSSProperties}
+              >
+                <li className='transition-opacity'>
+                  <Link
+                    href='mailto:yash17godara@gmail.com'
+                    className='flex items-center gap-2 no-underline'
+                  >
+                    <MdAttachEmail className='h-5 w-5' />
+                    <span className='underline-offset-4 hover:underline'>
+                      Email me
+                    </span>
+                  </Link>
+                </li>
+                <li className='transition-opacity'>
+                  <Link
+                    href='/assets/about/resume-y17godara.pdf'
+                    className='flex items-center gap-2 no-underline'
+                  >
+                    <SiGoogledocs className='h-5 w-5' />
+                    <span className='underline-offset-4 hover:underline'>
+                      Resume
+                    </span>
+                  </Link>
+                </li>
+                <li className='transition-opacity'>
+                  <Link
+                    href='/connect'
+                    className='flex items-center gap-2 no-underline'
+                  >
+                    <PiArrowUpRight className='h-5 w-5' />
+                    <span className='underline-offset-4 hover:underline'>
+                      More ways to connect
+                    </span>
+                  </Link>
+                </li>
+              </ul>
             </div>
           </section>
         </div>
