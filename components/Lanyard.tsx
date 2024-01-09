@@ -130,9 +130,9 @@ const Lanyard: FC = () => {
   if (!doing || (!vsCode && !doing.spotify)) return <section></section>;
   return (
     <>
-      <section className='relative flex flex-col gap-2 md:gap-4 xl:gap-6'>
+      <ul className='animated-list relative flex flex-col gap-2 md:gap-4 xl:gap-6'>
         <DisplayPresence doing={doing} />
-      </section>
+      </ul>
     </>
   );
 };
@@ -152,57 +152,53 @@ const DisplayPresence = (Presence: any) => {
   return (
     <>
       {doing?.listening_to_spotify ? (
-        <Link
+        <li
           className={cn(
             "w-full cursor-pointer rounded-md border-[1px] border-secondary bg-transparent p-[1rem] text-secondary transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-primary"
           )}
-          href={"/presence"}
         >
           <h5 className='flex flex-row items-center justify-center gap-1 text-center'>
             Listening to Spotify
             <div className='inline-block h-2 w-2 animate-pulse rounded-full bg-[var(--brand)]'></div>
           </h5>
-          <>
-            {/* Row */}
-            <div className={cn("flex flex-row items-center")}>
-              {/* ImageContainer */}
-              <div className={"relative h-[50px] md:h-[80px] lg:h-[100px]"}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={doing.spotify.album_art_url}
-                  alt='Album Art'
-                  className='h-[50px] w-[50px] rounded-md md:h-[80px] md:w-[80px] lg:h-[100px] lg:w-[100px]'
-                />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={"/assets/logo/spotify-logo.svg"}
-                  alt='Spotify Logo'
-                  className='absolute -bottom-[5px] -right-[5px] h-5 w-5 rounded-full border border-white bg-white dark:border-black dark:bg-black'
-                />
-              </div>
-              <div className='ml-4'>
-                <h5 className='m-0 text-primary'>{doing.spotify.song}</h5>
-                <p className='m-0 text-sm font-thin'>
-                  {"by "}
-                  {doing.spotify.artist}
-                </p>
-              </div>
+
+          <div className={cn("flex flex-row items-center")}>
+            {/* ImageContainer */}
+            <div className={"relative h-[50px] md:h-[80px] lg:h-[100px]"}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={doing.spotify.album_art_url}
+                alt='Album Art'
+                className='h-[50px] w-[50px] rounded-md md:h-[80px] md:w-[80px] lg:h-[100px] lg:w-[100px]'
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={"/assets/logo/spotify-logo.svg"}
+                alt='Spotify Logo'
+                className='absolute -bottom-[5px] -right-[5px] h-5 w-5 rounded-full border border-white bg-white dark:border-black dark:bg-black'
+              />
             </div>
-            <Progress
-              percentage={
-                (100 * (currentDate - doing.spotify.timestamps.start)) /
-                (doing.spotify.timestamps.end - doing.spotify.timestamps.start)
-              }
-            />
-          </>
-        </Link>
+            <div className='ml-4'>
+              <h5 className='m-0 text-primary'>{doing.spotify.song}</h5>
+              <p className='m-0 text-sm font-thin'>
+                {"by "}
+                {doing.spotify.artist}
+              </p>
+            </div>
+          </div>
+          <Progress
+            percentage={
+              (100 * (currentDate - doing.spotify.timestamps.start)) /
+              (doing.spotify.timestamps.end - doing.spotify.timestamps.start)
+            }
+          />
+        </li>
       ) : null}
       {currentActivity ? (
-        <Link
+        <li
           className={cn(
             "w-full cursor-pointer rounded-md border-[1px] border-secondary bg-transparent p-[1rem] text-secondary transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-primary"
           )}
-          href={"/presence"}
         >
           <h5 className='flex flex-row items-center justify-center gap-1 text-center'>
             Doing something
@@ -235,7 +231,7 @@ const DisplayPresence = (Presence: any) => {
               {currentActivity.state ? <p>{currentActivity.state}</p> : null}
             </div>
           </div>
-        </Link>
+        </li>
       ) : null}
     </>
   );

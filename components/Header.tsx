@@ -130,4 +130,8 @@ const navLinks: navLinksProps[] = [
     href: "/about",
     label: "About",
   },
+  {
+    href: "/presence",
+    label: "Presence",
+  },
 ];

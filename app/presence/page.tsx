@@ -29,7 +29,7 @@ export default async function page() {
 
               <p>
                 You may have noticed that while I&apos;m doing something like
-                listening to Spotify, programming in VSCode or playing a game,
+                listening to Spotify, programming in VSCode or something else,
                 it&apos;ll appear here. This is thanks to an open-source project
                 called{" "}
                 <Link
