@@ -3,6 +3,7 @@ import { Link } from "./ui";
 import { socials } from "@/components/index";
 import { type socialsProps } from "@/types/index";
 import { siteConfig } from "@/config";
+import { GoArrowRight } from "react-icons/go";
 
 export function Footer() {
   return (
@@ -76,7 +77,7 @@ export function Footer() {
           </p>
         </div>
 
-        <div className='flex flex-col items-center justify-center text-start'>
+        <div className='flex flex-col items-center justify-center gap-3 text-start'>
           <div className='flex flex-row items-center justify-center gap-1 text-xs font-medium text-secondary'>
             <span className='text-primary'>Beta</span>{" "}
             {`v${siteConfig.siteVersion}`}

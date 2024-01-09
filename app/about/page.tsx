@@ -131,7 +131,7 @@ export default async function About() {
 
         {/* Experience */}
         <div
-          className='flex animate-in flex-col gap-16  md:gap-24 '
+          className='flex animate-in flex-col gap-16 md:gap-24 '
           style={{ "--index": 3 } as React.CSSProperties}
         >
           <div className='relative flex  flex-col gap-8'>

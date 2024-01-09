@@ -1,5 +1,5 @@
 export const siteConfig = {
-  siteVersion: `1.0.0`,
+  siteVersion: `1.0.1`,
   title: `Yash Godara`,
   aboutMe: ``,
   creator: `Yash Godara`,
