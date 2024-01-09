@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import SpotifyLogo from "/assets/logo/spotify-logo.svg";
 import Progress from "./Progress";
 import Image from "next/image";
+import { id } from "date-fns/locale";
 
 const StatusMap = {
   dnd: "hsl(359, calc(var(--saturation-factor, 1) * 82.6%), 59.4%)",
@@ -37,12 +38,14 @@ type SocketEvent = {
 
 const USERID = "526972062741299211";
 
-const logLanyardEvent = (eventName: string, data: any) => {
+const logLanyardEvent = (eventName: string, data: Presence | unknown) => {
   console.log(
-    `%cLanyard%c <~ ${eventName} %o`,
+    `%cLanyard%c <~ ${eventName}`,
     "background-color: #8b0d0d; border-radius: 5px; padding: 3px; color: white; font-weight: bold;",
     "background: none; color: white; border-radius: 5px; padding: 2px;",
-    data
+    {
+      data,
+    }
   );
 };
 
@@ -78,7 +81,18 @@ const Lanyard: FC = () => {
         );
         send(Operation.Initialize, { subscribe_to_id: USERID });
       } else if (op === Operation.Event) {
-        logLanyardEvent(t, d);
+        logLanyardEvent(t, {
+          active_on_discord_mobile: (d as Presence).active_on_discord_mobile,
+          active_on_discord_desktop: (d as Presence).active_on_discord_desktop,
+          discord_user: {
+            id: (d as Presence).discord_user.id,
+            username: (d as Presence).discord_user.username,
+            avatar: (d as Presence).discord_user.avatar,
+          },
+          listening_to_spotify: (d as Presence).listening_to_spotify,
+          spotify: (d as Presence).spotify,
+          activities: (d as Presence).activities,
+        });
         if ([EventType.INIT_STATE, EventType.PRESENCE_UPDATE].includes(t)) {
           setDoing(d as Presence);
         }
@@ -152,12 +166,12 @@ const DisplayPresence = (Presence: any) => {
             {/* Row */}
             <div className={cn("flex flex-row items-center")}>
               {/* ImageContainer */}
-              <div className={"relative h-[50px]"}>
+              <div className={"relative h-[50px] md:h-[80px] lg:h-[100px]"}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={doing.spotify.album_art_url}
                   alt='Album Art'
-                  className='h-[50px] w-[50px] rounded-md'
+                  className='h-[50px] w-[50px] rounded-md md:h-[80px] md:w-[80px] lg:h-[100px] lg:w-[100px]'
                 />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img

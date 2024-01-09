@@ -20,35 +20,45 @@ export default async function page() {
         </div>
 
         <div
-          className='animate-in'
-          style={{ "--index": 1 } as React.CSSProperties}
+          className='flex animate-in flex-col gap-16 md:gap-24'
+          style={{ "--index": 2 } as React.CSSProperties}
         >
-          You may have noticed that while I&apos;m doing something like
-          listening to Spotify, programming in VSCode or playing a game,
-          it&apos;ll appear here. This is thanks to an open-source project
-          called{" "}
-          <span>
-            <Link
-              target='_blank'
-              rel='noopener noreferrer'
-              className='group inline-flex flex-row p-0 font-semibold underline-offset-4 transition-all duration-200  ease-linear hover:text-brand hover:underline'
-              href='https://github.com/Phineas/lanyard'
-            >
-              Lanyard
-              <GoArrowRight
-                size={18}
-                className={"hidden group-hover:block group-hover:-rotate-45"}
-              />
-            </Link>{" "}
-          </span>
-          which pulls live presences from Discord and updates an API and
-          WebSocket service.
+          <section className='col-reverse flex flex-col gap-2 md:flex-row md:gap-9'>
+            <div className='flex flex-col gap-6'>
+              <p>Hey,</p>
+
+              <p>
+                You may have noticed that while I&apos;m doing something like
+                listening to Spotify, programming in VSCode or playing a game,
+                it&apos;ll appear here. This is thanks to an open-source project
+                called{" "}
+                <Link
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='group inline-flex flex-row p-0 font-semibold underline-offset-4 transition-all duration-200  ease-linear hover:text-brand hover:underline'
+                  href='https://github.com/Phineas/lanyard'
+                >
+                  Lanyard.
+                  <GoArrowRight
+                    size={18}
+                    className={
+                      "hidden group-hover:block group-hover:-rotate-45"
+                    }
+                  />
+                </Link>
+              </p>
+              <p>
+                Which pulls live presences from Discord and updates an API and
+                WebSocket service.
+              </p>
+            </div>
+          </section>
         </div>
 
         {/* Presence */}
         <div
           className='flex animate-in flex-col gap-16 md:gap-24'
-          style={{ "--index": 2 } as React.CSSProperties}
+          style={{ "--index": 3 } as React.CSSProperties}
         >
           <Lanyard />
         </div>
