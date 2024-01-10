@@ -3,20 +3,8 @@
 // Thanks to Tim (https://github.com/timcole) & Antoinek.fr (https://github.com/AntoineKM)
 import { FC, useEffect, useMemo, useState } from "react";
 import type { Presence } from "@/types/lanyard";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
-import SpotifyLogo from "/assets/logo/spotify-logo.svg";
 import Progress from "./Progress";
-import Image from "next/image";
-import { id } from "date-fns/locale";
-
-const StatusMap = {
-  dnd: "hsl(359, calc(var(--saturation-factor, 1) * 82.6%), 59.4%)",
-  online: "hsl(139, calc(var(--saturation-factor, 1) * 47.3%), 43.9%)",
-  idle: "hsl(38, calc(var(--saturation-factor, 1) * 95.7%), 54.1%)",
-  offline: "hsl(214, calc(var(--saturation-factor, 1) * 9.9%), 50.4%)",
-};
 
 enum Operation {
   Event,
@@ -46,6 +34,40 @@ const logLanyardEvent = (eventName: string, data: Presence | unknown) => {
     {
       data,
     }
+  );
+};
+
+interface DiscordStatus {
+  [key: string]: string;
+}
+
+const StatusMap: DiscordStatus = {
+  dnd: "hsl(359, calc(var(--saturation-factor, 1) * 82.6%), 59.4%)",
+  online: "hsl(139, calc(var(--saturation-factor, 1) * 47.3%), 43.9%)",
+  idle: "hsl(38, calc(var(--saturation-factor, 1) * 95.7%), 54.1%)",
+  offline: "hsl(214, calc(var(--saturation-factor, 1) * 9.9%), 50.4%)",
+};
+
+const DiscordStatus = ({
+  status,
+}: {
+  status: "dnd" | "online" | "idle" | "offline";
+}) => {
+  return (
+    <div className='flex w-full flex-col items-center gap-2 '>
+      <div
+        className='flex w-full items-center justify-center gap-x-2 rounded-md p-3 text-center text-sm text-[var(--brand)]'
+        style={{ "--index": 1 } as React.CSSProperties}
+      >
+        <p className='text-lg text-secondary hover:text-primary'>
+          <span
+            className='inline-block h-2 w-2 rounded-full'
+            style={{ backgroundColor: StatusMap[status] }}
+          ></span>{" "}
+          {status}
+        </p>
+      </div>
+    </div>
   );
 };
 
@@ -82,8 +104,9 @@ const Lanyard: FC = () => {
         send(Operation.Initialize, { subscribe_to_id: USERID });
       } else if (op === Operation.Event) {
         logLanyardEvent(t, {
-          active_on_discord_mobile: (d as Presence).active_on_discord_mobile,
           active_on_discord_desktop: (d as Presence).active_on_discord_desktop,
+          active_on_discord_web: (d as Presence).active_on_discord_web,
+          active_on_discord_mobile: (d as Presence).active_on_discord_mobile,
           discord_user: {
             id: (d as Presence).discord_user.id,
             username: (d as Presence).discord_user.username,
@@ -127,12 +150,26 @@ const Lanyard: FC = () => {
     return () => clearInterval(progressUpdate);
   }, [doing]);
 
-  if (!doing || (!vsCode && !doing.spotify)) return <section></section>;
+  if (doing?.discord_status === "offline")
+    // If user is offline
+    return (
+      <>
+        <section>
+          <DiscordStatus status='offline' />
+        </section>
+      </>
+    );
+
+  if (!doing || (!vsCode && !doing.spotify)) return <section></section>; // Loading
+
   return (
     <>
-      <ul className='animated-list relative flex flex-col gap-2 md:gap-4 xl:gap-6'>
-        <DisplayPresence doing={doing} />
-      </ul>
+      <section>
+        <DiscordStatus status={doing.discord_status} />
+        <ul className='animated-list relative flex flex-col gap-2 md:gap-4 xl:gap-6'>
+          <DisplayPresence doing={doing} />
+        </ul>
+      </section>
     </>
   );
 };
@@ -154,10 +191,10 @@ const DisplayPresence = (Presence: any) => {
       {doing?.listening_to_spotify ? (
         <li
           className={cn(
-            "w-full cursor-pointer rounded-md border-[1px] border-secondary bg-transparent p-[1rem] text-secondary transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-primary"
+            "flex w-full cursor-pointer flex-col gap-y-2 rounded-md border-[1px] border-secondary bg-transparent p-[1rem] text-secondary transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-primary md:gap-1"
           )}
         >
-          <h5 className='flex flex-row items-center justify-center gap-1 text-center'>
+          <h5 className='line-clamp-1 flex flex-row items-center justify-center gap-1 text-center'>
             Listening to Spotify
             <div className='inline-block h-2 w-2 animate-pulse rounded-full bg-[var(--brand)]'></div>
           </h5>
@@ -187,6 +224,7 @@ const DisplayPresence = (Presence: any) => {
             </div>
           </div>
           <Progress
+            theme='brand'
             percentage={
               (100 * (currentDate - doing.spotify.timestamps.start)) /
               (doing.spotify.timestamps.end - doing.spotify.timestamps.start)
@@ -197,10 +235,10 @@ const DisplayPresence = (Presence: any) => {
       {currentActivity ? (
         <li
           className={cn(
-            "w-full cursor-pointer rounded-md border-[1px] border-secondary bg-transparent p-[1rem] text-secondary transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-primary"
+            "flex w-full cursor-pointer flex-col gap-y-2 rounded-md border-[1px] border-secondary bg-transparent p-[1rem] text-secondary transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-primary md:gap-1"
           )}
         >
-          <h5 className='flex flex-row items-center justify-center gap-1 text-center'>
+          <h5 className='line-clamp-1 flex flex-row items-center justify-center gap-1 text-center'>
             Doing something
             <div className='inline-block h-2 w-2 animate-pulse rounded-full bg-[var(--brand)]'></div>
           </h5>
@@ -222,13 +260,19 @@ const DisplayPresence = (Presence: any) => {
               </div>
             ) : null}
             <div className='ml-4'>
-              <h5 className='m-0 text-primary'>{currentActivity.name}</h5>
+              <h5 className='m-0 text-sm text-primary sm:text-base'>
+                {currentActivity.name}
+              </h5>
               {currentActivity.details ? (
                 <p className='m-0 text-sm font-thin'>
                   {currentActivity.details}
                 </p>
               ) : null}
-              {currentActivity.state ? <p>{currentActivity.state}</p> : null}
+              {currentActivity.state ? (
+                <p className='text-xs sm:text-sm md:text-base'>
+                  {currentActivity.state}
+                </p>
+              ) : null}
             </div>
           </div>
         </li>
