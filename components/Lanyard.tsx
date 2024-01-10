@@ -1,7 +1,7 @@
 "use client";
 
 // Thanks to Tim (https://github.com/timcole) & Antoinek.fr (https://github.com/AntoineKM)
-import { FC, useEffect, useMemo, useState } from "react";
+import { FC, useEffect, useMemo, useState, Suspense } from "react";
 import type { Presence } from "@/types/lanyard";
 import { cn } from "@/lib/utils";
 import Progress from "./Progress";
@@ -165,10 +165,12 @@ const Lanyard: FC = () => {
   return (
     <>
       <section>
-        <DiscordStatus status={doing.discord_status} />
-        <ul className='animated-list relative flex flex-col gap-2 md:gap-4 xl:gap-6'>
-          <DisplayPresence doing={doing} />
-        </ul>
+        <Suspense fallback={<section></section>}>
+          <DiscordStatus status={doing.discord_status} />
+          <ul className='animated-list relative flex flex-col gap-2 md:gap-4 xl:gap-6'>
+            <DisplayPresence doing={doing} />
+          </ul>
+        </Suspense>
       </section>
     </>
   );

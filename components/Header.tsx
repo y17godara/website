@@ -51,9 +51,9 @@ export function Header() {
                 </NavLink>
               </li>
             ))}
-            <Link className='ml-4 text-primary' href={"/connect"}>
+            {/* <Link className='ml-4 text-primary' href={"/connect"}>
               <CiLocationArrow1 title={"Connect with Me"} className='h-5 w-5' />
-            </Link>
+            </Link> */}
           </ul>
 
           {/* Small Nav Menu */}
