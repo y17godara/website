@@ -1,11 +1,12 @@
 export interface Presence {
   active_on_discord_mobile: boolean;
   active_on_discord_desktop: boolean;
+  active_on_discord_web: boolean;
   listening_to_spotify: boolean;
   kv: Record<string, string>;
   spotify?: Spotify;
   discord_user: DiscordUser;
-  discord_status: string;
+  discord_status: "online" | "offline" | "idle" | "dnd";
   activities: Activity[];
 }
 
