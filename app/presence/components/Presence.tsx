@@ -1,6 +1,8 @@
 import { useMemo } from "react";
 import Progress from "@/components/Progress";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { FaSpotify } from "react-icons/fa";
 
 function DiscordPresence({ doing }: { doing: any }) {
   return (
@@ -35,28 +37,45 @@ const DisplayPresence = (Presence: any) => {
             <div className='inline-block h-2 w-2 animate-pulse rounded-full bg-[var(--brand)]'></div>
           </h5>
 
-          <div className={cn("flex flex-row items-center")}>
+          <div className={cn("flex flex-row items-center justify-between")}>
             {/* ImageContainer */}
-            <div className={"relative h-[50px] md:h-[80px] lg:h-[100px]"}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={doing.spotify.album_art_url}
-                alt='Album Art'
-                className='h-[50px] w-[50px] rounded-md md:h-[80px] md:w-[80px] lg:h-[100px] lg:w-[100px]'
-              />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={"/assets/logo/spotify-logo.svg"}
-                alt='Spotify Logo'
-                className='absolute -bottom-[5px] -right-[5px] h-5 w-5 rounded-full border border-white bg-white dark:border-black dark:bg-black'
-              />
+            <div
+              className={
+                "relative flex h-full flex-row items-center justify-between"
+              }
+            >
+              <div className={"relative h-[50px] md:h-[80px] lg:h-[100px]"}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={doing.spotify.album_art_url}
+                  alt='Album Art'
+                  className='h-[50px] w-[50px] rounded-md md:h-[80px] md:w-[80px] lg:h-[100px] lg:w-[100px]'
+                />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={"/assets/logo/spotify-logo.svg"}
+                  alt='Spotify Logo'
+                  className='absolute -bottom-[5px] -right-[5px] h-5 w-5 rounded-full border border-white bg-white dark:border-black dark:bg-black'
+                />
+              </div>
+              <div className='ml-4'>
+                <h5 className='m-0 text-primary'>{doing.spotify.song}</h5>
+                <p className='m-0 text-sm font-thin'>
+                  {"by "}
+                  {doing.spotify.artist}
+                </p>
+              </div>
             </div>
-            <div className='ml-4'>
-              <h5 className='m-0 text-primary'>{doing.spotify.song}</h5>
-              <p className='m-0 text-sm font-thin'>
-                {"by "}
-                {doing.spotify.artist}
-              </p>
+
+            <div className={"relative h-full"}>
+              <Link
+                href={`https://open.spotify.com/track/${doing.spotify.track_id}`}
+                className='m-0 cursor-pointer text-primary'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <FaSpotify className={"h-5 w-5 text-green-500 md:h-8 md:w-8"} />
+              </Link>
             </div>
           </div>
           <Progress
