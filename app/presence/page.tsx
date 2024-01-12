@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import React from "react";
-import Lanyard from "@/components/Lanyard";
+import Lanyard from "./components/Lanyard";
 import Link from "next/link";
 import { GoArrowRight } from "react-icons/go";
 // https://api.lanyard.rest/v1/users/526972062741299211
