@@ -57,7 +57,7 @@ export default async function page() {
 
         {/* Presence */}
         <div
-          className='flex animate-in flex-col gap-16 md:gap-24'
+          className='flex animate-in flex-col gap-16 md:min-h-[25rem] md:gap-24 xl:min-h-[20rem]'
           style={{ "--index": 3 } as React.CSSProperties}
         >
           <Lanyard />
