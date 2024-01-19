@@ -8,9 +8,9 @@ import Logo from "@/public/assets/logo/favicon.png";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Transition, Menu } from "@headlessui/react";
-import { CiLocationArrow1 } from "react-icons/ci";
 import { TbDotsVertical } from "react-icons/tb";
 import { siteConfig } from "@/config";
+// import { CiLocationArrow1 } from "react-icons/ci";
 
 export function Header() {
   const pathname = `/${usePathname().split("/")[1]}`;
@@ -40,20 +40,26 @@ export function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <ul className='relative hidden h-8 items-center justify-center gap-1 sm:flex'>
+          <ul className='relative hidden h-8 items-center justify-center gap-3 sm:flex'>
             {navLinks.map((link: navLinksProps, index: number) => (
-              <li key={index}>
+              <li key={index} className='relative'>
                 <NavLink
-                  className='text-primary hover:bg-tertiary'
+                  className={cn(
+                    "text-primary hover:bg-tertiary",
+                    link.highlight &&
+                      "cursor-pointer border border-secondary  font-medium hover:border-[var(--brand)] hover:bg-[var(--brand)] hover:text-white"
+                  )}
                   href={link.href}
                 >
                   {link.label}
+                  {link.badge && (
+                    <span className='absolute right-2 top-0 inline-flex -translate-y-1/2 translate-x-1/2 transform items-center justify-center rounded-full bg-[var(--brand)] p-1 px-2 text-[8px] font-semibold leading-none text-white shadow-md'>
+                      {link.badge}
+                    </span>
+                  )}
                 </NavLink>
               </li>
             ))}
-            {/* <Link className='ml-4 text-primary' href={"/connect"}>
-              <CiLocationArrow1 title={"Connect with Me"} className='h-5 w-5' />
-            </Link> */}
           </ul>
 
           {/* Small Nav Menu */}
@@ -90,6 +96,11 @@ export function Header() {
                                 )}
                               >
                                 {link.label}
+                                {link.badge && (
+                                  <span className='absolute right-0  inline-flex items-center justify-center rounded-full bg-[var(--brand)] p-1 px-2 text-[10px] font-bold leading-none text-white'>
+                                    {link.badge}
+                                  </span>
+                                )}
                               </Link>
                             )}
                           </Menu.Item>
@@ -115,6 +126,8 @@ export function Header() {
 type navLinksProps = {
   href: string;
   label: string;
+  badge?: string;
+  highlight?: boolean;
 };
 
 const navLinks: navLinksProps[] = [
@@ -133,5 +146,11 @@ const navLinks: navLinksProps[] = [
   {
     href: "/presence",
     label: "Presence",
+  },
+  {
+    href: "https://store.y-g.tech/",
+    label: "Store",
+    badge: "🚧 New",
+    highlight: true,
   },
 ];

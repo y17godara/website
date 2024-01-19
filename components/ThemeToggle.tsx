@@ -23,10 +23,10 @@ export function ThemeToggle() {
       <Listbox value={theme} onChange={(value) => setTheme(value)}>
         {({ open }) => {
           return (
-            <div className='relative'>
+            <div className='relative cursor-pointer'>
               <Listbox.Button
                 className={clsx(
-                  "text-secoundary relative flex h-8 w-8 cursor-default items-center justify-center rounded-full text-secondary hover:text-primary focus:outline-none focus:ring-0 focus-visible:outline-none"
+                  "text-secoundary relative flex h-8 w-8 items-center justify-center rounded-full text-secondary hover:text-primary focus:outline-none focus:ring-0 focus-visible:outline-none"
                 )}
               >
                 <CgDarkMode className='h-5 w-5' />
