@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Avatar from "./icon.png";
+import { Suspense } from "react";
 import { Stats, LatestBlogs } from "./_components/index";
 import { Link } from "@/components/ui";
 import { PiArrowUpRight } from "react-icons/pi";
@@ -9,13 +10,14 @@ import { allBlogs, Blog } from "contentlayer/generated";
 import { SiGoogledocs } from "react-icons/si";
 
 export default async function page() {
-  const blogs: Blog[] = await allBlogs
+  const blogs: Blog[] = allBlogs
     .sort(
       (a, b) =>
         new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
     )
     // 2 most recent
     .filter((_, i) => i < 2);
+
   return (
     <>
       <div className='flex flex-col gap-16 md:gap-24'>
@@ -32,7 +34,7 @@ export default async function page() {
             </p>
           </div>
           <div
-            className='flex animate-in flex-col gap-6 text-secondary md:flex-row md:items-center'
+            className='flex max-w-lg animate-in flex-col gap-6 text-secondary md:flex-row md:items-center'
             style={{ "--index": 1 } as React.CSSProperties}
           >
             <Image
@@ -43,7 +45,13 @@ export default async function page() {
               priority
               className='rounded-full bg-secondary'
             />
-            <Stats />
+            <Suspense
+              fallback={
+                <div className='h-full w-full rounded-md bg-tertiary' />
+              }
+            >
+              <Stats />
+            </Suspense>
           </div>
           <div
             className='flex max-w-lg animate-in flex-col gap-8 text-primary'
