@@ -34,7 +34,7 @@ export default async function page() {
             </p>
           </div>
           <div
-            className='flex max-w-lg animate-in flex-col gap-6 text-secondary md:flex-row md:items-center'
+            className='flex max-w-lg animate-in flex-col gap-6 overflow-x-hidden text-secondary md:flex-row md:items-center'
             style={{ "--index": 1 } as React.CSSProperties}
           >
             <Image
@@ -47,7 +47,7 @@ export default async function page() {
             />
             <Suspense
               fallback={
-                <div className='h-full w-full rounded-md bg-tertiary' />
+                <div className='flex h-24 flex-1 animate-pulse rounded-md bg-secondary'></div>
               }
             >
               <Stats />

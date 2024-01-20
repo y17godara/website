@@ -1,10 +1,18 @@
 "use server";
 
+import prisma from "@/lib/prisma";
+
 const USERNAME = "y17godara";
 
 export async function getViews() {
-  // TODO
-  return 1;
+  const toatlView = await prisma.post.aggregate({
+    _sum: {
+      views: true,
+    },
+  });
+
+  console.log(toatlView);
+  return toatlView._sum.views || 0;
 }
 
 export async function getStars() {
