@@ -7,6 +7,7 @@ https://www.y-g.tech
 - [Next.js](nextjs.org) / TypeScript
 - [MDX](https://mdxjs.com) / [Contentlayer](https://contentlayer.dev/) (Blogs / Projects)
 - [Prisma](https://www.prisma.io) (ORM)
+- [MySQL](https://planetscale.com/) (Planetscale Database)
 - [Tailwind CSS](https://tailwindcss.com) (Styling)
 - [Radix Primitives](https://www.radix-ui.com/primitives) (Headless UI components)
 - [Radix UI Colors](https://www.radix-ui.com/colors) (Color system)
