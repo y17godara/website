@@ -58,13 +58,15 @@ export default async function About() {
                 technologies.
               </p>
               <p>
-                I have been coding for a years now and I have worked on various
-                small personal projects ranging from html websites to full
-                stack.
+                With over a year of hands-on experience in coding. I have worked
+                on various small personal projects ranging from html websites to
+                full stack.
               </p>
               <p>
-                I am currently working on a few personal projects and learning
-                new technologies.
+                While actively working on personal projects, I am concurrently
+                dedicated to expanding my skill set by delving into new
+                technologies. This balanced approach allows me to apply my
+                knowledge practically and ensures a continual learning process.
               </p>
               {/* Additionally */}
               <p>
