@@ -138,7 +138,7 @@ export default async function About() {
             <div className='flex flex-col gap-2'>
               <h1 className='animate-in text-lg font-bold'>Experience</h1>
               <p className='text-md animate-in font-normal'>
-                I have been coding for more than years now and I have worked on
+                I have been coding for more than year now and I have worked on
                 various{" "}
                 <Link
                   className='text-sm italic underline underline-offset-4'

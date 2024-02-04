@@ -27,7 +27,7 @@ export const education: educationProps[] = [
   {
     title: "Graduation",
     course: "Bachelors of Computer Applications",
-    majors: ["Coud", "FullStack", "Security"],
+    majors: ["Cloud", "FullStack", "Security"],
     cgpa: "N/A",
     certification: "",
     verification: "",
@@ -96,7 +96,7 @@ export const certifications: educationProps[] = [
   {
     title: "FullStack Web Development",
     course: "FullStack Cohort at 100xDevs by Harikat Singh",
-    majors: ["React.js", "Node.js", "Next.js", "MongoDB", "PostgreSQL"],
+    majors: ["React.js", "Node.js", "Next.js", "MongoDB", "PostgreSQL", "..."],
     cgpa: "",
     certification: "/assets/about/100xdev.jpg",
     verification: "#",
