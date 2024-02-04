@@ -58,13 +58,15 @@ export default async function About() {
                 technologies.
               </p>
               <p>
-                I have been coding for a years now and I have worked on various
-                small personal projects ranging from html websites to full
-                stack.
+                With over a year of hands-on experience in coding. I have worked
+                on various small personal projects ranging from html websites to
+                full stack.
               </p>
               <p>
-                I am currently working on a few personal projects and learning
-                new technologies.
+                While actively working on personal projects, I am concurrently
+                dedicated to expanding my skill set by delving into new
+                technologies. This balanced approach allows me to apply my
+                knowledge practically and ensures a continual learning process.
               </p>
               {/* Additionally */}
               <p>
@@ -138,7 +140,7 @@ export default async function About() {
             <div className='flex flex-col gap-2'>
               <h1 className='animate-in text-lg font-bold'>Experience</h1>
               <p className='text-md animate-in font-normal'>
-                I have been coding for more than years now and I have worked on
+                I have been coding for more than year now and I have worked on
                 various{" "}
                 <Link
                   className='text-sm italic underline underline-offset-4'
