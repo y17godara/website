@@ -12,9 +12,8 @@ export const metadata: Metadata = {
 
 export default function page() {
   const projects = allProjects.sort((a: any, b: any) =>
-    compareDesc(new Date(a.date), new Date(b.date))
+    compareDesc(parseISO(a.time!), parseISO(b.time!))
   );
-
   const Content = () => {
     return (
       <>
