@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   creator: siteConfig.creator,
   publisher: siteConfig.publisher,
   category: siteConfig.category,
-  metadataBase: new URL(`https://${process.env.DOMAIN}`),
+  metadataBase: new URL(`https://y-g.tech`),
   twitter: {
     card: "summary_large_image",
     images: [
