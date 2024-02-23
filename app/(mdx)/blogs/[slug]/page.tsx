@@ -32,7 +32,7 @@ export async function generateMetadata(
       type: "article",
       images: [
         {
-          url: `/api/og?title=${title}`,
+          url: post.image,
           alt: title,
         },
       ],
