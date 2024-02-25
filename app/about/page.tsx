@@ -154,12 +154,12 @@ export default async function About() {
             </div>
 
             {/* Additional Note */}
-            <Note
+            {/* <Note
               href={"mailto:yash17godara@gmail.com"}
               button={"Email Me"}
               note={"Note"}
-              description="Currently, I don't have industry experience, but I am actively looking for internship opportunities. Feel free to reach out to me via email or social media."
-            />
+              description='Any Offers or wanna discuss Something? Feel free to reach out to me via email or social media.'
+            /> */}
 
             {/* Experience List */}
             <WorkExperience experience={experience} />
