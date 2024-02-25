@@ -2,6 +2,26 @@ import { type experienceProps, educationProps } from "./types/index";
 
 export const experience: experienceProps[] = [
   {
+    logo: "/assets/about/capture-a-trip.jpeg",
+    title: "Junior Software Developer",
+    description:
+      "Working as a Junior Software Developer at Capture A Trip, Helping in building the next big thing.",
+    role: "FullStack",
+    href: "https://github.com/y17godara",
+    label: "Capture A Trip",
+    ariaLabel: "Capture A Trip",
+    className: "",
+    location: "India",
+    joined: {
+      month: "Feb",
+      year: "2024",
+    },
+    to: {
+      month: "", // Leave empty if currently working
+      year: Date().split(" ")[3],
+    },
+  },
+  {
     logo: "/assets/about/github.jpg",
     title: "Personal Projects",
     description:
