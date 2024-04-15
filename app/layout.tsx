@@ -27,30 +27,41 @@ export const metadata: Metadata = {
   creator: siteConfig.creator,
   publisher: siteConfig.publisher,
   category: siteConfig.category,
-  metadataBase: new URL(`https://${process.env.DOMAIN}`),
-  twitter: {
-    card: "summary_large_image",
-    images: [
-      {
-        url: `/api/og?title=${siteConfig.title}`,
-        alt: "Image: Yash Godara",
-      },
-    ],
+  metadataBase: new URL("https://y-g.tech"),
+  alternates: {
+    canonical: "https://y-g.tech",
+    languages: {
+      "x-default": "https://y-g.tech",
+      en: "https://y-g.tech",
+    },
   },
-  openGraph: {
-    title: siteConfig.aboutMe,
-    siteName: siteConfig.title,
-    type: "website",
-    locale: "en_US",
-    url: siteConfig.url,
-    description: siteConfig.description,
-    images: [
-      {
-        url: `/api/og?title=${siteConfig.title}`,
-        alt: "Image: Yash Godara",
-      },
-    ],
-  },
+  // twitter: {
+  //   title: siteConfig.aboutMe,
+  //   site: "https://y-g.tech",
+  //   creator: siteConfig.authors[0].twitterHandle,
+  //   description: siteConfig.description,
+  //   card: "summary_large_image",
+  //   images: [
+  //     {
+  //       url: "/og-bg.png",
+  //       alt: "Image: Yash Godara",
+  //     },
+  //   ],
+  // },
+  // openGraph: {
+  //   title: siteConfig.aboutMe,
+  //   siteName: siteConfig.title,
+  //   type: "website",
+  //   locale: "en_US",
+  //   url: "https://y-g.tech",
+  //   description: siteConfig.description,
+  //   images: [
+  //     {
+  //       url: "/og-bg.png",
+  //       alt: "Image: Yash Godara",
+  //     },
+  //   ],
+  // },
   referrer: "origin-when-cross-origin",
   keywords: siteConfig.keywords,
   generator: siteConfig.generator,
