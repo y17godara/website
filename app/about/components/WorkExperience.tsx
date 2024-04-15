@@ -24,13 +24,13 @@ export function Experience({
         aria-label={ariaLabel}
         className={cn("flex h-full w-full items-center gap-4", className)}
       >
-        <div className='flex items-center rounded-full border border-primary shadow-sm transition-opacity'>
+        <div className='relative flex h-[52px] w-[52px] items-center rounded-full border border-primary shadow-sm transition-opacity'>
           <Image
             src={logo}
             alt={label}
-            height={50}
-            width={50}
             className='rounded-full'
+            width={100}
+            height={100}
           />
         </div>
         <div className='flex-1'>
@@ -54,7 +54,7 @@ export function Experience({
           <div className='flex flex-col gap-1'>
             <h3 className='text-xs font-semibold'>Duration:</h3>
             <p className='text-xs font-normal'>
-              {joined.month} {joined.year} - {to.month} {to.year}
+              {joined.month} {joined.year} - {to.month || "Present"}
             </p>
           </div>
           <div className='flex flex-row gap-1'>
@@ -67,19 +67,21 @@ export function Experience({
   );
   return (
     <>
-      {href ? (
-        <Link
-          href={href}
-          target
-          aria-label={ariaLabel}
-          title={title}
-          className='inline-grid w-full rounded-lg border border-primary p-4 no-underline transition-opacity'
-        >
-          {content}
-        </Link>
-      ) : (
-        content
-      )}
+      <li key={title}>
+        {href ? (
+          <Link
+            href={href}
+            target
+            aria-label={ariaLabel}
+            title={title}
+            className='inline-grid w-full rounded-lg border border-primary p-4 no-underline transition-opacity'
+          >
+            {content}
+          </Link>
+        ) : (
+          content
+        )}
+      </li>
     </>
   );
 }
@@ -91,7 +93,7 @@ export function WorkExperience({
 }) {
   return (
     <>
-      <ul className='animated-list flex flex-col-reverse gap-2 sm:gap-4'>
+      <ul className='animated-list grid grid-cols-1 gap-2 sm:gap-4'>
         {experience.map(Experience)}
       </ul>
     </>
