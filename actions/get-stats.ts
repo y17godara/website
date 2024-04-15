@@ -11,7 +11,7 @@ export async function getViews() {
     },
   });
 
-  console.log(toatlView);
+  // console.log(toatlView);
   return toatlView._sum.views || 0;
 }
 
