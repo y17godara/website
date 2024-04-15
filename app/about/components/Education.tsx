@@ -102,7 +102,7 @@ export function Edu({
   );
 
   return (
-    <li>
+    <li key={title}>
       <div
         aria-label={ariaLabel}
         title={title}
