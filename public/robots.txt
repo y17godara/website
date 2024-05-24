@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: 
+Disallow: /cgi-bin/
+Disallow: /api/
+Sitemap: https://www.y-g.tech/sitemap.xml
