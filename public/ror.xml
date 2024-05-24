@@ -61,6 +61,14 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
+     <link>https://www.y-g.tech/projects/capture-a-trip</link>
+     <title>Capture a Trip | Projects | Yash Godara</title>
+     <description>Explore Incredible Tour Packages, Group Tour, Trekking, International tour Package with Capture A Trip. We offer best travel itineraries for your perfect journey</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
      <link>https://www.y-g.tech/projects/dramatic-scripts</link>
      <title>Dramatic Scripts | Projects | Yash Godara</title>
      <description>A Online FiveM Roleplay Server Scripts Store built using NextJS, TailwindCSS, Typescript, and MDX.</description>
