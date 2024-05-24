@@ -9,12 +9,13 @@ export const siteConfig = {
     {
       name: `Yash Godara`,
       twitterHandle: `@y17godara`,
+      url: `https://www.y-g.tech`,
     },
   ],
   description: `Developer Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more. Aspiring to become a successful software and web developer.`,
   twitterHandle: `@y17godara`,
   meta: `Developer Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more. Aspiring to become a successful software and web developer.`,
-  url: `${process.env.NEXT_PUBLIC_BASE_URL}` || `https://y-g.tech`,
+  url: `${process.env.NEXT_PUBLIC_BASE_URL}` || `https://www.y-g.tech`,
   generator: `Next.js`,
   ogImage: `https://website-61p9jbjff-y17godara.vercel.app/opengraph-image.png`,
   links: {

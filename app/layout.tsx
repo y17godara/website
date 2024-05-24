@@ -27,41 +27,16 @@ export const metadata: Metadata = {
   creator: siteConfig.creator,
   publisher: siteConfig.publisher,
   category: siteConfig.category,
-  metadataBase: new URL("https://y-g.tech"),
+  metadataBase: new URL("https://www.y-g.tech"),
   alternates: {
-    canonical: "https://y-g.tech",
+    canonical: "https://www.y-g.tech",
     languages: {
-      "x-default": "https://y-g.tech",
-      en: "https://y-g.tech",
+      "x-default": "https://www.y-g.tech",
+      en: "https://www.y-g.tech",
     },
   },
-  // twitter: {
-  //   title: siteConfig.aboutMe,
-  //   site: "https://y-g.tech",
-  //   creator: siteConfig.authors[0].twitterHandle,
-  //   description: siteConfig.description,
-  //   card: "summary_large_image",
-  //   images: [
-  //     {
-  //       url: "/og-bg.png",
-  //       alt: "Image: Yash Godara",
-  //     },
-  //   ],
-  // },
-  // openGraph: {
-  //   title: siteConfig.aboutMe,
-  //   siteName: siteConfig.title,
-  //   type: "website",
-  //   locale: "en_US",
-  //   url: "https://y-g.tech",
-  //   description: siteConfig.description,
-  //   images: [
-  //     {
-  //       url: "/og-bg.png",
-  //       alt: "Image: Yash Godara",
-  //     },
-  //   ],
-  // },
+  robots: "index, follow",
+  appleWebApp: true,
   referrer: "origin-when-cross-origin",
   keywords: siteConfig.keywords,
   generator: siteConfig.generator,

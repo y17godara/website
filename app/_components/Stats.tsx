@@ -1,11 +1,8 @@
-"use client";
-
-import useSWR from "swr";
 import { GoGitBranch } from "react-icons/go";
 import { CiStar } from "react-icons/ci";
 import { LuSignalHigh } from "react-icons/lu";
-
-import { fetcher, cn } from "@/lib/utils";
+import { Suspense } from "react";
+import { cn } from "@/lib/utils";
 
 const Loading = ({
   className,
@@ -69,28 +66,22 @@ const Loading = ({
   );
 };
 
-export const Stats = () => {
-  const { data, error, isLoading } = useSWR("/api/stats", fetcher);
-
-  const { Stars, Contributions, Views } = {
-    Stars: data?.Stars,
-    Contributions: data?.Contributions,
-    Views: data?.Views,
-  };
-
+export const Stats = ({
+  stars,
+  contributions,
+  views,
+}: {
+  stars: number;
+  contributions: number;
+  views: number;
+}) => {
   return (
     <ul className={cn("animated-list space-y-2")}>
       <li className='transition-opacity'>
         <div className='flex items-center gap-3 no-underline'>
           <GoGitBranch className='text-xl' />
           <div className='flex flex-row items-center gap-2 text-sm text-secondary md:text-base'>
-            {isLoading ? (
-              <Loading className='h-5' width='24' height='24' />
-            ) : error ? (
-              "Error"
-            ) : (
-              Contributions
-            )}
+            <span>{contributions}</span>
             <span>Github Commits</span>
           </div>
         </div>
@@ -99,13 +90,7 @@ export const Stats = () => {
         <div className='flex items-center gap-3 no-underline'>
           <CiStar className='text-xl' />
           <div className='flex flex-row gap-2 text-sm text-secondary md:text-base'>
-            {isLoading ? (
-              <Loading className='h-5' width='24' height='24' />
-            ) : error ? (
-              "Error"
-            ) : (
-              Stars
-            )}
+            <span>{stars}</span>
             <span> Github Stars</span>
           </div>
         </div>
@@ -114,13 +99,7 @@ export const Stats = () => {
         <div className='flex items-center gap-3'>
           <LuSignalHigh className='h-5 w-5' />
           <div className='flex flex-row gap-2 text-sm text-secondary md:text-base'>
-            {isLoading ? (
-              <Loading className='h-5' width='24' height='24' />
-            ) : error ? (
-              "Error"
-            ) : (
-              Views
-            )}
+            <span>{views}</span>
             <span> Total Blog Views</span>
           </div>
         </div>

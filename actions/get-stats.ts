@@ -5,14 +5,15 @@ import prisma from "@/lib/prisma";
 const USERNAME = "y17godara";
 
 export async function getViews() {
-  const toatlView = await prisma.post.aggregate({
-    _sum: {
-      views: true,
-    },
-  });
+  // const toatlView = await prisma.post.aggregate({
+  //   _sum: {
+  //     views: true,
+  //   },
+  // });
 
   // console.log(toatlView);
-  return toatlView._sum.views || 0;
+  // return toatlView._sum.views || 0;
+  return 0;
 }
 
 export async function getStars() {
