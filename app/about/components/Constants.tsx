@@ -2,12 +2,32 @@ import { type experienceProps, educationProps } from "./types/index";
 
 export const experience: experienceProps[] = [
   {
+    logo: "/assets/about/github.jpg",
+    title: "FullStack Developer",
+    description:
+      "Contributing as Fullstack Developer, building side projects and learning new technologies.",
+    role: "FullStack",
+    href: "https://github.com/y17godara",
+    label: "Freelancer",
+    ariaLabel: "Freelancer",
+    className: "",
+    location: "Remote",
+    joined: {
+      month: "May",
+      year: "2024",
+    },
+    to: {
+      month: "", // Leave empty if currently working
+      year: "Present",
+    },
+  },
+  {
     logo: "/assets/about/capture-a-trip.jpeg",
     title: "Junior Software Developer",
     description:
       "Working as a Junior Software Developer at Capture A Trip, Helping in building the next big thing.",
     role: "FullStack",
-    href: "https://github.com/y17godara",
+    href: "https://captureatrip.com/",
     label: "Capture A Trip",
     ariaLabel: "Capture A Trip",
     className: "",
@@ -17,8 +37,8 @@ export const experience: experienceProps[] = [
       year: "2024",
     },
     to: {
-      month: "", // Leave empty if currently working
-      year: Date().split(" ")[3],
+      month: "May", // Leave empty if currently working
+      year: "2024",
     },
   },
   {
@@ -37,8 +57,8 @@ export const experience: experienceProps[] = [
       year: "2021",
     },
     to: {
-      month: "", // Leave empty if currently working
-      year: Date().split(" ")[3],
+      month: "Feb", // Leave empty if currently working
+      year: "2024",
     },
   },
 ];
@@ -48,11 +68,11 @@ export const education: educationProps[] = [
     title: "Graduation",
     course: "Bachelors of Computer Applications",
     majors: ["Cloud", "FullStack", "Security"],
-    cgpa: "N/A",
+    cgpa: "9.0",
     certification: "",
     verification: "",
     description:
-      "Currently pursuing my Bachelors of Computer Applications from Amity University, Noida.",
+      "Currently pursuing my Bachelors of Computer Applications from Amity University Online, Noida.",
     joined: {
       month: "July",
       year: "2023",
