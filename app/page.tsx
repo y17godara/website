@@ -8,6 +8,7 @@ import { PiArrowUpRight } from "react-icons/pi";
 import { MdAttachEmail } from "react-icons/md";
 import { allBlogs, Blog } from "contentlayer/generated";
 import { SiGoogledocs } from "react-icons/si";
+import { getStars, getContributions, getViews } from "@/actions/get-stats";
 
 export default async function page() {
   const blogs: Blog[] = allBlogs
@@ -17,6 +18,10 @@ export default async function page() {
     )
     // 2 most recent
     .filter((_, i) => i < 2);
+
+  const stars = await getStars();
+  const contributions = await getContributions();
+  const views = await getViews();
 
   return (
     <>
@@ -50,7 +55,11 @@ export default async function page() {
                 <div className='flex h-24 flex-1 animate-pulse rounded-md bg-secondary'></div>
               }
             >
-              <Stats />
+              <Stats
+                contributions={contributions}
+                stars={stars}
+                views={views}
+              />
             </Suspense>
           </div>
           <div

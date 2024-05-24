@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for https://www.y-g.tech/</title>
+  <link>https://www.y-g.tech/</link>
+
+<item>
+     <link>https://www.y-g.tech/</link>
+     <title>Home | Yash Godara</title>
+     <description>Developer Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more. Aspiring to become a successful software and web developer.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.y-g.tech/blogs</link>
+     <title>Blogs | Yash Godara</title>
+     <description>Developer Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more. Aspiring to become a successful software and web developer.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.y-g.tech/projects</link>
+     <title>Projects | Yash Godara</title>
+     <description>Developer Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more. Aspiring to become a successful software and web developer.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.y-g.tech/about</link>
+     <title>About | Yash Godara</title>
+     <description>Developer Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more. Aspiring to become a successful software and web developer.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.y-g.tech/presence</link>
+     <title>Presence | Yash Godara</title>
+     <description>Developer Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more. Aspiring to become a successful software and web developer.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.y-g.tech/assets/about/resume-y17godara.pdf</link>
+     <title></title>
+     
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.y-g.tech/connect</link>
+     <title>Connect with Me | Yash Godara</title>
+     <description>Developer Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more. Aspiring to become a successful software and web developer.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.y-g.tech/projects/dramatic-scripts</link>
+     <title>Dramatic Scripts | Projects | Yash Godara</title>
+     <description>A Online FiveM Roleplay Server Scripts Store built using NextJS, TailwindCSS, Typescript, and MDX.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.y-g.tech/projects/portfolio-nextjs</link>
+     <title>Next.js + Contentlayer Portfolio Website | Projects | Yash Godara</title>
+     <description>A Fullstack Portfolio Website built using NextJS 14, TailwindCSS, Typescript, and Contentlayer MDX for Blogs and Projects.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.y-g.tech/projects/blueeverest</link>
+     <title>Blue Everest - Digial Solutions for your Business | Projects | Yash Godara</title>
+     <description>A digital agency that helps businesses with their digital transformation.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.y-g.tech/projects/portfolio-2023</link>
+     <title>Portfolio Website - Using Nextjs | Projects | Yash Godara</title>
+     <description>This was my portfolio website. The website is built using NextJS, TailwindCSS, and Typescript.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  

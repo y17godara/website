@@ -1,4 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<sitemap><loc>https://y-g.tech/sitemap-0.xml</loc></sitemap>
-</sitemapindex>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.y-g.tech/</loc>
+  <lastmod>2024-05-24T11:13:07+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.y-g.tech/blogs</loc>
+  <lastmod>2024-05-24T11:13:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.y-g.tech/projects</loc>
+  <lastmod>2024-05-24T11:13:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.y-g.tech/about</loc>
+  <lastmod>2024-05-24T11:13:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.y-g.tech/presence</loc>
+  <lastmod>2024-05-24T11:13:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.y-g.tech/assets/about/resume-y17godara.pdf</loc>
+  <lastmod>2024-05-24T11:13:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.y-g.tech/connect</loc>
+  <lastmod>2024-05-24T11:13:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.y-g.tech/projects/capture-a-trip</loc>
+  <lastmod>2024-05-24T11:13:07+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.y-g.tech/projects/dramatic-scripts</loc>
+  <lastmod>2024-05-24T11:13:07+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.y-g.tech/projects/portfolio-nextjs</loc>
+  <lastmod>2024-05-24T11:13:07+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.y-g.tech/projects/blueeverest</loc>
+  <lastmod>2024-05-24T11:13:07+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.y-g.tech/projects/portfolio-2023</loc>
+  <lastmod>2024-05-24T11:13:07+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
