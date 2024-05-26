@@ -10,6 +10,49 @@ import { allBlogs, Blog } from "contentlayer/generated";
 import { SiGoogledocs } from "react-icons/si";
 import { getStars, getContributions, getViews } from "@/actions/get-stats";
 
+const JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Yash Godara",
+  additionalName: "y17godara",
+  username: "y17godara",
+  pronouns: "he/him",
+  worksFor: "Sarathi Rides",
+  jobTitle: "Software Developer",
+  workingStatus: "Open for opportunities",
+  homeLocation: "New Delhi, India",
+  url: "https://www.y-g.tech",
+  sameAs: [
+    "https://www.linkedin.com/in/y17godara",
+    "https://x.com/y17godara",
+    "https://twitter.com/y17godara",
+    "https://stackoverflow.com/users/17114824/y17godara",
+    "https://github.com/y17godara",
+  ],
+  projects: [
+    {
+      "@type": "SoftwareApplication",
+      name: "Capture A Trip",
+      url: "https://www.y-g.tech/projects/capture-a-trip",
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "Dramatic Scripts",
+      url: "https://www.y-g.tech/projects/dramatic-scripts",
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "Next.js + Contentlayer Portfolio Website",
+      url: "https://www.y-g.tech/projects/portfolio-nextjs",
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "Blue Everest - Digial Solutions for your Business",
+      url: "https://www.y-g.tech/projects/blueeverest",
+    },
+  ],
+};
+
 export default async function page() {
   const blogs: Blog[] = allBlogs
     .sort(
@@ -26,6 +69,11 @@ export default async function page() {
   return (
     <>
       <div className='flex flex-col gap-16 md:gap-24'>
+        {/* JSON LD */}
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }}
+        ></script>
         <div className='flex animate-in flex-col gap-8'>
           <div>
             <h1 className='animate-in text-3xl font-bold tracking-tight text-primary'>
