@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider, Header, Footer } from "@/components";
+import AnimatedCursor from "react-animated-cursor";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -19,7 +20,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: `Home | Yash Godara`,
+    default: `Yash Godara | @y17godara`,
     template: `%s | Yash Godara`,
   },
   description: siteConfig.description,
@@ -74,7 +75,7 @@ export default function RootLayout({
           <Header />
           <main
             className={
-              "mx-auto max-w-[700px] px-4 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20"
+              "mx-auto mt-10 min-h-[60vh] max-w-[700px] px-4 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20"
             }
           >
             {children}
@@ -83,6 +84,8 @@ export default function RootLayout({
         </ThemeProvider>
         <SpeedInsights />
         <Analytics />
+
+        <AnimatedCursor color={"139, 13, 13"} />
       </body>
     </html>
   );

@@ -23,7 +23,16 @@
     --brandTinted: #dc61611f;
     --bg: var(--gray-1);
     --boxBg: var(--gray-4);
+    --primary: var(--gray-12);
+    --secondary: var(--gray-11);
+    --secondaryA: var(--gray-a4);
+    --tertiary: var(--gray-9);
+    --link: var(--blue-10);
   }
+}
+
+.react-activity-calendar__scroll-container::-webkit-scrollbar {
+  display: none; /* hide scrollbars with webkit scrollbar */
 }
 
 .overflow-x-scroll.snap-x::-webkit-scrollbar {
