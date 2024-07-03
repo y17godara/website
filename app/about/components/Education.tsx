@@ -106,7 +106,7 @@ export function Edu({
       <div
         aria-label={ariaLabel}
         title={title}
-        className='inline-grid w-full rounded-lg border border-primary p-4 no-underline transition-opacity'
+        className='inline-grid w-full rounded-lg border border-primary bg-secondaryA p-4 no-underline transition-opacity'
       >
         {content}
       </div>

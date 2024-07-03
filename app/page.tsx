@@ -9,6 +9,7 @@ import { MdAttachEmail } from "react-icons/md";
 import { allBlogs, Blog } from "contentlayer/generated";
 import { SiGoogledocs } from "react-icons/si";
 import { getStars, getContributions, getViews } from "@/actions/get-stats";
+import ActivityChart from "@/components/ActivityChart";
 
 const JSONLD = {
   "@context": "https://schema.org",
@@ -28,8 +29,14 @@ const JSONLD = {
     "https://twitter.com/y17godara",
     "https://stackoverflow.com/users/17114824/y17godara",
     "https://github.com/y17godara",
+    "https://www.yashgodara.me",
   ],
   projects: [
+    {
+      "@type": "SoftwareApplication",
+      name: "Desh Videsh Travels",
+      url: "https://www.y-g.tech/projects/desh-videsh-travels",
+    },
     {
       "@type": "SoftwareApplication",
       name: "Capture A Trip",
@@ -77,13 +84,14 @@ export default async function page() {
         <div className='flex animate-in flex-col gap-8'>
           <div>
             <h1 className='animate-in text-3xl font-bold tracking-tight text-primary'>
-              Hi, I&apos;m Yash,
+              Hi, I&apos;m Yash Godara,
             </h1>
             <p
               className='animate-in text-secondary'
               style={{ "--index": 1 } as React.CSSProperties}
             >
-              I love to code and explore new technologies.
+              Passionate about building products, sharing knowledge, and
+              helping.
             </p>
           </div>
           <div
@@ -116,8 +124,9 @@ export default async function page() {
           >
             <p>
               A Undergrad Computer Science Student from New Delhi, India. I am a
-              self-taught developer who loves to code and explore new
-              technologies.
+              self-taught Software Developer Who is Passionate about Building
+              Products, Learning New Technologies, and Sharing Knowledge with
+              other fellow developers.
             </p>
             <p>
               I bring a wealth of positive energy and a strong work ethic to the
@@ -125,14 +134,12 @@ export default async function page() {
               opportunities to learn and improve my skills. I am a team player
               who is always willing to help others and share my knowledge.
             </p>
-            <div className='hidden h-28 rounded-md bg-tertiary p-2 md:block'>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className='h-full max-w-full animate-in'
-                src='https://ghchart.rshah.org/y17godara'
-                alt='y17godara Github chart'
-              />
-            </div>
+            <p>
+              Other than coding, I sometimes spend my time exploring new things
+              like photography, videography, and sometimes learning new facts
+              about the world and the universe. I am a very curious person who
+              loves to learn new things daily and share them with others.
+            </p>
             <ul
               className='animated-list flex animate-in flex-col gap-2 text-secondary md:flex-row md:gap-6'
               style={{ "--index": 2 } as React.CSSProperties}
@@ -171,6 +178,14 @@ export default async function page() {
                 </Link>
               </li>
             </ul>
+
+            <Suspense
+              fallback={
+                <div className='flex h-32 w-full rounded-md bg-tertiary p-2'></div>
+              }
+            >
+              <ActivityChart />
+            </Suspense>
           </div>
         </div>
 

@@ -17,9 +17,9 @@ export function Header() {
   return (
     <>
       <header
-        className={cn("md:stick relative top-0 z-50 bg-primary shadow-sm")}
+        className={cn("fixed left-0 right-0 top-0 z-50 bg-primary sm:top-2")}
       >
-        <nav className='mx-auto flex max-w-[700px] items-center justify-between gap-3 px-4 py-3 md:px-6'>
+        <nav className=' mx-auto flex max-w-[700px] items-center justify-between gap-3 border border-[var(--secondaryA)] px-4 py-3 shadow-sm sm:rounded-full md:px-6'>
           {/* Logo */}
           <Link href='/' className='relative flex flex-col gap-1 sm:flex-row'>
             <div>

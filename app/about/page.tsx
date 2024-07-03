@@ -153,14 +153,6 @@ export default async function About() {
               </p>
             </div>
 
-            {/* Additional Note */}
-            <Note
-              href={"https://www.linkedin.com/in/y17godara/"}
-              button={"LinkedIn Profile"}
-              note={"Note"}
-              description='Any Offers or wanna discuss Something? Feel free to reach out to me via email or social media.'
-            />
-
             {/* Experience List */}
             <WorkExperience experience={experience} />
           </div>
