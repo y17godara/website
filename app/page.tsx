@@ -84,7 +84,7 @@ export default async function page() {
         <div className='flex animate-in flex-col gap-8'>
           <div>
             <h1 className='animate-in text-3xl font-bold tracking-tight text-primary'>
-              Hi, I&apos;m Yash,
+              Hi, I&apos;m Yash Godara,
             </h1>
             <p
               className='animate-in text-secondary'
