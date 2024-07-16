@@ -51,13 +51,31 @@ export default async function page({ params }: { params: { slug: string } }) {
 
   return (
     <div className='flex flex-col gap-20'>
-      <article className='prose dark:prose-invert lg:prose-lg'>
+      <div
+        className='flex animate-in flex-col gap-8'
+        style={{ "--index": 1 } as React.CSSProperties}
+      >
+        {post.image && (
+          <>
+            <Image
+              src={post.featuredImage}
+              alt={`${post.title} post image`}
+              width={700}
+              height={350}
+              className='-ml-6 w-[calc(100%+48px)] max-w-none animate-in md:rounded-lg lg:-ml-16 lg:w-[calc(100%+128px)]'
+              style={{ "--index": 2 } as React.CSSProperties}
+              priority
+              quality={100}
+            />
+          </>
+        )}
+
         <div
-          className='flex animate-in flex-col gap-8'
-          style={{ "--index": 1 } as React.CSSProperties}
+          className='flex max-w-3xl animate-in flex-col gap-4'
+          style={{ "--index": 2 } as React.CSSProperties}
         >
-          <div className='max-w-xl space-y-2'>
-            <h1 className='text-3xl font-bold leading-tight tracking-tight text-primary'>
+          <div className='flex w-full flex-col gap-1'>
+            <h1 className='w-full text-3xl font-bold leading-tight tracking-tight text-primary'>
               {post.title}
             </h1>
             <p className='text-lg leading-tight text-secondary md:text-xl'>
@@ -83,30 +101,13 @@ export default async function page({ params }: { params: { slug: string } }) {
             </div>
           </div>
         </div>
+      </div>
 
-        {post.image && (
-          <>
-            <div className='h-8' />
-            <Image
-              src={post.featuredImage}
-              alt={`${post.title} post image`}
-              width={700}
-              height={350}
-              className='-ml-6 w-[calc(100%+48px)] max-w-none animate-in md:rounded-lg lg:-ml-16 lg:w-[calc(100%+128px)]'
-              style={{ "--index": 2 } as React.CSSProperties}
-              priority
-              quality={100}
-            />
-          </>
-        )}
-
-        <div className='h-16' />
-        <div
-          className='blog prose-white animate-in'
-          style={{ "--index": 3 } as React.CSSProperties}
-        >
-          <MdxWrapper code={post.body.code} />
-        </div>
+      <article
+        className='blog prose-white prose animate-in dark:prose-invert lg:prose-lg'
+        style={{ "--index": 3 } as React.CSSProperties}
+      >
+        <MdxWrapper code={post.body.code} />
       </article>
 
       <div
