@@ -5,6 +5,8 @@ import {
 } from "contentlayer/source-files";
 import rehypePrism from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
+// @ts-ignore
+import rehypePrettyCode from "rehype-pretty-code";
 
 const getSlug = (doc: any) => doc._raw.sourceFileName.replace(/\.mdx$/, "");
 
@@ -72,6 +74,6 @@ export default makeSource({
   contentDirPath: "content",
   documentTypes: [Project, Blog],
   mdx: {
-    rehypePlugins: [rehypePrism, rehypeSlug],
+    rehypePlugins: [rehypePrism, rehypeSlug, rehypePrettyCode],
   },
 });
