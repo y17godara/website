@@ -28,6 +28,10 @@ Today We are Going to Create Same Animated Buttons Using TailwindCSS. These Butt
 
 Best thing about these Button is that you can use them in any project. If you are using Basic HTML, React, Next.js or any other framework, you can just copy the code and use it in your project.
 
+#### Lets Start with the First Button
+
+A Simple Button with Hover Effect of Wrapper on Alternative Corners of the Button.
+
 <ComponentPreviewCode
   section='tailwind-buttons'
   name='tailwind-wrap'
@@ -47,6 +51,45 @@ export default function Button() {
       <span className='relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white'>
         Get Started
       </span>
+    </button>
+  );
+}
+```
+</ComponentPreviewCode>
+
+<ComponentPreviewCode
+  section='tailwind-buttons'
+  name='tailwind-shine'
+  description='A primary button'
+>
+```
+export default function Button() {
+  return (
+    <button className='group relative z-10 h-12 w-32 cursor-pointer overflow-hidden rounded-md border-none bg-black p-2 text-xl font-bold text-white'>
+      Hover me!
+      <span className='absolute -left-2 -top-8 h-32 w-36 origin-right rotate-12 scale-x-0 transform bg-sky-200 transition-transform duration-1000 group-hover:scale-x-100 group-hover:duration-500'></span>
+      <span className='absolute -left-2 -top-8 h-32 w-36 origin-right rotate-12 scale-x-0 transform bg-sky-400 transition-transform duration-700 group-hover:scale-x-100 group-hover:duration-700'></span>
+      <span className='absolute -left-2 -top-8 h-32 w-36 origin-right rotate-12 scale-x-0 transform bg-sky-600 transition-transform duration-500 group-hover:scale-x-100 group-hover:duration-1000'></span>
+      <span className='absolute left-6 top-2.5 z-10 opacity-0 duration-100 group-hover:opacity-100 group-hover:duration-1000'>
+        Explore!
+      </span>
+    </button>
+  );
+}
+```
+</ComponentPreviewCode>
+
+<ComponentPreviewCode
+  section='tailwind-buttons'
+  name='tailwind-3d'
+  description='A primary button'
+>
+```
+export default function Button() {
+  return (
+    <button className='group relative overflow-hidden rounded-md border border-b-4 border-red-400 bg-red-950 px-4 py-2 font-medium text-red-400 outline-none duration-300 hover:border-b hover:border-t-4 hover:brightness-150 active:opacity-75'>
+      <span className='absolute -top-[150%] left-0 inline-flex h-[5px] w-80 rounded-md bg-red-400 opacity-50 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)] shadow-red-400 duration-500 group-hover:top-[150%]'></span>
+      Hover Me
     </button>
   );
 }
