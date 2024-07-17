@@ -1,10 +1,12 @@
 import { useMDXComponent } from "next-contentlayer/hooks";
 import CustomImage from "./Image";
-import { ComponentPreview } from "./ui/component-preview";
+import { ComponentPreviewCode } from "./component-code";
+import { ComponentPreview } from "./component-preview";
 
 const components = {
   // Components go here
   Image: CustomImage,
+  ComponentPreviewCode,
   ComponentPreview,
 };
 
