@@ -32,49 +32,60 @@ export async function getViews() {
 }
 
 export async function getStars() {
-  const cachedStars = await redis.get("total-stars");
+  try {
+    const cachedStars = await redis.get("total-stars");
 
-  if (cachedStars) {
-    console.info("cached data found: total-stars", cachedStars);
-    return Number(cachedStars);
+    if (cachedStars) {
+      console.info("cached data found: total-stars", cachedStars);
+      return Number(cachedStars);
+    }
+
+    const res = await fetch(
+      `https://api.github.com/users/${USERNAME}/repos?per_page=100000000`
+    );
+
+    const data = await res.json();
+    const stars = data.reduce(
+      (acc: number, curr: { stargazers_count: number }) =>
+        acc + curr.stargazers_count,
+      0
+    );
+
+    await redis.set("total-stars", JSON.stringify(stars), {
+      ex: REDIS_CACHE_EXPIRATION,
+    });
+    console.info("cached data set: total-stars", stars);
+
+    return stars;
+  } catch {
+    return 0;
   }
-
-  const res = await fetch(
-    `https://api.github.com/users/${USERNAME}/repos?per_page=100000000`
-  );
-
-  const data = await res.json();
-  const stars = data.reduce(
-    (acc: number, curr: { stargazers_count: number }) =>
-      acc + curr.stargazers_count,
-    0
-  );
-
-  await redis.set("total-stars", JSON.stringify(stars), {
-    ex: REDIS_CACHE_EXPIRATION,
-  });
-  console.info("cached data set: total-stars", stars);
-
-  return stars;
 }
 
 export async function getContributions() {
-  const cachedContributions = await redis.get("total-contributions");
+  try {
+    const cachedContributions = await redis.get("total-contributions");
 
-  if (cachedContributions) {
-    console.info("cached data found: total-contributions", cachedContributions);
-    return Number(cachedContributions);
+    if (cachedContributions) {
+      console.info(
+        "cached data found: total-contributions",
+        cachedContributions
+      );
+      return Number(cachedContributions);
+    }
+
+    const res = await fetch(
+      `https://api.github.com/search/commits?q=author:${USERNAME}`
+    );
+    const data = await res.json();
+
+    await redis.set("total-contributions", JSON.stringify(data.total_count), {
+      ex: REDIS_CACHE_EXPIRATION,
+    });
+    console.info("cached data set: total-contributions", data.total_count);
+
+    return data.total_count;
+  } catch {
+    return 0;
   }
-
-  const res = await fetch(
-    `https://api.github.com/search/commits?q=author:${USERNAME}`
-  );
-  const data = await res.json();
-
-  await redis.set("total-contributions", JSON.stringify(data.total_count), {
-    ex: REDIS_CACHE_EXPIRATION,
-  });
-  console.info("cached data set: total-contributions", data.total_count);
-
-  return data.total_count;
 }
