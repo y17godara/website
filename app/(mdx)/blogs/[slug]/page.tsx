@@ -6,6 +6,7 @@ import { MdxWrapper } from "../../components";
 import { Link } from "@/components/ui/index";
 import Avatar from "@/app/icon.png";
 import { ViewCounter, LoveCounter } from "../../components/ui/index";
+import { cookies } from "next/headers";
 
 type Props = {
   params: {
@@ -48,6 +49,8 @@ export default async function page({ params }: { params: { slug: string } }) {
   if (!post) {
     notFound();
   }
+
+  const loveCookie = cookies().has(`love-${params.slug}`);
 
   return (
     <div className='flex flex-col gap-20'>
@@ -128,7 +131,7 @@ export default async function page({ params }: { params: { slug: string } }) {
                 <p className='font-medium text-primary'>Yash Godara</p>
                 <div className='flex flex-row items-center gap-2 leading-tight text-secondary'>
                   <ViewCounter post={post as Post} />
-                  <LoveCounter post={post as Post} />
+                  <LoveCounter post={post as Post} loveCookie={loveCookie} />
                 </div>
               </div>
             </div>
