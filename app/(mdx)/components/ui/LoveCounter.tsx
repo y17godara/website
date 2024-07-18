@@ -38,7 +38,7 @@ export const LoveCounter = ({
     if (loveCookie || liked) return;
     try {
       await axios.post(`/api/love/slug?slug=${post.slug}`);
-      setHeart((prev) => prev + 1);
+      await getLove();
       setLiked(true);
     } catch (error) {
       console.error("Error updating heart:", error);

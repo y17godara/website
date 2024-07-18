@@ -11,12 +11,6 @@ export async function GET(req: NextRequest) {
     const searchParams = req.nextUrl.searchParams;
     const slug = searchParams.get("slug");
 
-    const loveCookie = cookies().has(`love-${slug}`);
-
-    if (loveCookie) {
-      return new Response("You've already liked this post", { status: 400 });
-    }
-
     if (!slug) {
       return new Response("No slug provided", { status: 400 });
     }
@@ -28,14 +22,6 @@ export async function GET(req: NextRequest) {
       select: {
         love: true,
       },
-    });
-
-    cookies().set({
-      name: `love-${slug}`,
-      value: "true",
-      httpOnly: true,
-      path: "/",
-      maxAge: 60 * 60 * 24 * 7, // 1 week
     });
 
     return new Response(JSON.stringify({ Likes: likesCount }), {
@@ -56,6 +42,12 @@ export async function POST(req: NextRequest) {
   try {
     const searchParams = req.nextUrl.searchParams;
     const slug = searchParams.get("slug");
+
+    const loveCookie = cookies().has(`love-${slug}`);
+
+    if (loveCookie) {
+      return new Response("You've already liked this post", { status: 400 });
+    }
 
     if (!slug) {
       return new Response("No slug provided", { status: 400 });
@@ -102,6 +94,14 @@ export async function POST(req: NextRequest) {
         loveCount = post.love;
       }
     }
+
+    cookies().set({
+      name: `love-${slug}`,
+      value: "true",
+      httpOnly: true,
+      path: "/",
+      maxAge: 60 * 60 * 24 * 7, // 1 week
+    });
 
     return new Response(JSON.stringify({ Likes: loveCount }), {
       status: 200,
