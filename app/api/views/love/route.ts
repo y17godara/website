@@ -9,25 +9,20 @@ export async function GET(req: NextRequest) {
     const searchParams = req.nextUrl.searchParams;
     const slug = searchParams.get("slug");
 
-    // console.warn("Backend: Slug", slug);
-
     if (!slug) {
       return new Response("No slug provided", { status: 400 });
     }
 
-    let loveCount = 0;
-
-    const post = await prisma.post.findUnique({
+    const likesCount = await prisma.post.findUnique({
       where: {
         slug: slug as string,
       },
+      select: {
+        love: true,
+      },
     });
 
-    if (post) {
-      loveCount = post.love;
-    }
-
-    return new Response(JSON.stringify({ Love: loveCount }), {
+    return new Response(JSON.stringify({ Likes: likesCount }), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
@@ -46,8 +41,6 @@ export async function POST(req: NextRequest) {
     const searchParams = req.nextUrl.searchParams;
     const slug = searchParams.get("slug");
 
-    // console.warn("Backend: Slug", slug);
-
     if (!slug) {
       return new Response("No slug provided", { status: 400 });
     }
@@ -55,7 +48,7 @@ export async function POST(req: NextRequest) {
     let loveCount = 0;
 
     if (process.env.NODE_ENV !== "development") {
-      // Increment the love count in production
+      // Increment the view count in production
       const post = await prisma.post.findUnique({
         where: {
           slug: slug as string,
@@ -82,7 +75,7 @@ export async function POST(req: NextRequest) {
         loveCount = updatedPost.love;
       }
     } else {
-      // Get love count without incrementing in local environment
+      // Get view count without incrementing in local environment
       const post = await prisma.post.findUnique({
         where: {
           slug: slug as string,
@@ -94,7 +87,7 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    return new Response(JSON.stringify({ Love: loveCount }), {
+    return new Response(JSON.stringify({ Likes: loveCount }), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
