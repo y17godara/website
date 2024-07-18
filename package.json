@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
+    "build": "prisma generate --no-engine && next build",
     "start": "next start",
     "lint": "next lint",
     "studio": "prisma studio",
@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
-    "@prisma/client": "^5.7.0",
+    "@prisma/client": "^5.17.0",
+    "@prisma/extension-accelerate": "^1.1.0",
     "@radix-ui/colors": "^3.0.0",
     "@radix-ui/react-scroll-area": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.0",
