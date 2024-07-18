@@ -5,6 +5,8 @@ import {
 } from "contentlayer/source-files";
 import rehypePrism from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
+// @ts-ignore
+import rehypePrettyCode from "rehype-pretty-code";
 
 const getSlug = (doc: any) => doc._raw.sourceFileName.replace(/\.mdx$/, "");
 
@@ -60,9 +62,7 @@ const Blog = defineDocumentType(() => ({
     publishedAt: { type: "string", required: true },
     updatedAt: { type: "string", required: true },
     image: { type: "string", required: true },
-    date: { type: "string", required: true },
     tags: { type: "json", required: false },
-    url: { type: "string", required: false },
     published: { type: "boolean", required: false, default: false },
   },
   computedFields: blogComputedFields,
@@ -72,6 +72,6 @@ export default makeSource({
   contentDirPath: "content",
   documentTypes: [Project, Blog],
   mdx: {
-    rehypePlugins: [rehypePrism, rehypeSlug],
+    rehypePlugins: [rehypePrism, rehypeSlug, rehypePrettyCode],
   },
 });

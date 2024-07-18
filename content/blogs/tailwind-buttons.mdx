@@ -1,0 +1,111 @@
+---
+title: Trending Animated Tailwind Buttons
+image: /assets/projects/tailwind-buttons/image.png
+description: A collection of animated buttons built using TailwindCSS for your next project. Easy to customize and copy to your project.
+tags:
+  [
+    "nextjs",
+    "typescript",
+    "tailwindcss",
+    "react",
+    "html",
+    "button",
+    "animation",
+  ]
+publishedAt: 2024-07-17
+updatedAt: 2024-07-17
+---
+
+### Animated Tailwind Buttons
+
+Today We are Going to Create Same Animated Buttons Using TailwindCSS. These Buttons are Fully Customizable and Easy to Use in Your Project. You Can Copy the Code and Use it in Your Project.
+
+<ComponentPreview
+  section='tailwind-buttons'
+  name='tailwind-banner'
+  description='A primary button'
+/>
+
+Best thing about these Button is that you can use them in any project. If you are using Basic HTML, React, Next.js or any other framework, you can just copy the code and use it in your project.
+
+#### Lets Start with the First Button, Here's how to create our first button.
+
+<ComponentPreviewCode
+  section='tailwind-buttons'
+  name='tailwind-wrap'
+  description='A primary button'
+>
+```
+export default function Button() {
+  return (
+    <button className='group relative flex items-center overflow-hidden rounded-md bg-indigo-500 px-6 py-3 font-medium transition-all'>
+      <span className='absolute right-0 top-0 inline-block h-4 w-4 rounded bg-indigo-700 transition-all duration-500 ease-in-out group-hover:-mr-4 group-hover:-mt-4'>
+        <span className='absolute right-0 top-0 h-5 w-5 -translate-y-1/2 translate-x-1/2 rotate-45 bg-white'></span>
+      </span>
+      <span className='absolute bottom-0 left-0 inline-block h-4 w-4 rotate-180 rounded bg-indigo-700 transition-all duration-500 ease-in-out group-hover:-mb-4 group-hover:-ml-4'>
+        <span className='absolute right-0 top-0 h-5 w-5 -translate-y-1/2 translate-x-1/2 rotate-45 bg-white'></span>
+      </span>
+      <span className='absolute bottom-0 left-0 h-full w-full -translate-x-full rounded-md bg-indigo-600 transition-all delay-200 duration-500 ease-in-out group-hover:translate-x-0'></span>
+      <span className='relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white'>
+        Get Started
+      </span>
+    </button>
+  );
+}
+```
+</ComponentPreviewCode>
+
+This button uses TailwindCSS classes to create a smooth hover animation, revealing a dynamic wrapper effect on alternating corners. It's perfect for call-to-action buttons or any interactive element on your website.
+
+#### The Shine Hover Effect Button
+
+Next, let's create a button with a shine effect that adds a dynamic and attractive hover animation.
+
+<ComponentPreviewCode
+  section='tailwind-buttons'
+  name='tailwind-shine'
+  description='A primary button'
+>
+```
+export default function Button() {
+  return (
+    <button className='group relative z-10 h-12 w-32 cursor-pointer overflow-hidden rounded-md border-none bg-black p-2 text-xl font-bold text-white'>
+      Hover me!
+      <span className='absolute -left-2 -top-8 h-32 w-36 origin-right rotate-12 scale-x-0 transform bg-sky-200 transition-transform duration-1000 group-hover:scale-x-100 group-hover:duration-500'></span>
+      <span className='absolute -left-2 -top-8 h-32 w-36 origin-right rotate-12 scale-x-0 transform bg-sky-400 transition-transform duration-700 group-hover:scale-x-100 group-hover:duration-700'></span>
+      <span className='absolute -left-2 -top-8 h-32 w-36 origin-right rotate-12 scale-x-0 transform bg-sky-600 transition-transform duration-500 group-hover:scale-x-100 group-hover:duration-1000'></span>
+      <span className='absolute left-6 top-2.5 z-10 opacity-0 duration-100 group-hover:opacity-100 group-hover:duration-1000'>
+        Explore!
+      </span>
+    </button>
+  );
+}
+```
+</ComponentPreviewCode>
+
+This button showcases a multi-layered shine effect, creating a visually appealing animation that grabs the user's attention. The effect is achieved using TailwindCSS's transition and transform utilities.
+
+#### The 3D Button Click Effect
+
+Finally, let's create a button with a 3D click effect that adds depth and a unique interaction experience.
+
+<ComponentPreviewCode
+  section='tailwind-buttons'
+  name='tailwind-3d'
+  description='A primary button'
+>
+```
+export default function Button() {
+  return (
+    <button className='group relative overflow-hidden rounded-md border border-b-4 border-red-400 bg-red-950 px-4 py-2 font-medium text-red-400 outline-none duration-300 hover:border-b hover:border-t-4 hover:brightness-150 active:opacity-75'>
+      <span className='absolute -top-[150%] left-0 inline-flex h-[5px] w-80 rounded-md bg-red-400 opacity-50 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)] shadow-red-400 duration-500 group-hover:top-[150%]'></span>
+      Hover Me
+    </button>
+  );
+}
+```
+</ComponentPreviewCode>
+
+This button uses TailwindCSS classes to create a hover effect that makes the button appear to pop out in 3D. It's a great addition to any website looking to enhance its user interface with engaging animations.
+
+Also, Feel free to customize these buttons further to match the style and theme of your project. TailwindCSS makes it easy to tweak colors, sizes, and animations to fit your needs perfectly. Happy coding!

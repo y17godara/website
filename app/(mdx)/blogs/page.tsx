@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function page() {
   const blogs = allBlogs.sort((a: any, b: any) =>
-    compareDesc(new Date(a.date), new Date(b.date))
+    compareDesc(new Date(a.publishedAt), new Date(b.publishedAt))
   );
 
   const Content = () => {
@@ -74,7 +74,7 @@ export default function page() {
                       </Link>
                       <time className='animate-in text-sm text-secondary'>
                         {" "}
-                        {format(parseISO(blog.date), "LLLL d, yyyy")}
+                        {format(parseISO(blog.publishedAt), "LLLL d, yyyy")}
                       </time>
                     </div>
 
