@@ -7,8 +7,8 @@ generator client {
 
 datasource db {
   provider     = "postgresql"
-  url          = env("DATABASE_URL_PRISMA_URL") // uses connection pooling
-  directUrl    = env("DATABASE_URL_URL_NON_POOLING") // uses a direct connection
+  url          = env("DATABASE_URL")
+  directUrl    = env("DIRECT_URL")
   relationMode = "prisma"
 }
 
@@ -16,4 +16,5 @@ model Post {
   id    Int    @id @default(autoincrement())
   slug  String @unique
   views Int    @default(0)
+  love  Int    @default(0)
 }

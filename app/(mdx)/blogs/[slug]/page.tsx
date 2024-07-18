@@ -5,7 +5,7 @@ import Image from "next/image";
 import { MdxWrapper } from "../../components";
 import { Link } from "@/components/ui/index";
 import Avatar from "@/app/icon.png";
-import { ViewCounter } from "../../components/ui/index";
+import { ViewCounter, LoveCounter } from "../../components/ui/index";
 
 type Props = {
   params: {
@@ -116,7 +116,7 @@ export default async function page({ params }: { params: { slug: string } }) {
             className='flex flex-col items-start justify-start gap-4 md:flex-row md:items-center md:justify-between'
             style={{ "--index": 4 } as React.CSSProperties}
           >
-            <div className='flex max-w-none items-center gap-4'>
+            <div className='flex max-w-none items-center gap-2 sm:gap-4'>
               <Image
                 src={Avatar}
                 width={40}
@@ -126,10 +126,9 @@ export default async function page({ params }: { params: { slug: string } }) {
               />
               <div className='leading-tight'>
                 <p className='font-medium text-primary'>Yash Godara</p>
-              </div>
-              <div className='leading-tight'>
-                <div className='text-secondary'>
+                <div className='flex flex-row items-center gap-2 leading-tight text-secondary'>
                   <ViewCounter post={post as Post} />
+                  <LoveCounter post={post as Post} />
                 </div>
               </div>
             </div>
@@ -145,7 +144,7 @@ export default async function page({ params }: { params: { slug: string } }) {
       </article>
 
       <div
-        className='flex animate-in flex-col gap-20'
+        className='flex animate-in flex-col gap-5 md:gap-10 lg:gap-16'
         style={{ "--index": 3 } as React.CSSProperties}
       >
         <div className='flex flex-col gap-6'>
