@@ -3,6 +3,7 @@ import { CiStar } from "react-icons/ci";
 import { LuSignalHigh } from "react-icons/lu";
 import { Suspense } from "react";
 import { cn } from "@/lib/utils";
+import { getStars, getContributions, getViews } from "@/actions/get-stats";
 
 const Loading = ({
   className,
@@ -66,15 +67,11 @@ const Loading = ({
   );
 };
 
-export const Stats = ({
-  stars,
-  contributions,
-  views,
-}: {
-  stars: number;
-  contributions: number;
-  views: number;
-}) => {
+export const Stats = async () => {
+  const stars = await getStars();
+  const contributions = await getContributions();
+  const views = await getViews();
+
   return (
     <ul className={cn("animated-list space-y-2")}>
       <li className='transition-opacity'>

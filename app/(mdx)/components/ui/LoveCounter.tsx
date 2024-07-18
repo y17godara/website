@@ -15,7 +15,8 @@ export const LoveCounter = ({ post }: { post: PostType }) => {
     () => async () => {
       try {
         const response = await axios.get(`/api/love/slug?slug=${post.slug}`);
-        const Views = response.data.love || 0;
+        console.info("response", response);
+        const Views = response.data.Likes.love || 0;
         setHeart(Views);
       } catch (error) {
         console.error("Error fetching heart:", error);
