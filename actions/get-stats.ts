@@ -6,30 +6,29 @@ import redis, { REDIS_CACHE_EXPIRATION } from "@/lib/redis";
 const USERNAME = "y17godara";
 
 export async function getViews() {
-  // const cachedViews = await redis.get("total-views");
+  const cachedViews = await redis.get("total-views");
 
-  // if (cachedViews) {
-  //   console.info("cached data found: total-views", cachedViews);
-  //   return Number(cachedViews);
-  // }
+  if (cachedViews) {
+    console.info("cached data found: total-views", cachedViews);
+    return Number(cachedViews) as number | 0;
+  }
 
-  // const res = await prisma.post.findMany({
-  //   select: {
-  //     views: true,
-  //   },
-  // });
-  // const totalViews = res.reduce(
-  //   (acc: number, curr: { views: number }) => acc + curr.views,
-  //   0
-  // ) as number;
+  const res = await prisma.post.findMany({
+    select: {
+      views: true,
+    },
+  });
+  const totalViews = res.reduce(
+    (acc: number, curr: { views: number }) => acc + curr.views,
+    0
+  ) as number;
 
-  // await redis.set("total-views", JSON.stringify(totalViews), {
-  //   ex: REDIS_CACHE_EXPIRATION,
-  // });
-  // console.info("cached data set: total-views", totalViews);
+  await redis.set("total-views", JSON.stringify(totalViews), {
+    ex: REDIS_CACHE_EXPIRATION,
+  });
+  console.info("cached data set: total-views", totalViews);
 
-  // return totalViews as number;
-  return 0;
+  return totalViews as number | 0;
 }
 
 export async function getStars() {
