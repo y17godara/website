@@ -1,6 +1,7 @@
 import prisma from "@/lib/prisma";
 import { NextRequest } from "next/server";
 
+export const revalidate = 0;
 export const dynamic = "force-dynamic";
 // 'auto' | 'force-dynamic' | 'error' | 'force-static'
 
@@ -96,7 +97,5 @@ export async function POST(req: NextRequest) {
   } catch (error: any) {
     console.log(error);
     return new Response("Something went wrong", { status: 500 });
-  } finally {
-    await prisma.$disconnect();
   }
 }
