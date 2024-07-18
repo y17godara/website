@@ -6,7 +6,13 @@ import React, { useState, useEffect, useMemo } from "react";
 import { FaHeart } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 
-export const LoveCounter = ({ post }: { post: PostType }) => {
+export const LoveCounter = ({
+  post,
+  loveCookie,
+}: {
+  post: PostType;
+  loveCookie: boolean;
+}) => {
   const [liked, setLiked] = useState<boolean>(false);
   const [heart, setHeart] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(true);
@@ -29,7 +35,7 @@ export const LoveCounter = ({ post }: { post: PostType }) => {
   );
 
   const handleHeart = async () => {
-    if (liked) return;
+    if (loveCookie || liked) return;
     try {
       await axios.post(`/api/love/slug?slug=${post.slug}`);
       setHeart((prev) => prev + 1);
@@ -60,7 +66,7 @@ export const LoveCounter = ({ post }: { post: PostType }) => {
               "flex flex-row items-center gap-2 whitespace-nowrap text-secondary"
             )}
           >
-            <FaHeart className={cn(liked ? "text-brand" : "")} />
+            <FaHeart className={cn(liked || loveCookie ? "text-brand" : "")} />
             {`${heart}`} likes
           </button>
         )}

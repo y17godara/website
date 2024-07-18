@@ -1,5 +1,6 @@
 import prisma from "@/lib/prisma";
 import { NextRequest } from "next/server";
+import { cookies } from "next/headers";
 
 export const revalidate = 0;
 export const dynamic = "force-dynamic";
@@ -9,6 +10,12 @@ export async function GET(req: NextRequest) {
   try {
     const searchParams = req.nextUrl.searchParams;
     const slug = searchParams.get("slug");
+
+    const loveCookie = cookies().has(`love-${slug}`);
+
+    if (loveCookie) {
+      return new Response("You've already liked this post", { status: 400 });
+    }
 
     if (!slug) {
       return new Response("No slug provided", { status: 400 });
@@ -21,6 +28,14 @@ export async function GET(req: NextRequest) {
       select: {
         love: true,
       },
+    });
+
+    cookies().set({
+      name: `love-${slug}`,
+      value: "true",
+      httpOnly: true,
+      path: "/",
+      maxAge: 60 * 60 * 24 * 7, // 1 week
     });
 
     return new Response(JSON.stringify({ Likes: likesCount }), {
