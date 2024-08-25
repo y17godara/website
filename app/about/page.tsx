@@ -106,7 +106,8 @@ export default async function About() {
                 </li>
                 <li className='transition-opacity'>
                   <Link
-                    href='/assets/about/resume-y17godara.pdf'
+                    // href='/assets/about/resume-y17godara.pdf'
+                    href='https://docs.google.com/document/d/1sUTNAoeqXXwJ_OUXztWzqUDSunaUvqoQXNWDXgsqwv8/edit?usp=sharing'
                     className='flex items-center gap-2 no-underline'
                   >
                     <SiGoogledocs className='h-5 w-5' />
