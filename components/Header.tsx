@@ -1,4 +1,5 @@
 "use client";
+
 import React, { Fragment } from "react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
@@ -9,8 +10,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Transition, Menu } from "@headlessui/react";
 import { TbDotsVertical } from "react-icons/tb";
-import { siteConfig } from "@/config";
-// import { CiLocationArrow1 } from "react-icons/ci";
 
 export function Header() {
   const pathname = `/${usePathname().split("/")[1]}`;
@@ -32,11 +31,11 @@ export function Header() {
                 height={40}
               />
             </div>
-            <SimpleNote
+            {/* <SimpleNote
               className={`relative flex h-4 flex-row items-center justify-center gap-[2px] rounded-lg bg-pink-100 p-[4px] text-[10px] font-medium text-primary dark:bg-pink-900`}
             >
               Beta <span>{`v${siteConfig.siteVersion}`}</span>
-            </SimpleNote>
+            </SimpleNote> */}
           </Link>
 
           {/* Desktop Nav */}
@@ -148,9 +147,9 @@ const navLinks: navLinksProps[] = [
     label: "Presence",
   },
   {
-    href: "https://store.y-g.tech/",
-    label: "Store",
-    badge: "🚧 New",
+    href: "/showcase/v1",
+    label: "Showcase",
+    badge: "🔥 Hire Me",
     highlight: true,
   },
 ];

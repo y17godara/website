@@ -12,15 +12,16 @@ export const siteConfig = {
       url: `https://www.y-g.tech`,
     },
   ],
-  description: `Hello, My Name is Yash Godara (@y17godara){" "} and I am a Developer and Design Enthusiast From New Delhi, India. I am Currently Pursuing My Bachelor's Degree in Computer Science and Working as a Software Developer at Sarathi Rides. Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more.`,
+  description: `Hello, My Name is Yash Godara (@y17godara) and I am a Developer and Design Enthusiast From New Delhi, India. I am Currently Pursuing My Bachelor's Degree in Computer Science and Working as a Software Developer at Sarathi Rides. Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more.`,
   twitterHandle: `@y17godara`,
   meta: `Developer Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more. Aspiring to become a successful software and web developer.`,
   url: `${process.env.NEXT_PUBLIC_BASE_URL}` || `https://www.y-g.tech`,
   generator: `Next.js`,
-  ogImage: `https://website-61p9jbjff-y17godara.vercel.app/opengraph-image.png`,
+  ogImage: `https://www.y-g.tech/opengraph-image.png`,
   links: {
     twitter: "https://x.com/y17godara",
     github: "https://github.com/y17godara",
+    linkedin: "https://www.linkedin.com/in/y17godara",
   },
   keywords: [
     "Yash Godara y17godara",
@@ -36,6 +37,10 @@ export const siteConfig = {
     "Yash Godara Personal Website",
     "Yash Godara Github",
     "Github y17godara",
+    "y-g.tech",
+    "Yash Godara y-g.tech",
+    "y17godara y-g.tech",
+    "Yash Godara Portfolio Website y-g.tech",
   ],
 };
 

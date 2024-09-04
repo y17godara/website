@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Avatar from "./icon.png";
+import Avatar from "../icon.png";
 import { Suspense } from "react";
 import { Stats, LatestBlogs } from "./_components/index";
 import { Link } from "@/components/ui";
