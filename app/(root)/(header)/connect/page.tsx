@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Link } from "@/components/ui";
 import { socials } from "@/components";
-import Avatar from "../icon.png";
+import Avatar from "../../../icon.png";
 import { Metadata } from "next";
 import { socialsProps } from "@/types";
 

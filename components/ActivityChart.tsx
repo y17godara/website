@@ -1,13 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import ActivityCalendar from "react-activity-calendar";
-
-type Activity = {
-  date: string;
-  count: number;
-  level: number;
-};
+import GitHubCalendar from "react-github-calendar";
+import { useTheme } from "next-themes";
+import { AnimateBlur } from "./animation/animate-blur";
 
 const githubTheme = {
   dark: [
@@ -20,49 +15,20 @@ const githubTheme = {
 };
 
 export default function ActivityChart() {
-  const [data, setData] = useState<Activity[]>();
-  const [loading, setLoading] = useState(true);
-
-  const fetchData = async () => {
-    const res = await fetch(
-      `https://github-contributions-api.jogruber.de/v4/y17godara`,
-      {
-        next: {
-          revalidate: 3600,
-        },
-      }
-    );
-    return await res.json();
-  };
-
-  useEffect(() => {
-    fetchData().then((data) => {
-      setData(data.contributions);
-      setLoading(false);
-    });
-  }, []);
-
-  if (!data || loading)
-    return <div className='flex h-32 w-full rounded-md bg-tertiary p-2'></div>;
-
-  const currentYear = new Date().getFullYear();
-  //   const currentMonth = new Date().getMonth(); // January is 0, December is 11
-
-  const filteredData = data.filter((d) => {
-    const date = new Date(d.date);
-    return (
-      date.getFullYear() === currentYear
-      //   && date.getMonth() <= currentMonth
-    );
-  });
+  const { theme } = useTheme();
 
   return (
-    <div className='flex w-full flex-col items-start justify-start p-2 text-center'>
-      <ActivityCalendar
-        data={filteredData}
-        loading={loading}
-        theme={githubTheme}
-      />
-    </div>
+    <AnimateBlur>
+      <div className='flex flex-col items-center justify-center space-y-4'>
+        <GitHubCalendar
+          username='y17godara'
+          colorScheme={theme === "dark" ? "dark" : "light"}
+          hideColorLegend
+          labels={{
+            totalCount: "$ git push 'd {{count}} times since last year",
+          }}
+        />
+      </div>
+    </AnimateBlur>
   );
 }

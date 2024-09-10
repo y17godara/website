@@ -147,7 +147,7 @@ const navLinks: navLinksProps[] = [
     label: "Presence",
   },
   {
-    href: "/showcase/v1",
+    href: "/showcase",
     label: "Showcase",
     badge: "🔥 Hire Me",
     highlight: true,

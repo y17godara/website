@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/index";
 import { cn } from "@/lib/utils";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import { ThemeProvider} from "@/components";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -64,8 +65,10 @@ export default function SiteLayout({
   return (
     <html lang='en' dir='ltr' suppressHydrationWarning>
       <body className={cn(hubot.variable)}>
+      <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
         {children} <SpeedInsights />
         <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );

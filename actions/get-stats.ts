@@ -75,16 +75,21 @@ export async function getContributions() {
     }
 
     const res = await fetch(
-      `https://api.github.com/search/commits?q=author:${USERNAME}`
+      `https://github-contributions-api.jogruber.de/v4/${USERNAME}`
     );
+
     const data = await res.json();
 
-    await redis.set("total-contributions", JSON.stringify(data.total_count), {
+    const currentYear = new Date().getFullYear();
+
+    const total = data.total[currentYear];
+
+    await redis.set("total-contributions", JSON.stringify(total), {
       ex: REDIS_CACHE_EXPIRATION,
     });
-    console.info("cached data set: total-contributions", data.total_count);
+    console.info("cached data set: total-contributions", total);
 
-    return data.total_count;
+    return total;
   } catch {
     return 0;
   }

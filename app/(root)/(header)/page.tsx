@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Avatar from "../icon.png";
+import Avatar from "../../icon.png";
 import { Suspense } from "react";
 import { Stats, LatestBlogs } from "./_components/index";
 import { Link } from "@/components/ui";
@@ -169,21 +169,20 @@ export default async function page() {
                 </Link>
               </li>
             </ul>
+          </div>
 
-            <Suspense
-              fallback={
-                <div className='flex h-32 w-full rounded-md bg-tertiary p-2'></div>
-              }
-            >
-              <ActivityChart />
-            </Suspense>
+          <div
+            className='flex animate-in flex-col gap-8 text-primary'
+            style={{ "--index": 3 } as React.CSSProperties}
+          >
+            <ActivityChart />
           </div>
         </div>
 
         {/* Latest Blogs */}
         <div
           className='flex animate-in flex-col gap-8'
-          style={{ "--index": 3 } as React.CSSProperties}
+          style={{ "--index": 4 } as React.CSSProperties}
         >
           <h2 className='text-secoundary text-lg'>Latest Blogs</h2>
           {blogs.length > 0 ? (

@@ -52,3 +52,13 @@
 .animate-in {
   animation-delay: calc(var(--index) * 130ms);
 }
+
+.react-activity-calendar__scroll-container {
+  padding-top: 0.1rem;
+  overflow-x: scroll;
+  direction: rtl;
+}
+
+.react-activity-calendar__legend-month {
+  direction: ltr;
+}
