@@ -31,10 +31,15 @@ npm install
 3. **Setup Environment Variables**
 
    ```bash
+   NEXT_PUBLIC_SITE_URL=http://localhost:3000
+   NEXT_PUBLIC_SITE_KEYWORDS=
    NEXT_PUBLIC_BASE_URL=http://localhost:3000
    DOMAIN="localhost:3000"
-   NODE_ENV=development
-   DATABASE_URL=""
+   NODE_ENV=
+   DATABASE_URL=
+   DIRECT_URL=
+   REDIS_URL=
+   REDIS_TOKEN=
    ```
 
 4. **Setup Database/ Prisma**:

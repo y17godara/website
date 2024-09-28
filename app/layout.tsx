@@ -5,7 +5,8 @@ import { siteConfig } from "@/config/index";
 import { cn } from "@/lib/utils";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
-import { ThemeProvider, Header, Footer } from "@/components";
+import { ThemeProvider } from "@/components";
+import { Header, Footer } from "@/components";
 import AnimatedCursor from "react-animated-cursor";
 
 export const viewport: Viewport = {
@@ -56,36 +57,31 @@ const hubot = localFont({
   weight: "400 900",
 });
 
-type RootLayoutProps = {
+type SiteLayoutProps = {
   children: React.ReactNode;
 };
 
-export default function RootLayout({
+export default function SiteLayout({
   children,
-}: RootLayoutProps): React.ReactElement<RootLayoutProps> {
+}: SiteLayoutProps): React.ReactElement<SiteLayoutProps> {
   return (
     <html lang='en' dir='ltr' suppressHydrationWarning>
-      <body
-        className={cn(
-          "w-full bg-primary font-sans text-primary antialiased selection:bg-secondaryA",
-          hubot.variable
-        )}
-      >
+      <body className={cn(hubot.variable)}>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
-          <Header />
-          <main
-            className={
-              "mx-auto mt-10 min-h-[60vh] max-w-[700px] px-4 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20"
-            }
+          <div
+            className={cn(
+              "w-full bg-primary font-sans text-primary antialiased selection:bg-secondaryA"
+            )}
           >
+            <Header />
             {children}
-          </main>
-          <Footer />
-        </ThemeProvider>
-        <SpeedInsights />
-        <Analytics />
+            <Footer />
 
-        <AnimatedCursor color={"139, 13, 13"} />
+            <AnimatedCursor color={"139, 13, 13"} />
+          </div>{" "}
+          <SpeedInsights />
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );

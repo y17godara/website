@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Avatar from "./icon.png";
+import Avatar from "@/app/icon.png";
 import { Suspense } from "react";
 import { Stats, LatestBlogs } from "./_components/index";
 import { Link } from "@/components/ui";
@@ -150,6 +150,7 @@ export default async function page() {
                   // href='/assets/about/resume-y17godara.pdf'
                   href='https://docs.google.com/document/d/1sUTNAoeqXXwJ_OUXztWzqUDSunaUvqoQXNWDXgsqwv8/edit?usp=sharing'
                   className='flex items-center gap-2 no-underline'
+                  target={true}
                 >
                   <SiGoogledocs className='h-5 w-5' />
                   <span className='underline-offset-4 hover:underline'>
@@ -169,21 +170,20 @@ export default async function page() {
                 </Link>
               </li>
             </ul>
+          </div>
 
-            <Suspense
-              fallback={
-                <div className='flex h-32 w-full rounded-md bg-tertiary p-2'></div>
-              }
-            >
-              <ActivityChart />
-            </Suspense>
+          <div
+            className='flex animate-in flex-col gap-8 text-primary'
+            style={{ "--index": 3 } as React.CSSProperties}
+          >
+            <ActivityChart />
           </div>
         </div>
 
         {/* Latest Blogs */}
         <div
           className='flex animate-in flex-col gap-8'
-          style={{ "--index": 3 } as React.CSSProperties}
+          style={{ "--index": 4 } as React.CSSProperties}
         >
           <h2 className='text-secoundary text-lg'>Latest Blogs</h2>
           {blogs.length > 0 ? (
