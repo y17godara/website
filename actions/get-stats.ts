@@ -75,14 +75,12 @@ export async function getContributions() {
     }
 
     const res = await fetch(
-      `https://github-contributions-api.jogruber.de/v4/${USERNAME}`
+      `https://github-readme-streak-stats.herokuapp.com/?user=${USERNAME}&theme=dark&type=json`
     );
 
     const data = await res.json();
 
-    const currentYear = new Date().getFullYear();
-
-    const total = data.total[currentYear];
+    const total = data.totalContributions;
 
     await redis.set("total-contributions", JSON.stringify(total), {
       ex: REDIS_CACHE_EXPIRATION,
