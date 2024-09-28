@@ -109,6 +109,7 @@ export default async function About() {
                     // href='/assets/about/resume-y17godara.pdf'
                     href='https://docs.google.com/document/d/1sUTNAoeqXXwJ_OUXztWzqUDSunaUvqoQXNWDXgsqwv8/edit?usp=sharing'
                     className='flex items-center gap-2 no-underline'
+                    target={true}
                   >
                     <SiGoogledocs className='h-5 w-5' />
                     <span className='underline-offset-4 hover:underline'>

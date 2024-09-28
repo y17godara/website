@@ -146,10 +146,10 @@ const navLinks: navLinksProps[] = [
     href: "/presence",
     label: "Presence",
   },
-  {
-    href: "/showcase",
-    label: "Showcase",
-    badge: "🔥 Hire Me",
-    highlight: true,
-  },
+  // {
+  //   href: "/showcase",
+  //   label: "Showcase",
+  //   badge: "🔥 Hire Me",
+  //   highlight: true,
+  // },
 ];
