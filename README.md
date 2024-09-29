@@ -13,6 +13,7 @@ https://www.y-g.tech
 - [Radix UI Colors](https://www.radix-ui.com/colors) (Color system)
 - [Framer Motion](https://www.framer.com/motion/) (Animations)
 - [Discord Presence](https://github.com/Phineas/lanyard) (RESTful API and WebSocket)
+- [Zustand](https://github.com/pmndrs/zustand) (State Management)
 
 ## Getting Started
 
