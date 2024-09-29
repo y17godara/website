@@ -32,9 +32,9 @@ const AlertAccounce = ({ className = "" }: { className?: string }) => {
   return (
     <div className='fixed bottom-0 sm:bottom-4 left-0 right-0 z-[99]'>
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0, transition: { duration: 0.2 } }}
-        exit={{ opacity: 0, y: -20 }}
+        exit={{ opacity: 0, y: 20 }}
         className={cn(
           "border-brand group mx-auto max-w-2xl border-4 border-b-0 border-l-2 border-t-2 bg-primary p-2 font-sans text-primary shadow-[5px_5px_black] dark:border dark:shadow-[5px_5px_white]",
           className
