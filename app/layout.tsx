@@ -8,6 +8,9 @@ import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/components";
 import { Header, Footer } from "@/components";
 import AnimatedCursor from "react-animated-cursor";
+import {
+  AlertAccounce,
+} from "@/components/ui/announce";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -78,7 +81,9 @@ export default function SiteLayout({
             <Footer />
 
             <AnimatedCursor color={"139, 13, 13"} />
-          </div>{" "}
+
+            <AlertAccounce />
+          </div>
           <SpeedInsights />
           <Analytics />
         </ThemeProvider>
