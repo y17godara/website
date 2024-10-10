@@ -1,6 +1,5 @@
 # My Personal Website
-
-https://www.y-g.tech
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=y17godara.website)
 
 ## Tech Stack
 
@@ -60,18 +59,3 @@ npm run dev
 ## Deployment
 
 This project is deployed on [Vercel](https://vercel.com) and is automatically deployed on every push to `main` branch.
-
-# Todo
-
-- [x] Add `Og Image` support
-- [x] `Discord Presence API` Integration.
-- [x] `Spotify API` Integration.
-- [ ] Add `Share Button` Component.
-- [ ] `Table`, `List View` for Blogs and Projects.
-- [ ] `Add Related Blogs` to `Blog Post Page using Tags`.
-- [ ] `Blog` and `Project` `Search` Feature.
-- [ ] `Blog` and `Project` `Filter` Feature.
-- [ ] `Blog` and `Project` `Sort` Feature.
-- [ ] `Blog` and `Project` `Pagination` Feature.
-- [ ] `Blog` and `Project` `Tags` Feature.
-- [ ] `Blog` and `Project` `Categories` Feature.
