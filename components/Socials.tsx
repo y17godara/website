@@ -49,7 +49,7 @@ export const socials: socialsProps[] = [
     private: false,
   },
   {
-    href: "https://discord.com/users/526972062741299211",
+    href: "https://discord.gg/63t4kNS53A",
     label: "Discord",
     ariaLabel: "Discord",
     title: "@y17godara",
