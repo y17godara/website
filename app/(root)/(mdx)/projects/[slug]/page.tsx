@@ -6,6 +6,7 @@ import {
 import { notFound } from "next/navigation";
 import { MdxWrapper } from "../../components";
 import { Metadata, ResolvingMetadata } from "next";
+import Script from "next/script";
 
 type Props = {
   params: {
@@ -26,13 +27,25 @@ export async function generateMetadata(
   const metadata: Metadata = {
     title: `${title} | Projects`,
     description: post.description,
+    keywords: [...post.tags],
+    alternates: {
+      canonical: "https://www.y-g.tech/projects",
+      languages: {
+        "x-default": "https://www.y-g.tech/projects",
+        en: "https://www.y-g.tech/projects",
+      },
+    },
     openGraph: {
       title,
       description: post.description,
+      url: `/projects/${post.slug}`,
+      siteName: "Yash Godara",
       type: "article",
       images: [
         {
-          url: post.image,
+          url: `https://www.y-g.tech${post.featuredImage}`,
+          width: 1200,
+          height: 900,
           alt: title,
         },
       ],
@@ -51,6 +64,13 @@ export default function Home({ params }: { params: { slug: string } }) {
 
   return (
     <div className='flex flex-col gap-20'>
+      <Script
+        id='post-json-ld'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(post?.jsonLd || {}),
+        }}
+        type='application/ld+json'
+      />
       <article className='prose dark:prose-invert lg:prose-lg'>
         <div className='flex animate-in flex-col gap-3'>
           <div className='flex items-center gap-3 text-secondary'>

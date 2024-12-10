@@ -12,7 +12,7 @@ export const siteConfig = {
       url: `https://www.y-g.tech`,
     },
   ],
-  description: `Hello, My Name is Yash Godara (@y17godara) and I am a Developer and Design Enthusiast From New Delhi, India. I am Currently Pursuing My Bachelor's Degree in Computer Science and Working as a Software Developer at Sarathi Rides. Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more.`,
+  description: `Hello, My Name is Yash Godara (@y17godara) and I am a Developer and Design Enthusiast From New Delhi, India.`,
   twitterHandle: `@y17godara`,
   meta: `Developer Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more. Aspiring to become a successful software and web developer.`,
   url: `${process.env.NEXT_PUBLIC_BASE_URL}` || `https://www.y-g.tech`,

@@ -7,6 +7,8 @@ import { Link } from "@/components/ui/index";
 import Avatar from "@/app/icon.png";
 import { ViewCounter, LoveCounter } from "../../components/ui/index";
 import { cookies } from "next/headers";
+import Script from "next/script";
+import ShareButtons from "../../components/ui/ShareButtons";
 
 type Props = {
   params: {
@@ -25,15 +27,27 @@ export async function generateMetadata(
   }
   const { title } = post;
   const metadata: Metadata = {
-    title: `${title} | Blogs`,
+    title: `${title}`,
     description: post.description,
+    keywords: [...post.tags],
+    alternates: {
+      canonical: "https://www.y-g.tech/blogs",
+      languages: {
+        "x-default": "https://www.y-g.tech/blogs",
+        en: "https://www.y-g.tech/blogs",
+      },
+    },
     openGraph: {
       title,
       description: post.description,
+      url: `/blogs/${post.slug}`,
+      siteName: "Yash Godara",
       type: "article",
       images: [
         {
-          url: post.image,
+          url: `https://www.y-g.tech${post.featuredImage}`,
+          width: 1200,
+          height: 900,
           alt: title,
         },
       ],
@@ -53,7 +67,14 @@ export default async function page({ params }: { params: { slug: string } }) {
   const loveCookie = cookies().has(`love-${params.slug}`);
 
   return (
-    <div className='flex flex-col gap-20'>
+    <div className='flex flex-col gap-10'>
+      <Script
+        id='post-json-ld'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(post?.jsonLd || {}),
+        }}
+        type='application/ld+json'
+      />
       <div
         className='flex animate-in flex-col gap-8'
         style={{ "--index": 1 } as React.CSSProperties}
@@ -80,12 +101,15 @@ export default async function page({ params }: { params: { slug: string } }) {
           style={{ "--index": 2 } as React.CSSProperties}
         >
           <div className='flex w-full flex-col'>
-            <h1 className='w-full text-3xl font-bold leading-tight tracking-tight text-primary'>
+            <h1 className='text-3xl font-bold leading-relaxed tracking-tight text-primary md:text-4xl'>
               {post.title}
             </h1>
+            <p className='mt-2 text-sm text-secondary'>
+              Last updated on {new Date(post.updatedAt).toDateString()}
+            </p>
           </div>
 
-          <div className='flex flex-col gap-1.5'>
+          {/* <div className='flex flex-col gap-1.5'>
             <div
               className='flex flex-col gap-4 overflow-hidden rounded-lg border border-secondary'
               style={{ "--index": 3 } as React.CSSProperties}
@@ -109,14 +133,14 @@ export default async function page({ params }: { params: { slug: string } }) {
                 Last updated on {new Date(post.updatedAt).toDateString()}
               </h5>
             </div>
-          </div>
+          </div> */}
 
-          <p className='text-base leading-tight text-secondary md:text-lg'>
+          {/* <p className='text-base leading-tight text-secondary md:text-lg'>
             {post.description}
-          </p>
+          </p> */}
 
           <div
-            className='flex flex-col items-start justify-start gap-4 md:flex-row md:items-center md:justify-between'
+            className='mt-5 flex flex-col items-start justify-start gap-4 md:flex-row md:items-center md:justify-between'
             style={{ "--index": 4 } as React.CSSProperties}
           >
             <div className='flex max-w-none items-center gap-2 sm:gap-4'>
@@ -129,12 +153,30 @@ export default async function page({ params }: { params: { slug: string } }) {
               />
               <div className='leading-tight'>
                 <p className='font-medium text-primary'>Yash Godara</p>
-                <div className='flex flex-row items-center gap-2 leading-tight text-secondary'>
+                {/* <div className='flex flex-row items-center gap-2 leading-tight text-secondary'>
                   <ViewCounter post={post as Post} />
                   <LoveCounter post={post as Post} loveCookie={loveCookie} />
+                </div> */}
+                <div className='flex flex-row items-center gap-2 text-xs leading-tight text-secondary'>
+                  @y17godara
                 </div>
               </div>
             </div>
+          </div>
+
+          <div
+            className='my-6 flex flex-col items-start justify-start gap-4'
+            style={{ "--index": 4 } as React.CSSProperties}
+          >
+            <hr className='mb-1 w-full border-secondary' />
+            <div className='flex w-full flex-row items-center justify-between gap-4'>
+              <div className='flex w-full flex-row items-center justify-start gap-4'>
+                <ViewCounter post={post as Post} />
+                <LoveCounter post={post as Post} loveCookie={loveCookie} />
+              </div>
+              <ShareButtons slug={post.slug} />
+            </div>
+            <hr className='mt-1 w-full border-secondary' />
           </div>
         </div>
       </div>

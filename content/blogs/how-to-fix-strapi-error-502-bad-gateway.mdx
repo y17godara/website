@@ -1,0 +1,256 @@
+---
+title: How to Fix Strapi Error 502 Bad Gateway on AWS EC2
+image: /assets/projects/how-to-fix-strapi-error-502-bad-gateway/image.png
+description: Encountering a "502 Bad Gateway" error on your Strapi CMS hosted on AWS EC2? Follow this step-by-step guide to diagnose and resolve the issue efficiently.
+tags:
+  [
+    strapi,
+    aws,
+    ec2,
+    Strapi 502 error,
+    Strapi bad gateway fix,
+    AWS EC2 Strapi error,
+    troubleshoot Strapi,
+    Strapi admin dashboard error,
+    Strapi CMS troubleshooting,
+  ]
+publishedAt: 2024-12-10
+updatedAt: 2024-12-10
+jsonLd:
+  [
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "image":
+        [
+          "https://www.y-g.tech/assets/blogs/how-to-fix-strapi-error-502-bad-gateway/image.png",
+        ],
+      "url": "https://www.y-g.tech/blogs/how-to-fix-strapi-error-502-bad-gateway",
+      "dateCreated": "2024-12-10T10:00:00.000Z",
+      "datePublished": "2024-12-10T10:00:00.000Z",
+      "dateModified": "2024-12-10T10:00:00.000Z",
+      "headline": "How to Fix Strapi Error 502 Bad Gateway on AWS EC2",
+      "name": "How to Fix Strapi Error 502 Bad Gateway on AWS EC2",
+      "description": "Encountering a 502 Bad Gateway error on your Strapi CMS hosted on AWS EC2? This guide provides step-by-step troubleshooting instructions to resolve the issue and get your CMS running smoothly.",
+      "identifier": "how-to-fix-strapi-error-502-bad-gateway",
+      "keywords":
+        [
+          "Strapi 502 error",
+          "Strapi bad gateway fix",
+          "AWS EC2 Strapi error",
+          "troubleshoot Strapi",
+          "Strapi admin dashboard error",
+          "Strapi CMS troubleshooting",
+        ],
+      "author":
+        {
+          "@type": "Person",
+          "name": "Yash Godara",
+          "url": "https://github.com/y17godara",
+        },
+      "publisher":
+        {
+          "@type": "Organization",
+          "name": "y-g.tech",
+          "url": "https://www.y-g.tech",
+          "logo":
+            {
+              "@type": "ImageObject",
+              "width": 100,
+              "height": 100,
+              "url": "https://www.y-g.tech/assets/logo/logo.png",
+            },
+        },
+      "mainEntityOfPage": "https://www.y-g.tech/blogs/how-to-fix-strapi-error-502-bad-gateway",
+    },
+    {
+      "@context": "http://schema.org",
+      "@type": "QAPage",
+      "name": "Fix Strapi Error 502 Bad Gateway on AWS EC2",
+      "mainEntity":
+        {
+          "@type": "Question",
+          "name": "Strapi error 502 Bad Gateway",
+          "text": "How to fix the Strapi error 502 Bad Gateway on AWS EC2?",
+          "upvoteCount": 1,
+          "answerCount": 1,
+          "datePublished": "2024-12-10T12:00:00.901Z",
+          "author":
+            {
+              "@type": "Person",
+              "name": "Yash Godara",
+              "url": "https://github.com/y17godara",
+            },
+          "acceptedAnswer":
+            {
+              "@type": "Answer",
+              "text": "Follow our guide to diagnose and resolve the Strapi 502 Bad Gateway error efficiently. This includes checking server logs, updating your reverse proxy configurations, and validating your AWS EC2 instance health.",
+              "datePublished": "2024-12-10T12:00:00.901Z",
+              "author":
+                {
+                  "@type": "Person",
+                  "name": "Yash Godara",
+                  "url": "https://github.com/y17godara",
+                },
+            },
+        },
+    },
+  ]
+---
+
+Encountering a "502 Bad Gateway" error on your Strapi CMS hosted on AWS EC2? Follow this step-by-step guide to diagnose and resolve the issue efficiently. Learn troubleshooting tips, commands, and configurations to get your Strapi admin dashboard back online.
+
+TL;DR: If you're running Strapi on AWS EC2 and encounter a "502 Bad Gateway" error, this guide walks you through steps to diagnose and resolve the issue effectively. No more random troubleshooting—follow these tried-and-tested methods to get your Strapi CMS back on track!
+
+---
+
+## What is a 502 Bad Gateway Error?
+
+A "502 Bad Gateway" error indicates that a server acting as a gateway or proxy received an invalid response from an upstream server. Common reasons include:
+
+- Backend server issues
+- Proxy misconfiguration
+- Server overloads
+- Application crashes
+
+### Quick Fix Ideas:
+
+1. Refresh the page—it might be temporary.
+2. Check server logs for detailed error messages.
+3. Verify the health of your backend server.
+4. Adjust server configurations, if necessary.
+5. Consult your hosting provider if the error persists.
+
+---
+
+## Diagnosing the 502 Error on AWS EC2
+
+When I encountered this issue while testing my Strapi API, I couldn’t access the admin dashboard either—it threw a "502 Bad Gateway" error. Here's how I systematically debugged and resolved the problem.
+
+### Steps to Fix the Issue:
+
+### 1. **Start with Instance Reboot**
+
+- Go to your AWS EC2 management console.
+- Reboot the instance.
+- Wait for it to restart and check if the issue resolves. If not, move on.
+
+### 2. **Access the Server Console**
+
+Use SSH to connect to your EC2 instance:
+
+<CodeBlock
+  code='ssh -i your-key.pem ec2-user@your-ec2-public-ip'
+  language='bash'
+/>
+
+Navigate to your Strapi directory. If you don’t know where it’s located, use these commands:
+
+<CodeBlock
+  code={`
+ps aux | grep strapi  # Check if Strapi is running and its directory.
+sudo lsof -i :1337  # Verify Strapi’s port (default: 1337).
+find /home -type d -name "strapi" # Locate the folder.
+find /home -type f -name "package.json" | grep strapi # Locate Strapi installation.
+`}
+  language='bash'
+/>
+
+### 3. **Reinstall Dependencies**
+
+Inside the Strapi directory:
+
+<CodeBlock
+  code={`
+yarn install      # Install packages (or use npm install).
+yarn develop      # Run Strapi in development mode.
+`}
+  language='bash'
+/>
+
+it would run the Strapi Server but as soon as you close the terminal, the server would stop. To keep the server running in the background, you can use tmux, proceed to the next step.
+
+### 4. **Keep Strapi Running in the Background**
+
+Use **tmux** to manage your Strapi process efficiently. It's simple and robust compared to tools like `pm2` or `nohup`.
+
+### Install tmux:
+
+<CodeBlock
+  code={`
+sudo apt-get install tmux
+`}
+  language='bash'
+/>
+
+### Start a new session:
+
+<CodeBlock
+  code={`
+tmux new-session -s strapi
+`}
+  language='bash'
+/>
+
+### Run Strapi:
+
+<CodeBlock
+  code={`
+yarn develop
+`}
+  language='bash'
+/>
+
+### Detach from the session:
+
+Press `Ctrl + B`, then `D` to leave the session running in the background.
+
+### Reattach to the session:
+
+<CodeBlock
+  code={`
+tmux attach -t strapi
+`}
+  language='bash'
+/>
+
+### Terminate the session (if needed):
+
+<CodeBlock
+  code={`
+exit
+`}
+  language='bash'
+/>
+
+---
+
+### 5. **Verify the Fix**
+
+- Check the admin dashboard via your browser.
+- Test the APIs to ensure everything works correctly.
+
+---
+
+### Bonus: Common Reasons for Strapi Crashes
+
+1. **Server Overload:**
+   - High memory or CPU usage can cause downtime. Upgrade your EC2 instance type if needed.
+2. **Broken Configurations:**
+   - Misconfigured environment variables can lead to errors. Double-check them.
+3. **File Upload Issues:**
+   - Large file imports or incorrect file configurations may overload the application.
+4. **Port Conflict:**
+   - Ensure the port Strapi uses (default: 1337) is not occupied by another application.
+
+---
+
+### Conclusion
+
+While encountering a "502 Bad Gateway" error can be frustrating, debugging it step by step helps you learn more about your server and application. In my case, restarting the Strapi application via tmux on AWS EC2 resolved the issue.
+
+Remember, systematic debugging is key to solving such errors efficiently. If you follow this guide, your Strapi CMS should be up and running in no time!
+
+---
+
+**Happy coding!**

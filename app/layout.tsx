@@ -8,9 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/components";
 import { Header, Footer } from "@/components";
 import AnimatedCursor from "react-animated-cursor";
-import {
-  AlertAccounce,
-} from "@/components/ui/announce";
+import { AlertAccounce } from "@/components/ui/announce";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -24,8 +22,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: `Yash Godara | @y17godara`,
-    template: `%s | Yash Godara`,
+    default: `Yash Godara | Socials @y17godara`,
+    template: `%s`,
   },
   description: siteConfig.description,
   authors: siteConfig.authors,

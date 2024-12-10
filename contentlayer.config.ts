@@ -33,6 +33,7 @@ const Project = defineDocumentType(() => ({
     tags: { type: "json", required: false },
     url: { type: "string", required: false },
     published: { type: "boolean", required: false, default: false },
+    jsonLd: { type: "json", required: false },
   },
   computedFields: projectComputedFields,
 }));
@@ -64,6 +65,7 @@ const Blog = defineDocumentType(() => ({
     image: { type: "string", required: true },
     tags: { type: "json", required: false },
     published: { type: "boolean", required: false, default: false },
+    jsonLd: { type: "json", required: false },
   },
   computedFields: blogComputedFields,
 }));
