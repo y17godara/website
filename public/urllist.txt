@@ -3,8 +3,10 @@ https://www.y-g.tech/blogs
 https://www.y-g.tech/projects
 https://www.y-g.tech/about
 https://www.y-g.tech/presence
-https://docs.google.com/document/d/1sUTNAoeqXXwJ_OUXztWzqUDSunaUvqoQXNWDXgsqwv8/edit?usp=sharing
 https://www.y-g.tech/connect
+https://www.y-g.tech/blogs/how-to-fix-strapi-error-502-bad-gateway
+https://www.y-g.tech/blogs/tailwind-buttons
+https://www.y-g.tech/projects/desh-videsh-travels
 https://www.y-g.tech/projects/capture-a-trip
 https://www.y-g.tech/projects/dramatic-scripts
 https://www.y-g.tech/projects/portfolio-nextjs

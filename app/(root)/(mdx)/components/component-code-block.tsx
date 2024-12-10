@@ -21,10 +21,10 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
   };
 
   return (
-    <div className='relative rounded-lg bg-gray-800 px-4 pb-1 text-white shadow-md'>
+    <div className='relative rounded-lg bg-secondary px-4 py-1 text-white shadow-md'>
       {/* Copy Button */}
       <button
-        className='absolute right-2 top-2 rounded bg-gray-700 px-2 py-1 text-sm text-gray-300 hover:bg-gray-600'
+        className='absolute right-2 top-2 rounded bg-primary px-2 py-1 text-sm text-black dark:text-white'
         onClick={handleCopy}
       >
         {copied ? (
@@ -36,7 +36,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
       </button>
 
       {/* Code Content */}
-      <pre className='overflow-auto text-sm'>
+      <pre className='overflow-auto bg-secondary text-sm text-primary'>
         <code className={`language-${language}`}>{code}</code>
       </pre>
     </div>

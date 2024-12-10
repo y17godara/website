@@ -6,63 +6,79 @@
 
 <item>
      <link>https://www.y-g.tech/</link>
-     <title>Home | Yash Godara</title>
-     <description>Developer Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more. Aspiring to become a successful software and web developer.</description>
+     <title>Yash Godara | Socials @y17godara</title>
+     <description>Hello, My Name is Yash Godara (@y17godara) and I am a Developer and Design Enthusiast From New Delhi, India.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>0</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
      <link>https://www.y-g.tech/blogs</link>
-     <title>Blogs | Yash Godara</title>
-     <description>Developer Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more. Aspiring to become a successful software and web developer.</description>
+     <title>Tech Blogs by Yash Godara | Socials @y17godara</title>
+     <description>Explore a collection of insightful blogs covering various topics, including personal experiences, technology, and learning.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
      <link>https://www.y-g.tech/projects</link>
-     <title>Projects | Yash Godara</title>
-     <description>Developer Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more. Aspiring to become a successful software and web developer.</description>
+     <title>Tech Projects by Yash Godara | Socials @y17godara</title>
+     <description>Explore a showcase of projects I&amp;#x27;ve worked on, highlighting my experience in Software Development Engineering, and creative solutions.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
      <link>https://www.y-g.tech/about</link>
-     <title>About | Yash Godara</title>
-     <description>Developer Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more. Aspiring to become a successful software and web developer.</description>
+     <title>About</title>
+     <description>Hello, My Name is Yash Godara (@y17godara) and I am a Developer and Design Enthusiast From New Delhi, India.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
      <link>https://www.y-g.tech/presence</link>
-     <title>Presence | Yash Godara</title>
-     <description>Developer Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more. Aspiring to become a successful software and web developer.</description>
-     <ror:updatePeriod></ror:updatePeriod>
-     <ror:sortOrder>1</ror:sortOrder>
-     <ror:resourceOf>sitemap</ror:resourceOf>
-</item>
-<item>
-     <link>https://docs.google.com/document/d/1sUTNAoeqXXwJ_OUXztWzqUDSunaUvqoQXNWDXgsqwv8/edit?usp=sharing</link>
-     <title>Resume PDF</title>
-     
+     <title>Presence</title>
+     <description>Hello, My Name is Yash Godara (@y17godara) and I am a Developer and Design Enthusiast From New Delhi, India.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
      <link>https://www.y-g.tech/connect</link>
-     <title>Connect with Me | Yash Godara</title>
-     <description>Developer Expertise in Tech like ▲ Next.js, TailwindCSS, React, TypeScript, Node.js, Serverless, Prisma PostgreSQL, MongoDB, and more. Aspiring to become a successful software and web developer.</description>
+     <title>Connect with Me</title>
+     <description>Hello, My Name is Yash Godara (@y17godara) and I am a Developer and Design Enthusiast From New Delhi, India.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
+     <link>https://www.y-g.tech/blogs/how-to-fix-strapi-error-502-bad-gateway</link>
+     <title>How to Fix Strapi Error 502 Bad Gateway on AWS EC2</title>
+     <description>Encountering a &amp;quot;502 Bad Gateway&amp;quot; error on your Strapi CMS hosted on AWS EC2? Follow this step-by-step guide to diagnose and resolve the issue efficiently.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.y-g.tech/blogs/tailwind-buttons</link>
+     <title>3 Trending Animated Tailwind Buttons 2024</title>
+     <description>A collection of animated buttons built using TailwindCSS for your next project. Easy to customize and copy to your project.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.y-g.tech/projects/desh-videsh-travels</link>
+     <title>Desh Videsh Travels | Projects</title>
+     <description>At Desh Videsh Travels I Worked on the Development and Design of the Website. The Website is Built using Latest and Mordern Technologies Like NextJS, TailwindCSS, and Typescript. The Website is Using Strapi as CMS for Managing Content Real-time.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
      <link>https://www.y-g.tech/projects/capture-a-trip</link>
-     <title>Capture a Trip | Projects | Yash Godara</title>
+     <title>Capture a Trip | Projects</title>
      <description>Explore Incredible Tour Packages, Group Tour, Trekking, International tour Package with Capture A Trip. We offer best travel itineraries for your perfect journey</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>2</ror:sortOrder>
@@ -70,7 +86,7 @@
 </item>
 <item>
      <link>https://www.y-g.tech/projects/dramatic-scripts</link>
-     <title>Dramatic Scripts | Projects | Yash Godara</title>
+     <title>Dramatic Scripts | Projects</title>
      <description>A Online FiveM Roleplay Server Scripts Store built using NextJS, TailwindCSS, Typescript, and MDX.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>2</ror:sortOrder>
@@ -78,7 +94,7 @@
 </item>
 <item>
      <link>https://www.y-g.tech/projects/portfolio-nextjs</link>
-     <title>Next.js + Contentlayer Portfolio Website | Projects | Yash Godara</title>
+     <title>Next.js + Contentlayer Portfolio Website | Projects</title>
      <description>A Fullstack Portfolio Website built using NextJS 14, TailwindCSS, Typescript, and Contentlayer MDX for Blogs and Projects.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>2</ror:sortOrder>
@@ -86,7 +102,7 @@
 </item>
 <item>
      <link>https://www.y-g.tech/projects/blueeverest</link>
-     <title>Blue Everest - Digial Solutions for your Business | Projects | Yash Godara</title>
+     <title>Blue Everest - Digial Solutions for your Business | Projects</title>
      <description>A digital agency that helps businesses with their digital transformation.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>2</ror:sortOrder>
@@ -94,7 +110,7 @@
 </item>
 <item>
      <link>https://www.y-g.tech/projects/portfolio-2023</link>
-     <title>Portfolio Website - Using Nextjs | Projects | Yash Godara</title>
+     <title>Portfolio Website - Using Nextjs | Projects</title>
      <description>This was my portfolio website. The website is built using NextJS, TailwindCSS, and Typescript.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>2</ror:sortOrder>

@@ -10,54 +10,146 @@ import { allBlogs, Blog } from "contentlayer/generated";
 import { SiGoogledocs } from "react-icons/si";
 import ActivityChart from "@/components/ActivityChart";
 
-const JSONLD = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Yash Godara",
-  additionalName: "y17godara",
-  username: "y17godara",
-  pronouns: "he/him",
-  worksFor: "Sarathi Rides",
-  jobTitle: "Software Developer",
-  workingStatus: "Open for opportunities",
-  homeLocation: "New Delhi, India",
-  url: "https://www.y-g.tech",
-  sameAs: [
-    "https://www.linkedin.com/in/y17godara",
-    "https://x.com/y17godara",
-    "https://twitter.com/y17godara",
-    "https://stackoverflow.com/users/17114824/y17godara",
-    "https://github.com/y17godara",
-    "https://www.yashgodara.me",
-  ],
-  projects: [
-    {
-      "@type": "SoftwareApplication",
-      name: "Desh Videsh Travels",
-      url: "https://www.y-g.tech/projects/desh-videsh-travels",
-    },
-    {
-      "@type": "SoftwareApplication",
-      name: "Capture A Trip",
-      url: "https://www.y-g.tech/projects/capture-a-trip",
-    },
-    {
-      "@type": "SoftwareApplication",
-      name: "Dramatic Scripts",
-      url: "https://www.y-g.tech/projects/dramatic-scripts",
-    },
-    {
-      "@type": "SoftwareApplication",
-      name: "Next.js + Contentlayer Portfolio Website",
-      url: "https://www.y-g.tech/projects/portfolio-nextjs",
-    },
-    {
-      "@type": "SoftwareApplication",
-      name: "Blue Everest - Digial Solutions for your Business",
-      url: "https://www.y-g.tech/projects/blueeverest",
-    },
-  ],
-};
+const JSONLD = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Yash Godara",
+    additionalName: "y17godara",
+    username: "y17godara",
+    pronouns: "he/him",
+    worksFor: "Freelancer",
+    jobTitle: "Software Developer",
+    workingStatus: "Open for opportunities",
+    homeLocation: "New Delhi, India",
+    url: "https://www.y-g.tech",
+    sameAs: [
+      "https://www.linkedin.com/in/y17godara",
+      "https://x.com/y17godara",
+      "https://twitter.com/y17godara",
+      "https://stackoverflow.com/users/17114824/y17godara",
+      "https://github.com/y17godara",
+      "https://www.yashgodara.me",
+    ],
+    projects: [
+      {
+        "@type": "SoftwareApplication",
+        name: "Desh Videsh Travels",
+        url: "https://www.y-g.tech/projects/desh-videsh-travels",
+      },
+      {
+        "@type": "SoftwareApplication",
+        name: "Capture A Trip",
+        url: "https://www.y-g.tech/projects/capture-a-trip",
+      },
+      {
+        "@type": "SoftwareApplication",
+        name: "Dramatic Scripts",
+        url: "https://www.y-g.tech/projects/dramatic-scripts",
+      },
+      {
+        "@type": "SoftwareApplication",
+        name: "Next.js + Contentlayer Portfolio Website",
+        url: "https://www.y-g.tech/projects/portfolio-nextjs",
+      },
+      {
+        "@type": "SoftwareApplication",
+        name: "Blue Everest - Digital Solutions for your Business",
+        url: "https://www.y-g.tech/projects/blueeverest",
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.y-g.tech/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blogs",
+        item: "https://www.y-g.tech/blogs",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Projects",
+        item: "https://www.y-g.tech/projects",
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: "About",
+        item: "https://www.y-g.tech/about",
+      },
+      {
+        "@type": "ListItem",
+        position: 5,
+        name: "Presence",
+        item: "https://www.y-g.tech/presence",
+      },
+      {
+        "@type": "ListItem",
+        position: 6,
+        name: "Connect",
+        item: "https://www.y-g.tech/connect",
+      },
+      {
+        "@type": "ListItem",
+        position: 7,
+        name: "How to Fix Strapi Error 502 Bad Gateway",
+        item: "https://www.y-g.tech/blogs/how-to-fix-strapi-error-502-bad-gateway",
+      },
+      {
+        "@type": "ListItem",
+        position: 8,
+        name: "Tailwind Buttons",
+        item: "https://www.y-g.tech/blogs/tailwind-buttons",
+      },
+      {
+        "@type": "ListItem",
+        position: 9,
+        name: "Desh Videsh Travels",
+        item: "https://www.y-g.tech/projects/desh-videsh-travels",
+      },
+      {
+        "@type": "ListItem",
+        position: 10,
+        name: "Capture A Trip",
+        item: "https://www.y-g.tech/projects/capture-a-trip",
+      },
+      {
+        "@type": "ListItem",
+        position: 11,
+        name: "Dramatic Scripts",
+        item: "https://www.y-g.tech/projects/dramatic-scripts",
+      },
+      {
+        "@type": "ListItem",
+        position: 12,
+        name: "Portfolio - Next.js",
+        item: "https://www.y-g.tech/projects/portfolio-nextjs",
+      },
+      {
+        "@type": "ListItem",
+        position: 13,
+        name: "Blue Everest",
+        item: "https://www.y-g.tech/projects/blueeverest",
+      },
+      {
+        "@type": "ListItem",
+        position: 14,
+        name: "Portfolio 2023",
+        item: "https://www.y-g.tech/projects/portfolio-2023",
+      },
+    ],
+  },
+];
 
 export default async function page() {
   const blogs: Blog[] = allBlogs

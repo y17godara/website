@@ -176,30 +176,15 @@ Use **tmux** to manage your Strapi process efficiently. It's simple and robust c
 
 ### Install tmux:
 
-<CodeBlock
-  code={`
-sudo apt-get install tmux
-`}
-  language='bash'
-/>
+<CodeBlock code={`sudo apt-get install tmux`} language='bash' />
 
 ### Start a new session:
 
-<CodeBlock
-  code={`
-tmux new-session -s strapi
-`}
-  language='bash'
-/>
+<CodeBlock code={`tmux new-session -s strapi`} language='bash' />
 
 ### Run Strapi:
 
-<CodeBlock
-  code={`
-yarn develop
-`}
-  language='bash'
-/>
+<CodeBlock code={`yarn develop`} language='bash' />
 
 ### Detach from the session:
 
@@ -207,21 +192,11 @@ Press `Ctrl + B`, then `D` to leave the session running in the background.
 
 ### Reattach to the session:
 
-<CodeBlock
-  code={`
-tmux attach -t strapi
-`}
-  language='bash'
-/>
+<CodeBlock code={`tmux attach -t strapi`} language='bash' />
 
 ### Terminate the session (if needed):
 
-<CodeBlock
-  code={`
-exit
-`}
-  language='bash'
-/>
+<CodeBlock code={`exit`} language='bash' />
 
 ---
 
